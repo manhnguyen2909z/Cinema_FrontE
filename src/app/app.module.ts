@@ -16,7 +16,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ForgotPasswordComponent } from './shared/forgot-password/forgot-password.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutComponent } from './user/layout/layout.component';
-import { FilmComponent } from './admin/film/film.component';
+import { FilmComponent } from './admin/list-film/film.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
 import { ProfileComponent } from './admin/profile/profile.component';
 
