@@ -7,7 +7,7 @@ import { RegistrationFormComponent } from './shared/registration-form/registrati
 import { SignInComponent } from './shared/sign-in/sign-in.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
 import { MovieDetailComponent } from './user/movies/movie-detail/movie-detail.component';
-import {  MoviesComponent } from './user/movies/movies.component';
+import {  MoviesComponent } from './user/movies/movies/movies.component';
 import { SliderComponent } from './user/slider/slider.component';
 import { DiscountComponent } from './user/discount/discount.component';
 import { ModalOrderComponent } from './user/modal-order/modal-order.component';
@@ -19,6 +19,8 @@ import { LayoutComponent } from './user/layout/layout.component';
 import { FilmComponent } from './admin/film/list-film/film.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
 import { ProfileComponent } from './admin/profile/profile.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -45,7 +47,7 @@ import { ProfileComponent } from './admin/profile/profile.component';
      
  
     ],
-    imports: [BrowserModule, AppRoutingModule,NgxPaginationModule,HttpClientModule],
+    imports: [BrowserModule, AppRoutingModule,NgxPaginationModule,HttpClientModule,FormsModule],
     providers: [],
     bootstrap: [AppComponent],
 })

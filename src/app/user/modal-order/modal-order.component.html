@@ -2,32 +2,51 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Đặt vé</h5>
+                <h5 class="modal-title fs-1" id="exampleModalLabel">Đặt vé</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Chọn Ngày</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+            <div class="modal-body text-dark mx-2">
+                <div class="text-dark text-lg-start fs-4 fw-bolder">Chọn Ngày</div>
+                <div class="mt-2 mb-4 mx-2">
+                    <input type="date" class="w-100 p-2 px-2 form-select" name="" id="" />
+                </div>
+
+                <div class="text-dark text-lg-start fs-4 fw-bolder">Chọn Rạp</div>
+                <select class="form-select mx-2 mt-2 mb-4 px-2" aria-label="Default select example">
+                    <option value="1">Cầu giấy</option>
+                    <option value="2">Mỹ Đình</option>
+                    <option value="3">Hà Đông</option>
                 </select>
-                <select class="form-select my-4" aria-label="Default select example">
-                    <option selected>Chọn Giờ</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+
+                <div class="text-dark text-lg-start fs-4 fw-bolder">Chọn Giờ</div>
+                <select class="form-select mx-2 mt-2 mb-4 px-2" aria-label="Default select example">
+                    <option value="1">13:25</option>
+                    <option value="2">20:30</option>
+                    <option value="3">21:15</option>
                 </select>
-                <select class="form-select mb-4" aria-label="Default select example">
-                    <option selected>Chọn ghế</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-                <img style="width: 100%; height: 100%" src="../../../assets/img/map.jpg" alt="" />
+
+                <div class="text-dark text-lg-start my-2 fs-4 fw-bolder">Chọn Ghế</div>
+                <div class="text-center fs-2 text-primary">SCREEN</div>
+                <hr />
+                <div class="row mx-2 mt-4">
+                    <button
+                        [disabled]="seat.disable"
+                        (click)="select(seat.id)"
+                        *ngFor="let seat of seats"
+                        [ngClass]="seat.isSelect ? 'btn-secondary' : 'btn-outline-secondary'"
+                        class="col-sm-1 btn-ticket btn m-1"
+                    >
+                        {{ seat.name }}
+                    </button>
+                </div>
+
+                <div class="text-dark text-lg-start mt-4 fs-4 fw-bolder">Danh Sách Ghế Vừa chọn</div>
+                <div class="mt-2 mx-2">
+                    <input type="text" class="w-100 p-1 px-2" ngModel="{{ data }}" name="" id="" />
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button (click)="reset()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                 <button type="button" class="btn btn-primary">Xác nhận</button>
             </div>
         </div>
