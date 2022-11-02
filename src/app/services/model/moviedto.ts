@@ -1,4 +1,4 @@
-export class ListFilm {
+export class moviedto  {
     MovieId!: String;
     MovieName!: String;
     MovieDescription!: String;

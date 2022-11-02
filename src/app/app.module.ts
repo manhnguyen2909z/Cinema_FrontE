@@ -6,19 +6,21 @@ import { HomeComponent } from './user/home/home.component';
 import { RegistrationFormComponent } from './shared/registration-form/registration-form.component';
 import { SignInComponent } from './shared/sign-in/sign-in.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
-import { DetailFilmComponent } from './user/detail-film/detail-film.component';
-import { ListFilmComponent } from './user/list-film/list-film.component';
+import { MovieDetailComponent } from './user/movies/movie-detail/movie-detail.component';
+import {  MoviesComponent } from './user/movies/movies.component';
 import { SliderComponent } from './user/slider/slider.component';
-import { ListDiscountComponent } from './user/list-discount/list-discount.component';
+import { DiscountComponent } from './user/discount/discount.component';
 import { ModalOrderComponent } from './user/modal-order/modal-order.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ForgotPasswordComponent } from './shared/forgot-password/forgot-password.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutComponent } from './user/layout/layout.component';
-import { FilmComponent } from './admin/list-film/film.component';
+import { FilmComponent } from './admin/film/list-film/film.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
 import { ProfileComponent } from './admin/profile/profile.component';
+
+
 
 
 
@@ -29,17 +31,19 @@ import { ProfileComponent } from './admin/profile/profile.component';
         RegistrationFormComponent,
         SignInComponent,
         AboutUsComponent,
-        DetailFilmComponent,
-        ListFilmComponent,
+        MovieDetailComponent,
+        MoviesComponent,
         SliderComponent,
-        ListDiscountComponent,
+        DiscountComponent,
         ModalOrderComponent,
         NotFoundComponent,
         ForgotPasswordComponent,
         LayoutComponent,
         FilmComponent,
         LayoutAdminComponent,
-        ProfileComponent
+        ProfileComponent,
+     
+ 
     ],
     imports: [BrowserModule, AppRoutingModule,NgxPaginationModule,HttpClientModule],
     providers: [],

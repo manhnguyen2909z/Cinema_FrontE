@@ -2,11 +2,11 @@
     <h3 class="mt-4 container border-bottom">Phim Đang Chiếu</h3>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-4">
+            <div class="col-sm-6 col-lg-4" *ngFor="let film of movieDto">
                 <div class="card mt-4">
-                    <a href="/detailFilm">
+                    <a href="/detailFilm/{{film.movieId}}">
                         <img
-                            src="https://cdn.galaxycine.vn/media/2022/10/12/1350wx900h_1665592999797.jpg" 
+                            src="{{film.image}}" 
                             alt="Avatar"
                             class="image position-relative"
                             style="width: 100%"

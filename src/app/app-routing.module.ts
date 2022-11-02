@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './user/home/home.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
-import { DetailFilmComponent } from './user/detail-film/detail-film.component';
-import { ListFilmComponent } from './user/list-film/list-film.component';
+import { MovieDetailComponent } from './user/movies/movie-detail/movie-detail.component';
+import { MoviesComponent } from './user/movies/movies.component'; 
 import { CreateComponent } from './admin/film/create/create.component';
-import { EditComponent } from './admin/edit/edit.component';
-import { FilmComponent } from './admin/list-film/film.component';
+import { EditComponent } from './admin/film/edit/edit.component';
+import { FilmComponent } from './admin/film/list-film/film.component';
 import { RegistrationFormComponent } from './shared/registration-form/registration-form.component';
 import { SignInComponent } from './shared/sign-in/sign-in.component';
 import { LayoutComponent } from './user/layout/layout.component';
@@ -33,8 +33,8 @@ const routes: Routes = [
             { path: 'signUp', component: RegistrationFormComponent },
             { path: 'signIn', component: SignInComponent },
             { path: 'aboutUs', component: AboutUsComponent },
-            { path: 'detailFilm', component: DetailFilmComponent },
-            { path: 'listFilm', component: ListFilmComponent },
+            { path: 'detailFilm/:id', component: MovieDetailComponent },
+            { path: 'listFilm', component: MoviesComponent },
             { path: '', component: HomeComponent },
 
         ],

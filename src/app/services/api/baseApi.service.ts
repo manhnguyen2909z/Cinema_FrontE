@@ -1,19 +1,18 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ListFilm } from 'src/app/model/list-film';
 import { Observable } from 'rxjs';
-import { BaseApiService } from '../baseapi';
+import { BaseApiUrl } from '../baseapi'; 
 
 @Injectable({
     providedIn: 'root',
 })
-export class ListFilmService {
+export class BaseApiService {
     constructor(private http: HttpClient) {}
-     baseUrl = new BaseApiService; 
+     baseUrl = new BaseApiUrl; 
     // GET
 
     public getlist(): Observable<any> {
-        console.log(this.baseUrl.rootUrl)
+        // console.log(this.baseUrl.rootUrl)
         return this.http.get<any>(this.baseUrl.rootUrl + 'Movie'); // link truyen vao day
     }
 }
