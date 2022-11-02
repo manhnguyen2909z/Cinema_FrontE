@@ -13,6 +13,7 @@ import { LayoutComponent } from './user/layout/layout.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
 import { ProfileComponent } from './admin/profile/profile.component';
+import { ForgotPasswordComponent } from './shared/forgot-password/forgot-password.component';
 const routes: Routes = [
     {
         path: 'admin',
@@ -35,6 +36,7 @@ const routes: Routes = [
             { path: 'aboutUs', component: AboutUsComponent },
             { path: 'detailFilm/:id', component: MovieDetailComponent },
             { path: 'listFilm', component: MoviesComponent },
+            { path: 'forgot', component: ForgotPasswordComponent },
             { path: '', component: HomeComponent },
 
         ],
