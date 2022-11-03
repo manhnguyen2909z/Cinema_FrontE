@@ -20,6 +20,9 @@ import { FilmComponent } from './admin/film/list-film/film.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
 import { ProfileComponent } from './admin/profile/profile.component';
 import { FormsModule } from '@angular/forms';
+import { CatmoviecreateComponent } from './admin/categorymovie/catmoviecreate/catmoviecreate.component';
+import { CatmovieeditComponent } from './admin/categorymovie/catmovieedit/catmovieedit.component';
+import { CatmovielistComponent } from './admin/categorymovie/catmovielist/catmovielist.component';
 
 
 
@@ -44,6 +47,9 @@ import { FormsModule } from '@angular/forms';
         FilmComponent,
         LayoutAdminComponent,
         ProfileComponent,
+        CatmoviecreateComponent,
+        CatmovieeditComponent,
+        CatmovielistComponent,
      
  
     ],

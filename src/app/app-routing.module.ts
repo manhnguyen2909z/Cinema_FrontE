@@ -14,6 +14,7 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
 import { ProfileComponent } from './admin/profile/profile.component';
 import { ForgotPasswordComponent } from './shared/forgot-password/forgot-password.component';
+import { CatmovielistComponent } from './admin/categorymovie/catmovielist/catmovielist.component';
 const routes: Routes = [
     {
         path: 'admin',
@@ -23,6 +24,7 @@ const routes: Routes = [
             { path: 'edit', component: EditComponent },
             { path: 'film', component: FilmComponent },
             { path: 'profile', component: ProfileComponent },
+            { path: 'catmovie', component:CatmovielistComponent },
             { path: '', component: FilmComponent },
         ],
     },
