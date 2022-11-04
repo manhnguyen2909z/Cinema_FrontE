@@ -1,10 +1,15 @@
 export class moviedto  {
-    MovieId!: String;
-    MovieName!: String;
-    MovieDescription!: String;
-    Duration!: Date;
-    Actor!: String;
-    Director!: String;
-    Image!: String;
-    ReleaseDate!: Date;
+data =[
+    {
+        movieId: '',
+        movieName: '',
+        movieDescription: '',
+        duration: Date,
+        actor: '',
+        director: '',
+        image: '',
+        releaseDate: Date,
+    }
+
+]
 }

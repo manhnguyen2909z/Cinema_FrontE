@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { CinemaService } from '../../services/api/user/cinema.service';
 
 @Component({
     selector: 'app-modal-order',
@@ -6,13 +7,25 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
     styleUrls: ['./modal-order.component.css'],
 })
 export class ModalOrderComponent implements OnInit {
-    constructor() {}
+    constructor(private cinema :CinemaService) {}
+    cinemaDto:any
+
     data = [''];
     result = [''];
     reset() {
         this.seats.forEach((seat) => {
             seat.isSelect = false;
         });
+    }
+   
+    ngOnInit(): void {
+        this.result.pop()
+        // [GET] cinmea/user
+        this.cinema.getAllCinema().subscribe(res =>{
+            this.cinemaDto = res.data
+            console.log(this.cinemaDto)
+        })
+
     }
     select(id: string) {
         this.seats.forEach((seat) => {
@@ -406,5 +419,5 @@ export class ModalOrderComponent implements OnInit {
             disable: false,
         },
     ];
-    ngOnInit(): void {}
+    
 }

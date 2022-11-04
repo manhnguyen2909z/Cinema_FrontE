@@ -2,32 +2,29 @@
     <h3 class="mt-4 container border-bottom">Phim Đang Chiếu</h3>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-3" *ngFor="let film of movieDto | paginate: { itemsPerPage: 4, currentPage: p }">
+            <div class="col-sm-6 col-lg-3" *ngFor="let movie of movieDto.data| paginate: { itemsPerPage: 4, currentPage: p }">
                 <div class="card mt-4">
                     <a>
-                        <img src="{{ film.image }}" alt="Avatar" class="image position-relative" style="width: 100%" />
+                        <img width="300px" height="400px" src="{{ movie.image }}" alt="Avatar" class="image position-relative" style="width: 100%" />
                     </a>
                     <div class="middle">
                         <button
-                            class="position-absolute translate-middle btn btn-lg btn-outline-light"
-                            data-bs-toggle="modal"
-                            data-bs-target="#dialog-order"
-                            style="bottom: 10px; right: 4%"
+                            class="position-absolute btn btn-lg btn-secondary"
+                            data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                            style="bottom: 40px; right: 16%"
                         >
                             Đặt vé
                         </button>
-
-                        <form method="post" action="/detailFilm/{{ film.movieId }}" id="formDetail">
-                            <button
-                                class="position-absolute translate-middle btn btn-lg btn-outline-light"
-                                style="bottom: 10px; left: 30%"
-                                (click)="detail(film.movieId)"
-                                type="submit"
-                                (click)="submit()"
-                            >
-                                Chi tiết
-                            </button>
-                        </form>
+                        <a
+                            href="/detailFilm/{{ movie }}"
+                            class="position-absolute btn btn-lg btn-secondary"
+                            style="bottom: 40px; left: 16%"
+                            (click)="detail(movie.movieId)"
+                            type="submit"
+                            id="btn-submit-formDetail"
+                        >
+                            Chi tiết
+                        </a>
                     </div>
                     <!-- dialog đặt vé -->
                 </div>
@@ -40,8 +37,7 @@
                 nextLabel=""
                 previousLabel=""
                 (pageChange)="p = $event"
-                style="font-size: 15px"
-                class="text-center mt-4 fs-1"
+                class="text-center mt-4"
             ></pagination-controls>
         </div>
     </div>

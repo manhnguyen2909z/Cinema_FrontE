@@ -6,7 +6,7 @@ import { MovieDetailComponent } from './user/movies/movie-detail/movie-detail.co
 import { MoviesComponent } from './user/movies/movies/movies.component'; 
 import { CreateComponent } from './admin/film/create/create.component';
 import { EditComponent } from './admin/film/edit/edit.component';
-import { FilmComponent } from './admin/film/list-film/film.component';
+import { FilmComponent } from './admin/film/movies/film.component';
 import { RegistrationFormComponent } from './shared/registration-form/registration-form.component';
 import { SignInComponent } from './shared/sign-in/sign-in.component';
 import { LayoutComponent } from './user/layout/layout.component';
