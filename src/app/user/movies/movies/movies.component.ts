@@ -44,9 +44,9 @@ export class MoviesComponent implements OnInit {
     constructor(private movie: MoviesService) {}
     movieDto: any;
     detailMovieDto: any;
-    formDetail = document.getElementById('formDetail') 
+    formDetail = document.getElementById('formDetail')
     submit(){
-        
+
     }
     detail(id: string) {
         this.movie.getDetailMovie(id).subscribe((res) => {
@@ -56,7 +56,8 @@ export class MoviesComponent implements OnInit {
     }
     ngOnInit(): void {
         this.movie.getAllMovies().subscribe((res) => {
-            this.movieDto = res.data;
+            this.movieDto = res;
+            console.log(this.movieDto);
         });
     }
 }

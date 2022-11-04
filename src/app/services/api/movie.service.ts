@@ -14,14 +14,15 @@ export class MoviesService extends BaseApiService {
   name() {
     return 'Movie';
   }
-  
 
-  // GET
+
+  // GET ALL MOVIES
   public getAllMovies(): Observable<any> {
     return this.http.get<any>(this.rootUrl);
   }
+
   public getDetailMovie(id:string): Observable<any> {
-    return this.http.get<any>(this.rootUrl+ '/detailMovieId?='+id);
+    return this.http.get<any>(this.rootUrl+ '/detailMovieId?detailMovieId='+id);
   }
 
 }
