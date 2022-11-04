@@ -20,6 +20,9 @@ import { FilmComponent } from './admin/film/list-film/film.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
 import { ProfileComponent } from './admin/profile/profile.component';
 import { FormsModule } from '@angular/forms';
+import { CreateCsComponent } from './admin/categoryseat/create-cs/create-cs.component';
+import { EditCsComponent } from './admin/categoryseat/edit-cs/edit-cs.component';
+import { ListCsComponent } from './admin/categoryseat/list-cs/list-cs.component';
 
 
 
@@ -44,6 +47,9 @@ import { FormsModule } from '@angular/forms';
         FilmComponent,
         LayoutAdminComponent,
         ProfileComponent,
+        CreateCsComponent,
+        EditCsComponent,
+        ListCsComponent,
      
  
     ],

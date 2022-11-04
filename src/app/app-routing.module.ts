@@ -14,13 +14,19 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
 import { ProfileComponent } from './admin/profile/profile.component';
 import { ForgotPasswordComponent } from './shared/forgot-password/forgot-password.component';
+import { CreateCsComponent } from './admin/categoryseat/create-cs/create-cs.component';
+import { EditCsComponent } from './admin/categoryseat/edit-cs/edit-cs.component';
+import { ListCsComponent } from './admin/categoryseat/list-cs/list-cs.component';
 const routes: Routes = [
     {
         path: 'admin',
         component: LayoutAdminComponent,
         children: [
             { path: 'create', component: CreateComponent },
+            { path: 'create-cs', component: CreateCsComponent },
             { path: 'edit', component: EditComponent },
+            { path: 'edit-cs', component: EditCsComponent },
+            { path: 'list-cs', component: ListCsComponent },
             { path: 'film', component: FilmComponent },
             { path: 'profile', component: ProfileComponent },
             { path: '', component: FilmComponent },
