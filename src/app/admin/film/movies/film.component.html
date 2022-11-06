@@ -1,4 +1,4 @@
-<div class="me-5">
+<div class="me-5 container px-5">
     <h1 class="h3 my-4 text-gray-800">Danh Sách Phim</h1>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -11,20 +11,21 @@
                         <div>
                             <div class="dataTables_length" id="dataTable_length" cla>
                                 <a type="button" class="btn btn-secondary com-sm-6" href="/admin/create">Thêm Phim Mới</a>
+                                <a type="button" class="btn btn-secondary ms-2"  href="javascript:window.top.location.reload(true)"><i class="fas fa-sync-alt"></i></a>
                             </div>
                         </div>
                         <div class="d-flex align-items-center gap-2">
-                            <select class="form-select" style="width: 180px;"  aria-label=" select example">
-                                <option selected>Số phim hiển thị</option>
-                                <option value="1">10</option>
-                                <option value="2">20</option>
-                                <option value="3">50</option>
+                            <select class="form-select" [(ngModel)]="items" style="width:200px" aria-label="Default select example">
+                                <option  value="1">10 Bản ghi</option>
+                                <option value="2">20 bản ghi</option>
+                                <option value="5">50 bản ghi</option>
+                                <option value="10">100 bản ghi</option>
                               </select>
                             <div class="input-group rounded">
                                 <input
                                     type="search"
                                     class="form-control rounded"
-                                    placeholder="Search"
+                                    placeholder="Tìm Kiếm"
                                     aria-label="Search"
                                     aria-describedby="search-addon"
                                 />
@@ -49,7 +50,7 @@
                                 <thead>
                                     <tr role="row">
                                         <th
-                                            class="sorting sorting_asc"
+                                            class="sorting sorting_asc name-col"
                                             tabindex="0"
                                             aria-controls="dataTable"
                                             rowspan="1"
@@ -57,8 +58,9 @@
                                             aria-sort="ascending"
                                             aria-label="Name: activate to sort column descending"
                                             style="width: 120px"
+                                            (click)="sortByName()"
                                         >
-                                            Tên Phim
+                                            Tên Phim  <i class="fa" [ngClass]="dec? 'd-none':''" [ngClass]="decName? 'fa-arrow-down':'fa-arrow-up'"></i>
                                         </th>
                                         <th
                                             class="sorting"
@@ -111,20 +113,20 @@
                                 </thead>
 
                                 <tbody>
-                                    <tr class="odd" *ngFor="let film of films | paginate: { itemsPerPage: 5, currentPage: p }">
+                                    <tr class="odd" *ngFor="let film of films | paginate: { itemsPerPage: items, currentPage: p }">
                                         <td style="font-size: 15px">{{ film.movieName }}</td>
                                         <td>{{ film.movieDescription }}</td>
                                         <td>{{ film.category }}</td>
                                         <td>{{ film.releaseDate | date }}</td>
                                         <td>{{ film.duration }} phút</td>
                                         <td class="text-center">
-                                            <a href="/admin/edit" class="me-1 text-decoration-none">Sửa</a>
+                                            <a href="/admin/edit" class="me-2 text-decoration-none text-secondary"><i class="fa fa-pen" aria-hidden="true"></i></a>
                                             <a
                                                 href=""
                                                 class="ms-1 text-danger text-decoration-none"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal"
-                                                >Xóa</a
+                                                ><i class="fa fa-trash" aria-hidden="true"></i></a
                                             >
                                         </td>
                                     </tr>
