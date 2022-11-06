@@ -53,8 +53,8 @@ export class MoviesComponent implements OnInit {
     }
     ngOnInit(): void {
         this.movie.getAllMovies().subscribe((res) => {
-            this.movieDto.data = res.data;
-            console.log(res)
+            this.movieDto = res;
+            // console.log(res)
         });
     }
 }
