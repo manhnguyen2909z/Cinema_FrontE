@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BaseApiService } from '../base-api.service';
-import { moviedto } from '../../model/moviedto';
+import { Moviedto } from '../../model/moviedto';
 
 @Injectable({
     providedIn: 'root',
@@ -15,7 +15,7 @@ export class MoviesAdminService extends BaseApiService {
   name() {
     return 'Movie';
   }
-  
+
 
   // GET
   public getAllMovies(): Observable<any> {

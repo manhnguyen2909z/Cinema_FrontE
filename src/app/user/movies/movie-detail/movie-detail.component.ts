@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from 'src/app/services/api/user/movie.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-movie-detail',
@@ -16,8 +17,14 @@ constructor(private detailMovie: MoviesService, private route: ActivatedRoute) {
     this.detailMovie.getDetailMovie(id).subscribe((res) => {
       this.detailmoviedto = res;
       console.log(res)
-
     });
   }
+
+  fomartReleaseDate(releaseDate: Date){
+    let formattedDate = (moment(releaseDate)).format('DD-MM-YYYY');
+    console.log(formattedDate);
+    return formattedDate;
+  }
+
 
 }
