@@ -1,15 +1,10 @@
-export class moviedto  {
-data =[
-    {
-        movieId: '',
-        movieName: '',
-        movieDescription: '',
-        duration: Date,
-        actor: '',
-        director: '',
-        image: '',
-        releaseDate: Date,
-    }
-
-]
+export class Moviedto  {
+    movieId!: String;
+    movieName!: String;
+    movieDescription!: String;
+    duration!: Date;
+    actor!: String;
+    director!: String;
+    image!: String;
+    releaseDate!: Date;
 }
