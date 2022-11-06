@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../../../services/api/movie.service';
+import { MoviesService } from '../../../services/api/user/movie.service';
 import { moviedto } from 'src/app/services/model/moviedto';
 
 @Component({
@@ -42,21 +42,19 @@ export class MoviesComponent implements OnInit {
     p: number = 1;
 
     constructor(private movie: MoviesService) {}
-    movieDto: any;
+    movieDto: moviedto = new moviedto();
     detailMovieDto: any;
-    formDetail = document.getElementById('formDetail') 
-    submit(){
-        
-    }
+
     detail(id: string) {
         this.movie.getDetailMovie(id).subscribe((res) => {
             this.detailMovieDto = res;
-            console.log(this.detailMovieDto);
+            // console.log(id);
         });
     }
     ngOnInit(): void {
         this.movie.getAllMovies().subscribe((res) => {
-            this.movieDto = res.data;
+            this.movieDto.data = res.data;
+            console.log(res)
         });
     }
 }
