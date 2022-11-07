@@ -1,10 +1,11 @@
 export class Moviedto  {
-    movieId!: String;
-    movieName!: String;
-    movieDescription!: String;
+    movieId!: string;
+    movieName!: string;
+    movieDescription!: string;
     duration!: Date;
-    actor!: String;
-    director!: String;
-    image!: String;
+    actor!: string;
+    director!: string;
+    image!: string;
+    isShowing!:boolean
     releaseDate!: Date;
 }

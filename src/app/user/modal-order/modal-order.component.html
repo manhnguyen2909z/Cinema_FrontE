@@ -28,13 +28,12 @@
                 <hr />
                 <div class="row mx-2 mt-4">
                     <button
-                        [disabled]="seat.disable"
-                        (click)="select(seat.id)"
-                        *ngFor="let seat of seats"
-                        [ngClass]="seat.isSelect ? 'btn-secondary' : 'btn-outline-secondary'"
-                        class="col-sm-1 btn-ticket btn m-1"
+                        (click)="select(seat.seatId)"
+                        *ngFor="let seat of seatsDto"
+                        
+                        class="col-sm-1 btn-ticket btn m-1 btn btn-outline-secondary"
                     >
-                        {{ seat.name }}
+                        {{ seat.seatName }}
                     </button>
                 </div>
 

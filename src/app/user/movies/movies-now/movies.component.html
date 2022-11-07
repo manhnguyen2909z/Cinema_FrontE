@@ -1,16 +1,19 @@
-<div class="my-4">
-    <h3 class="mt-4 container border-bottom">Phim Đang Chiếu</h3>
+<div class="my-4 position-relative">
+    <h3 class="mt-4 container ">Phim Đang Chiếu</h3>
+    <a routerLink="/moviesComing" *ngIf="isShow" class="position-absolute me-5 text-decoration-none text-dark fs-4" style="right: 0; top:0px">Phim Sắp Chiếu</a>
+    <hr>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-3" *ngFor="let movie of movieDto | paginate: { itemsPerPage: 4, currentPage: p }">
-                <div class="card mt-4">
+            <div class="col-sm-6 col-lg-3" *ngFor="let movie of movieShowing | paginate: { itemsPerPage: item, currentPage: p }">
+                <div class="card mt-4 movies">
                     <a>
-                        <img width="300px" height="400px" src="{{ movie.image }}" alt="Avatar" class="image position-relative" style="width: 100%" />
+                        <img width="300px" height="400px" src="{{movie.image}}" alt="Avatar" class="image position-relative" style="width: 100%" />
                     </a>
-                    <div class="middle">
+                    <div class="middle d-none">
                         <button
                             class="position-absolute btn btn-lg btn-secondary"
-                            data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                            data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"
                             style="bottom: 40px; right: 16%"
                         >
                             Đặt vé
@@ -33,12 +36,7 @@
                 <div class="mt-2">{{movie.movieName}}</div>
                 <!-- <div class="fw-lighter">GIRL FROM THE PAST</div> -->
             </div>
-            <pagination-controls
-                nextLabel=""
-                previousLabel=""
-                (pageChange)="p = $event"
-                class="text-center mt-4"
-            ></pagination-controls>
+            <pagination-controls nextLabel="" previousLabel="" (pageChange)="p = $event" class="text-center mt-4"></pagination-controls>
         </div>
     </div>
 </div>

@@ -1,0 +1,101 @@
+<li id="opc-2" class="section">
+    <div class="step-title">
+        <h2><span class="class-step-payment">Bước 2: </span>Hình thức thanh toán</h2>
+        <a href="#">Thay đổi</a>
+    </div>
+
+    <div id="checkout-step-2" class="step a-item">
+        <dl class="sp-methods" id="checkout-payment-method-load">
+            <dt id="dt_method_onepay" style="margin: 0 0 5px">
+                <input
+                    id="p_method_onepay"
+                    value="onepay"
+                    type="radio"
+                    name="payment[method]"
+                    title="ATM card (Thẻ nội địa)"
+                    class="radio"
+                    onclick="externalpayment(this);"
+                />
+                <label for="p_method_onepay">
+                    <span
+                        class="pm_icon"
+                        style="background-image: url('https://www.cgv.vn/media/catalog/product/placeholder/default/atm_icon.png')"
+                    ></span>
+                    <span class="pm_name method_label">ATM card (Thẻ nội địa)</span>
+                </label>
+            </dt>
+            <dt id="dt_method_onepayquocte" style="margin: 0 0 5px">
+                <input
+                    id="p_method_onepayquocte"
+                    value="onepayquocte"
+                    type="radio"
+                    name="payment[method]"
+                    title="Thẻ quốc tế (Visa, Master, Amex, JCB) "
+                    class="radio"
+                    onclick="externalpayment(this);"
+                />
+                <label for="p_method_onepayquocte">
+                    <span
+                        class="pm_icon"
+                        style="background-image: url('https://www.cgv.vn/media/catalog/product/placeholder/default/visa-mastercard-icon.png')"
+                    ></span>
+                    <span class="pm_name method_label">Thẻ quốc tế (Visa, Master, Amex, JCB) </span>
+                </label>
+            </dt>
+            <dt id="dt_method_momo" style="margin: 0 0 5px">
+                <input
+                    id="p_method_momo"
+                    value="momo"
+                    type="radio"
+                    name="payment[method]"
+                    title="Ví MoMo"
+                    class="radio"
+                    onclick="externalpayment(this);"
+                />
+                <label for="p_method_momo">
+                    <span
+                        class="pm_icon"
+                        style="background-image: url('https://www.cgv.vn/media/catalog/product/placeholder/default/momo_icon.png')"
+                    ></span>
+                    <span class="pm_name method_label pm_diff">Ví MoMo</span>
+                </label>
+            </dt>
+            <dt id="dt_method_zalo_pay" style="margin: 0 0 5px">
+                <input
+                    id="p_method_zalo_pay"
+                    value="zalo_pay"
+                    type="radio"
+                    name="payment[method]"
+                    title="ZaloPay-U22: vé 1K/59K; KH khác: vé 9K/69K"
+                    class="radio"
+                    onclick="externalpayment(this);"
+                />
+                <label for="p_method_zalo_pay">
+                    <span
+                        class="pm_icon"
+                        style="background-image: url('https://www.cgv.vn/media/catalog/product/placeholder/default/icon_zlp_1k.png')"
+                    ></span>
+                    <span class="pm_name method_label pm_diff">ZaloPay-U22: vé 1K/59K; KH khác: vé 9K/69K</span>
+                </label>
+            </dt>
+            <dt id="dt_method_shopeepay" style="margin: 0 0 5px">
+                <input
+                    id="p_method_shopeepay"
+                    value="shopeepay"
+                    type="radio"
+                    name="payment[method]"
+                    title="ShopeePay - Giảm 50%, tối đa 30K với mã SPPCGVEEU"
+                    class="radio"
+                    onclick="externalpayment(this);"
+                />
+                <label for="p_method_shopeepay">
+                    <span
+                        class="pm_icon"
+                        style="background-image: url('https://www.cgv.vn/media/catalog/product/placeholder/default/sppay.png')"
+                    ></span>
+                    <span class="pm_name method_label">ShopeePay - Giảm 50%, tối đa 30K với mã SPPCGVEEU</span>
+                </label>
+            </dt>
+        </dl>
+    </div>
+</li>
