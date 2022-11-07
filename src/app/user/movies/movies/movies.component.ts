@@ -10,7 +10,8 @@ import { Moviedto } from 'src/app/services/model/moviedto';
 export class MoviesComponent implements OnInit {
     p: number = 1;
     constructor(private movie: MoviesService) {}
-    movieDto: any;
+    movieDto = [] as Moviedto[];
+    movieNowShowing: Moviedto[] = [];
     detailMovieDto: any;
 
     detail(id: string) {
@@ -19,9 +20,10 @@ export class MoviesComponent implements OnInit {
         });
     }
     ngOnInit(): void {
-        this.movie.getAllMovies().subscribe((res) => {
+        this.movie.getAllMovies().subscribe((res: any) => {
             this.movieDto = res;
-            console.log(this.movieDto)
+            this.movieNowShowing = this.movieDto.filter(movie => movie.isShowing === true)
+            console.log(this.movieNowShowing)
         });
     }
 }
