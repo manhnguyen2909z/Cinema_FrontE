@@ -1,25 +1,19 @@
-<div class="my-4">
-    <h3 class="mt-4 container border-bottom">Phim Đang Chiếu</h3>
+<div class="my-4 position-relative">
+    <h3 class="mt-4 container">Phim Sắp Chiếu</h3>
+    <a routerLink="/moviesNow" class="position-absolute me-5 text-decoration-none text-dark fs-4" style="right: 0; top:0px">Phim Đang Chiếu</a>
+    <hr>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-3" *ngFor="let movie of movieDto.data | paginate: { itemsPerPage: 4, currentPage: p }">
-                <div class="card mt-4 movies">
+            <div class="col-sm-6 col-lg-3" *ngFor="let movie of movieComing | paginate: { itemsPerPage: 8, currentPage: p }">
+                <div class="card mt-4 movies" >
                     <a>
                         <img width="300px" height="400px" src="{{movie.image}}" alt="Avatar" class="image position-relative" style="width: 100%" />
                     </a>
                     <div class="middle d-none">
-                        <button
-                            class="position-absolute btn btn-lg btn-secondary"
-                            data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop"
-                            style="bottom: 40px; right: 16%"
-                        >
-                            Đặt vé
-                        </button>
                         <a
                             href="/detailFilm/{{ movie.movieId }}"
-                            class="position-absolute btn btn-lg btn-secondary"
-                            style="bottom: 40px; left: 16%"
+                            class="position-absolute bottom-0 start-50 translate-middle btn btn-lg btn-secondary"
+                           
                             (click)="detail(movie.movieId)"
                             type="submit"
                             id="btn-submit-formDetail"

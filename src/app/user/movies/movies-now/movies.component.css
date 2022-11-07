@@ -1,6 +1,7 @@
-.discount:hover .middle{
+.movies:hover .middle{
     display: block !important;
+    
 }
-.discount:hover .image{
+.movies:hover .image{
     opacity: 0.5;
 }

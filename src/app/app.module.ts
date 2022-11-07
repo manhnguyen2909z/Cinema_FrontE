@@ -7,7 +7,7 @@ import { RegistrationFormComponent } from './shared/registration-form/registrati
 import { SignInComponent } from './shared/sign-in/sign-in.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
 import { MovieDetailComponent } from './user/movies/movie-detail/movie-detail.component';
-import {  MoviesComponent } from './user/movies/movies/movies.component';
+import { MoviesComponent } from './user/movies/movies-now/movies.component';
 import { SliderComponent } from './user/slider/slider.component';
 import { DiscountComponent } from './user/discount/discount.component';
 import { ModalOrderComponent } from './user/modal-order/modal-order.component';
@@ -20,6 +20,9 @@ import { FilmComponent } from './admin/film/movies/film.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
 import { ProfileComponent } from './admin/profile/profile.component';
 import { FormsModule } from '@angular/forms';
+import { MoviesComingComponent } from './user/movies/movies-coming/movies-coming.component';
+import { PaymentComponent } from './user/payment/payment.component';
+import { MyTicketComponent } from './user/my-ticket/my-ticket.component';
 
 
 
@@ -45,6 +48,9 @@ import { FormsModule } from '@angular/forms';
         FilmComponent,
         LayoutAdminComponent,
         ProfileComponent,
+        MoviesComingComponent,
+        PaymentComponent,
+        MyTicketComponent,
      
  
     ],
