@@ -26,7 +26,7 @@ export class ModalOrderComponent implements OnInit {
     result = [''];
     date = Date();
 
-    reset() {
+    close() {
         // this.seats.forEach((seat) => {
         //     seat.isSelect = false;
         // });
