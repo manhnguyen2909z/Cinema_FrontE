@@ -35,12 +35,6 @@ import { CommonModule } from '@angular/common';
 import { CreateComponent } from './admin/film/create/create.component';
 import { EditComponent } from './admin/film/edit/edit.component';
 
-
-
-
-
-
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -64,7 +58,6 @@ import { EditComponent } from './admin/film/edit/edit.component';
         CatmovieeditComponent,
         CatmovielistComponent,
 
-
         CreateCsComponent,
         EditCsComponent,
         ListCsComponent,
@@ -73,13 +66,9 @@ import { EditComponent } from './admin/film/edit/edit.component';
         PaymentComponent,
         MyTicketComponent,
         CreateComponent,
-        EditComponent
-
-
-     
- 
+        EditComponent,
     ],
-    imports: [BrowserModule,CommonModule, AppRoutingModule,NgxPaginationModule,HttpClientModule,FormsModule],
+    imports: [BrowserModule, CommonModule, AppRoutingModule, NgxPaginationModule, HttpClientModule, FormsModule],
     providers: [],
     bootstrap: [AppComponent],
 })

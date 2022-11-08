@@ -14,7 +14,7 @@
                 <div class="my-1" >
                     Diễn Viên: {{detailmoviedto.actor}}
                 </div>
-                <div class="my-1">Thể Loại: {{detailmoviedto.listCategoryMovieName}}</div>
+                <div class="my-1">Thể Loại: <span *ngFor="let category of detailmoviedto.listCategoryMovieName">{{category.categoryMovieName}}, </span></div>
                 <div class="my-1">Khởi Chiếu: {{fomartReleaseDate(detailmoviedto.releaseDate)}}</div>
                 <div class="my-1">Thời lượng: {{detailmoviedto.duration}} phút</div>
                 <div class="my-1">Ngôn ngữ: Tiếng Anh - Phụ đề Tiếng Việt</div>
