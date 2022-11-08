@@ -10,14 +10,16 @@ import * as moment from 'moment';
 })
 export class MovieDetailComponent implements OnInit {
 detailmoviedto :any
+listCategorty!: string
 constructor(private detailMovie: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id') as any
     this.detailMovie.getDetailMovie(id).subscribe((res) => {
       this.detailmoviedto = res;
-      console.log('detail')
+      
     });
+
   }
 
   fomartReleaseDate(releaseDate: Date){

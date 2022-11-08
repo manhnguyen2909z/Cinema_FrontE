@@ -12,12 +12,12 @@ export class SeatsService extends BaseApiService {
     }
 
     name() {
-        return 'Seat';
+        return 'Seat/detail?showTimeId=';
     }
 
     // GET
 
-    public getAllSeats(): Observable<any> {
-        return this.http.get<any>(this.rootUrl);
+    public getSeats(id:string): Observable<any> {
+        return this.http.get<any>(this.rootUrl +id);
     }
 }

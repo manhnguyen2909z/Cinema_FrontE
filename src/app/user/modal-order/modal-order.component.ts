@@ -19,9 +19,9 @@ export class ModalOrderComponent implements OnInit {
     @Input() modalId: any;
     cinemaDto = [] as Cinemadto[];
     showtimeDto = [] as Showtimedto[];
-    showtimeDtoCheck = [] as Showtimedto[];
     seatsDto = [] as Seatsdto[];
-    cinemaId: any;
+    cinemaId!: string;
+    showtimeId!:string;
     data = [''];
     result = [''];
     date = Date();
@@ -34,6 +34,8 @@ export class ModalOrderComponent implements OnInit {
         this.cinema.getAllCinema().subscribe((res) => {
             this.cinemaDto = [];
         });
+        this.showtimeDto = []
+        this.seatsDto = []
     }
     select(id: string) {
         // this.seats.forEach((seat) => {
@@ -47,7 +49,7 @@ export class ModalOrderComponent implements OnInit {
     getCinema() {
         this.showtime.getShowTime(this.cinemaId).subscribe((res: any) => {
             this.showtimeDto = res;
-            this.showtimeDtoCheck = this.showtimeDto.filter((showtime) => showtime.movieId == this.modalId);
+            this.showtimeDto = this.showtimeDto.filter((showtime) => showtime.movieId == this.modalId);
         });
         this.cinema.getAllCinema().subscribe((res) => {
             this.cinemaDto = res.data;
@@ -57,8 +59,14 @@ export class ModalOrderComponent implements OnInit {
     getShowTime() {
         this.showtime.getShowTime(this.cinemaId).subscribe((res: any) => {
             this.showtimeDto = res;
-            this.showtimeDtoCheck = this.showtimeDto.filter((showtime) => showtime.movieId == this.modalId);
+            this.showtimeDto = this.showtimeDto.filter((showtime) => showtime.movieId == this.modalId);
         });
+    }
+    getSeats(){
+        this.seat.getSeats(this.showtimeId).subscribe(res =>{
+            this.seatsDto = res
+            console.log(this.showtimeId)
+        })
     }
 
     ngOnInit(): void {
@@ -67,7 +75,6 @@ export class ModalOrderComponent implements OnInit {
         this.cinema.getAllCinema().subscribe((res) => {
             this.cinemaDto = res.data;
         });
-        //GET seat
-        this.seat.getAllSeats().subscribe((res) => (this.seatsDto = res.data));
+        
     }
 }
