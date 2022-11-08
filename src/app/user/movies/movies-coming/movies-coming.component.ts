@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/api/user/movie.service';
-import { Moviedto } from 'src/app/services/model/moviedto';
+import { Moviesdto } from 'src/app/services/model/moviesdto';
 import * as moment from 'moment';
 
 @Component({
@@ -12,8 +12,8 @@ export class MoviesComingComponent implements OnInit {
     p: number = 1;
     constructor(private movie: MoviesService) {}
     // movieDto: Array<Moviedto> = new  Array<Moviedto>;
-    movieDto = [] as Moviedto[];
-    movieComing = [] as Moviedto[];
+    movieDto = [] as Moviesdto[];
+    movieComing = [] as Moviesdto[];
     detailMovieDto: any;
     date = new Date();
 

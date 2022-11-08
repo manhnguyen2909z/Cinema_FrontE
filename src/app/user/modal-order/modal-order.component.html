@@ -1,4 +1,4 @@
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade"  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,19 +8,17 @@
             <div class="modal-body text-dark mx-2">
                 <div class="text-dark text-lg-start fs-4 fw-bolder">Chọn Ngày</div>
                 <div class="mt-2 mb-4 mx-2">
-                    <input type="date" class="w-100 px-2 form-select" name="" id="" />
+                    <input type="date" [ngModel]="date | date:'yyyy-MM-dd'" class="w-100 px-2 form-select" name="" id="" />
                 </div>
 
                 <div class="text-dark text-lg-start fs-4 fw-bolder">Chọn Rạp</div>
-                <select class="form-select mx-2 mt-2 mb-4 px-2" aria-label="Default select example">
-                    <option  *ngFor="let cinema of cinemaDto"> {{cinema.cinemaName}}</option>
+                <select (click)="getCinema()" (change)="getShowTime()" class="form-select mx-2 mt-2 mb-4 px-2" aria-label="Default select example" [(ngModel)]="cinemaId">
+                    <option  *ngFor="let cinema of cinemaDto"  [ngValue]="cinema.cinemaId"> {{cinema.cinemaName}}</option>
                 </select>
 
                 <div class="text-dark text-lg-start fs-4 fw-bolder">Chọn Giờ</div>
                 <select class="form-select mx-2 mt-2 mb-4 px-2" aria-label="Default select example">
-                    <option value="1">13:25</option>
-                    <option value="2">20:30</option>
-                    <option value="3">21:15</option>
+                    <option *ngFor="let showtime  of showtimeDtoCheck" value="1">{{showtime.startTime}}</option>
                 </select>
 
                 <div class="text-dark text-lg-start my-2 fs-4 fw-bolder">Chọn Ghế</div>
@@ -28,6 +26,7 @@
                 <hr />
                 <div class="row mx-2 mt-4">
                     <button
+                    
                         (click)="select(seat.seatId)"
                         *ngFor="let seat of seatsDto"
                         
@@ -44,7 +43,7 @@
             </div>
             <div class="modal-footer">
                 <button (click)="reset()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                <button type="button" class="btn btn-primary">Xác nhận</button>
+                <a href="/payment" type="button" class="btn btn-primary">Xác nhận</a>
             </div>
         </div>
     </div>

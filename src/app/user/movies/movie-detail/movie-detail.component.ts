@@ -16,13 +16,13 @@ constructor(private detailMovie: MoviesService, private route: ActivatedRoute) {
     const id = this.route.snapshot.paramMap.get('id') as any
     this.detailMovie.getDetailMovie(id).subscribe((res) => {
       this.detailmoviedto = res;
-      console.log(res)
+      console.log('detail')
     });
   }
 
   fomartReleaseDate(releaseDate: Date){
     let formattedDate = (moment(releaseDate)).format('DD-MM-YYYY');
-    console.log(formattedDate);
+    // console.log(formattedDate);
     return formattedDate;
   }
 

@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MoviesService } from '../../../services/api/user/movie.service';
-import { Moviedto } from 'src/app/services/model/moviedto';
+import { Moviesdto } from 'src/app/services/model/moviesdto';
 
 @Component({
     selector: 'app-movies',
@@ -11,9 +11,11 @@ export class MoviesComponent implements OnInit {
     p: number = 1;
    @Input() item: number = 8
    @Input() isShow:boolean = true
+  
+  
     constructor(private movie: MoviesService) {}
-    movieDto= [] as Moviedto[];
-    movieShowing = [] as Moviedto[];
+    movieDto= [] as Moviesdto[];
+    movieShowing = [] as Moviesdto[];
     detailMovieDto: any;
 
     detail(id: string) {
@@ -21,6 +23,7 @@ export class MoviesComponent implements OnInit {
             this.detailMovieDto = res;
         });
     }
+
     ngOnInit(): void {
         this.movie.getAllMovies().subscribe((res:any) => {
             this.movieDto = res;
