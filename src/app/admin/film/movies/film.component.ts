@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesAdminService } from '../../../services/api/admin/movies.service';
+import { Moviesdto } from '../../../services/model/moviesdto';
 
 @Component({
     selector: 'app-film',
@@ -7,13 +8,14 @@ import { MoviesAdminService } from '../../../services/api/admin/movies.service';
     styleUrls: ['./film.component.css'],
 })
 export class FilmComponent implements OnInit {
- 
+  
     constructor(private movies: MoviesAdminService) {}
     ngOnInit(): void {
         this.movies.getAllMovies().subscribe((res) => {
-            this.films = res.data;
+            this.films = res;
         });
     }
+    films = [] as Moviesdto[]
     dec =true
     decName!:boolean
     isHiddenName!:boolean
@@ -33,40 +35,40 @@ export class FilmComponent implements OnInit {
     }
     
 
-    films = [
-        {
-          movieName:'Black Adam2',
-          movieDescription: 'Phim này rât là ok',
-          category:'Khoa học viễn tưởng, hài',
-          filmId:' 123456',
-          releaseDate:'2008/11/28',
-          duration:'129 phút'
-        },
-        {
-          movieName:'Black Adam1',
-          movieDescription: 'Phim này rât là ok1',
-          category:'Khoa học viễn tưởng, hài',
-          filmId:' 123456',
-          releaseDate:'2008/11/28',
-          duration:'129 phút'
-        },
-        {
-          movieName:'Black Adam3',
-          movieDescription: 'Phim này rât là ok1',
-          category:'Khoa học viễn tưởng, hài',
-          filmId:' 123456',
-          releaseDate:'2008/11/28',
-          duration:'129 phút'
-        },
-        {
-          movieName:'Black Adam1',
-          movieDescription: 'Phim này rât là ok1',
-          category:'Khoa học viễn tưởng, hài',
-          filmId:' 123456',
-          releaseDate:'2008/11/28',
-          duration:'129 phút'
-        }
-      ]
+    // films = [
+    //     {
+    //       movieName:'Black Adam2',
+    //       movieDescription: 'Phim này rât là ok',
+    //       category:'Khoa học viễn tưởng, hài',
+    //       filmId:' 123456',
+    //       releaseDate:'2008/11/28',
+    //       duration:'129 phút'
+    //     },
+    //     {
+    //       movieName:'Black Adam1',
+    //       movieDescription: 'Phim này rât là ok1',
+    //       category:'Khoa học viễn tưởng, hài',
+    //       filmId:' 123456',
+    //       releaseDate:'2008/11/28',
+    //       duration:'129 phút'
+    //     },
+    //     {
+    //       movieName:'Black Adam3',
+    //       movieDescription: 'Phim này rât là ok1',
+    //       category:'Khoa học viễn tưởng, hài',
+    //       filmId:' 123456',
+    //       releaseDate:'2008/11/28',
+    //       duration:'129 phút'
+    //     },
+    //     {
+    //       movieName:'Black Adam1',
+    //       movieDescription: 'Phim này rât là ok1',
+    //       category:'Khoa học viễn tưởng, hài',
+    //       filmId:' 123456',
+    //       releaseDate:'2008/11/28',
+    //       duration:'129 phút'
+    //     }
+    //   ]
       items = 1
       // films: any;
       p: number = 1;

@@ -8,4 +8,5 @@ export class Moviesdto  {
     image!: string;
     isShowing!:boolean
     releaseDate!: Date;
+    endShowDate!:Date;
 }
