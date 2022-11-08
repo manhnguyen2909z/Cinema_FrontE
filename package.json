@@ -21,6 +21,8 @@
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.9.1",
     "jquery": "^3.6.1",
+    "moment": "^2.29.4",
+    "ng-bootstrap-pagination": "^0.2.3",
     "ngx-pagination": "^6.0.2",
     "rxjs": "^7.5.7",
     "tslib": "^2.3.0",

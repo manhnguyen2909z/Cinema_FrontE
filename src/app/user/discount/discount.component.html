@@ -3,63 +3,28 @@
     <h3 class="mt-4 container">Tin Khuyến Mãi</h3>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-4">
+            <div class="col-sm-6 col-md-3 discount" *ngFor="let discount of discounts | paginate: { itemsPerPage: 4, currentPage: p }">
                 <div class="card mt-4">
                     <a href="#">
-                        <img
+                        <img 
                             src="https://cdn.galaxycine.vn/media/2022/10/14/vnpay_1665735135975.jpg"
                             alt="Avatar"
                             class="image position-relative"
                             style="width: 100%"
                         />
-                        <div class="middle">
-                            <button
-                                class="position-absolute bottom-0 start-50 translate-middle btn btn-lg btn-outline-light"
-                            >
-                                Chi Tiết
-                            </button>
+                        <div class="middle d-none">
+                            <button class="position-absolute bottom-0 start-50 translate-middle btn btn-lg btn-secondary">Chi Tiết</button>
                         </div>
                     </a>
                 </div>
+               
             </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class="card mt-4">
-                    <a href="#">
-                        <img
-                            src="https://cdn.galaxycine.vn/media/2022/10/12/galaween-digital-300x450_1665553621835.jpg"
-                            alt="Avatar"
-                            class="image position-relative"
-                            style="width: 100%"
-                        />
-                        <div class="middle">
-                            <button
-                                class="position-absolute bottom-0 start-50 translate-middle btn btn-lg btn-outline-light"
-                            >
-                                Chi Tiết
-                            </button>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class="card mt-4">
-                    <a href="#">
-                        <img
-                            src="https://cdn.galaxycine.vn/media/2022/10/10/khaitruonghtp-digital-300x450_1665387758351.jpg"
-                            alt="Avatar"
-                            class="image position-relative"
-                            style="width: 100%"
-                        />
-                        <div class="middle">
-                            <button
-                                class="position-absolute bottom-0 start-50 translate-middle btn btn-lg btn-outline-light"
-                            >
-                                Chi Tiết
-                            </button>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <pagination-controls
+            nextLabel=""
+            previousLabel=""
+            (pageChange)="p = $event"
+            class="text-center mt-4 "
+        ></pagination-controls>
         </div>
     </div>
 </div>

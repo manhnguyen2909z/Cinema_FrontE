@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from 'src/app/services/api/movie.service';
+import { ActivatedRoute } from '@angular/router';
+import { MoviesService } from 'src/app/services/api/user/movie.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-movie-detail',
@@ -8,14 +10,21 @@ import { MoviesService } from 'src/app/services/api/movie.service';
 })
 export class MovieDetailComponent implements OnInit {
 detailmoviedto :any
-  constructor(private detail: MoviesService) { }
+constructor(private detailMovie: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.detail.detail(this.detailmoviedto.movieId).subscribe((res) => {
-    //   this.detailmoviedto = res;
-    //   console.log(this.detailmoviedto.movieId)
-
-    // });
+    const id = this.route.snapshot.paramMap.get('id') as any
+    this.detailMovie.getDetailMovie(id).subscribe((res) => {
+      this.detailmoviedto = res;
+      console.log('detail')
+    });
   }
+
+  fomartReleaseDate(releaseDate: Date){
+    let formattedDate = (moment(releaseDate)).format('DD-MM-YYYY');
+    // console.log(formattedDate);
+    return formattedDate;
+  }
+
 
 }
