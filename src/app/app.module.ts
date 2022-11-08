@@ -23,7 +23,9 @@ import { FormsModule } from '@angular/forms';
 import { MoviesComingComponent } from './user/movies/movies-coming/movies-coming.component';
 import { PaymentComponent } from './user/payment/payment.component';
 import { MyTicketComponent } from './user/my-ticket/my-ticket.component';
-
+import { CommonModule } from '@angular/common';
+import { CreateComponent } from './admin/film/create/create.component';
+import { EditComponent } from './admin/film/edit/edit.component';
 
 
 
@@ -51,10 +53,12 @@ import { MyTicketComponent } from './user/my-ticket/my-ticket.component';
         MoviesComingComponent,
         PaymentComponent,
         MyTicketComponent,
+        CreateComponent,
+        EditComponent
      
  
     ],
-    imports: [BrowserModule, AppRoutingModule,NgxPaginationModule,HttpClientModule,FormsModule],
+    imports: [BrowserModule,CommonModule, AppRoutingModule,NgxPaginationModule,HttpClientModule,FormsModule],
     providers: [],
     bootstrap: [AppComponent],
 })

@@ -13,7 +13,7 @@ export class MoviesAdminService extends BaseApiService {
   }
 
   name() {
-    return 'Movie';
+    return 'Movie/getall';
   }
 
 
