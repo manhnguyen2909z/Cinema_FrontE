@@ -6,22 +6,19 @@ import { BaseApiService } from './base-api.service';
 @Injectable({
     providedIn: 'root',
 })
-export class MoviesService extends BaseApiService {
+export class CategorySeatsService extends BaseApiService {
   constructor(http: HttpClient) {
     super(http);
   }
 
   name() {
-    return 'Movie';
+    return 'CategorySeat';
   }
   
 
   // GET
-  public getAllMovies(): Observable<any> {
+  public getAllCategorySeats(): Observable<any> {
     return this.http.get<any>(this.rootUrl);
-  }
-  public getDetailMovie(id:string): Observable<any> {
-    return this.http.get<any>(this.rootUrl+ '/detailMovieId?='+id);
   }
 
 }
