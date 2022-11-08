@@ -20,12 +20,18 @@ import { FilmComponent } from './admin/film/movies/film.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
 import { ProfileComponent } from './admin/profile/profile.component';
 import { FormsModule } from '@angular/forms';
+
+import { CreateCsComponent } from './admin/categoryseat/create-cs/create-cs.component';
+import { EditCsComponent } from './admin/categoryseat/edit-cs/edit-cs.component';
+import { ListCsComponent } from './admin/categoryseat/list-cs/list-cs.component';
+
 import { MoviesComingComponent } from './user/movies/movies-coming/movies-coming.component';
 import { PaymentComponent } from './user/payment/payment.component';
 import { MyTicketComponent } from './user/my-ticket/my-ticket.component';
 import { CommonModule } from '@angular/common';
 import { CreateComponent } from './admin/film/create/create.component';
 import { EditComponent } from './admin/film/edit/edit.component';
+
 
 
 
@@ -50,11 +56,17 @@ import { EditComponent } from './admin/film/edit/edit.component';
         FilmComponent,
         LayoutAdminComponent,
         ProfileComponent,
+
+        CreateCsComponent,
+        EditCsComponent,
+        ListCsComponent,
+
         MoviesComingComponent,
         PaymentComponent,
         MyTicketComponent,
         CreateComponent,
         EditComponent
+
      
  
     ],
