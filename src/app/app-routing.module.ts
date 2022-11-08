@@ -15,12 +15,16 @@ import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.componen
 import { ProfileComponent } from './admin/profile/profile.component';
 import { ForgotPasswordComponent } from './shared/forgot-password/forgot-password.component';
 
+import { CatmovielistComponent } from './admin/categorymovie/catmovielist/catmovielist.component';
+
+
 import { CreateCsComponent } from './admin/categoryseat/create-cs/create-cs.component';
 import { EditCsComponent } from './admin/categoryseat/edit-cs/edit-cs.component';
 import { ListCsComponent } from './admin/categoryseat/list-cs/list-cs.component';
 
 import { MoviesComingComponent } from './user/movies/movies-coming/movies-coming.component';
 import { PaymentComponent } from './user/payment/payment.component';
+
 
 const routes: Routes = [
     {
@@ -34,6 +38,7 @@ const routes: Routes = [
             { path: 'list-cs', component: ListCsComponent },
             { path: 'film', component: FilmComponent },
             { path: 'profile', component: ProfileComponent },
+            { path: 'catmovie', component:CatmovielistComponent },
             { path: '', component: FilmComponent },
         ],
     },

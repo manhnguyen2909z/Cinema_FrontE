@@ -20,6 +20,9 @@ import { FilmComponent } from './admin/film/movies/film.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
 import { ProfileComponent } from './admin/profile/profile.component';
 import { FormsModule } from '@angular/forms';
+import { CatmoviecreateComponent } from './admin/categorymovie/catmoviecreate/catmoviecreate.component';
+import { CatmovieeditComponent } from './admin/categorymovie/catmovieedit/catmovieedit.component';
+import { CatmovielistComponent } from './admin/categorymovie/catmovielist/catmovielist.component';
 
 import { CreateCsComponent } from './admin/categoryseat/create-cs/create-cs.component';
 import { EditCsComponent } from './admin/categoryseat/edit-cs/edit-cs.component';
@@ -57,6 +60,11 @@ import { EditComponent } from './admin/film/edit/edit.component';
         LayoutAdminComponent,
         ProfileComponent,
 
+        CatmoviecreateComponent,
+        CatmovieeditComponent,
+        CatmovielistComponent,
+
+
         CreateCsComponent,
         EditCsComponent,
         ListCsComponent,
@@ -66,6 +74,7 @@ import { EditComponent } from './admin/film/edit/edit.component';
         MyTicketComponent,
         CreateComponent,
         EditComponent
+
 
      
  
