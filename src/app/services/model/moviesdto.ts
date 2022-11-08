@@ -1,4 +1,4 @@
-export class Moviedto  {
+export class Moviesdto  {
     movieId!: string;
     movieName!: string;
     movieDescription!: string;

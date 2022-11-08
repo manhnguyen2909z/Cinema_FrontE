@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BaseApiService } from '../base-api.service';
-import { Moviedto } from '../../model/moviedto';
+import { Moviesdto } from '../../model/moviesdto';
 
 @Injectable({
     providedIn: 'root',
