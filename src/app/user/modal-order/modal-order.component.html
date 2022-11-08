@@ -26,10 +26,10 @@
                 <hr />
                 <div class="row mx-2 mt-4">
                     <button
-                    
+
                         (click)="select(seat.seatId)"
                         *ngFor="let seat of seatsDto"
-                        
+
                         class="col-sm-1 btn-ticket btn m-1 btn btn-outline-secondary"
                     >
                         {{ seat.seatName }}
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button (click)="reset()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button (click)="close()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                 <a href="/payment" type="button" class="btn btn-primary">Xác nhận</a>
             </div>
         </div>
