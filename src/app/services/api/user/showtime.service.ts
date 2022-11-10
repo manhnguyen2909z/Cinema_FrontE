@@ -19,5 +19,5 @@ export class ShowTimeService extends BaseApiService {
     // GET
     public getShowTime(id:string): Observable<Showtimedto> {
         return this.http.get<Showtimedto>(this.rootUrl +id);
-    }   
+    }  
 }
