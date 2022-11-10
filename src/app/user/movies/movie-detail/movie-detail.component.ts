@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from 'src/app/services/api/user/movie.service';
 import * as moment from 'moment';
+import { categorymoviedto } from 'src/app/services/model/categorymoviedto';
+import { Moviesdto } from 'src/app/services/model/moviesdto';
 
 @Component({
   selector: 'app-movie-detail',
@@ -9,17 +11,27 @@ import * as moment from 'moment';
   styleUrls: ['./movie-detail.component.css']
 })
 export class MovieDetailComponent implements OnInit {
-detailmoviedto :any
-listCategorty!: string
+detailmoviedto!: Moviesdto;
+listCategorty= new String();
 constructor(private detailMovie: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getMovieDetail();
+  }
+
+  getMovieDetail(){
     const id = this.route.snapshot.paramMap.get('id') as any
     this.detailMovie.getDetailMovie(id).subscribe((res) => {
       this.detailmoviedto = res;
-      
+      this.getCategoryMovie();
     });
+  }
 
+  getCategoryMovie(){
+    this.detailmoviedto.categoryMovies.forEach( (categoryMovie: any) =>{
+      this.listCategorty += categoryMovie.categoryMovieName +", ";
+    });
+    this.listCategorty = this.listCategorty.substring(0, this.listCategorty.length-2);
   }
 
   fomartReleaseDate(releaseDate: Date){
