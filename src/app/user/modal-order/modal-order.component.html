@@ -1,6 +1,6 @@
 <div
     class="modal fade"
-    id="staticBackdrop"
+    id="modalOrder"
     data-bs-backdrop="static"
     data-bs-keyboard="false"
     tabindex="-1"
@@ -50,22 +50,33 @@
                         </select>
                     </div>
                     <div class="col-sm-6">
-                        <img src="https://static.vecteezy.com/system/resources/previews/001/227/419/non_2x/cinema-background-concept-vector.jpg" alt="img" class="w-100" style="height:80%">
+                        <img
+                            src="https://patch.com/img/cdn20/users/22889014/20190531/020055/styles/patch_image/public/background-black-board-camera-canvas-chalk-chalkboard-cinema-cinematography-clap-clapboard-clapper-clapperboard-concept-curtai-20190531134258-67181300.jpg"
+                            alt="img"
+                            class="w-100 rounded-start rounded-end"
+                            style="height: 70%; margin-top: 38px"
+                        />
                     </div>
                 </div>
                 <div class="text-dark text-lg-start my-2 fs-4 fw-bolder">Chọn Ghế</div>
                 <div class="text-center fs-2 text-primary">SCREEN</div>
                 <hr />
                 <div class="row mx-2 mt-4">
-                    <button (click)="select(seat.seatId)" *ngFor="let seat of seatsDto" class="col-sm-1 btn-ticket btn m-1 btn btn-outline-secondary">
+                    <button
+                        (click)="select(seat.seatId)"
+                        [ngClass]="seat.isSelected ? 'btn-secondary' : 'btn-outline-secondary'"
+                        *ngFor="let seat of seatsDto"
+                        class="col-sm-1 btn-ticket btn m-1 btn"
+                    >
                         {{ seat.seatName }}
                     </button>
                 </div>
             </div>
             <div class="modal-footer">
                 <button (click)="close()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                <a href="/payment" type="button" class="btn btn-primary">Xác nhận</a>
+                <button data-bs-toggle="modal" data-bs-target="#modalOrder2" class="btn btn-primary">Xác nhận</button>
             </div>
         </div>
     </div>
 </div>
+<app-payment></app-payment>
