@@ -27,6 +27,7 @@ export class ModalOrderComponent implements OnInit {
     data = [''];
     result = [''];
     date =Date();
+    noShowTime="";
     close() {
         // this.seats.forEach((seat) => {
         //     seat.isSelect = false;
@@ -34,6 +35,8 @@ export class ModalOrderComponent implements OnInit {
         this.cinemaDto = [];
         this.showtimeDto = [];
         this.seatsDto = [];
+        this.noShowTime=''
+     
         
     }
     getdate(){
@@ -59,10 +62,13 @@ export class ModalOrderComponent implements OnInit {
     getShowTime() {
         this.showtime.getShowTime(this.cinemaId).subscribe((res: any) => {
             if (moment(res[0].showDate).format('YYYY-MM-DD') != this.date) {
+                this.noShowTime = "Không có ca chiếu nào"
                 this.showtimeDto = [];
+                console.log(  this.date)
                 
             
             } else {
+                this.noShowTime = ""
                 this.showtimeDto = res;
                 this.showtimeDto = this.showtimeDto.filter((showtime) => showtime.movieId == this.modalId);
                
