@@ -44,13 +44,12 @@ export class ModalOrderComponent implements OnInit {
         this.close()
     }
     select(id: string) {
-        // this.seats.forEach((seat) => {
-        //     if (id === seat.id) {
-        //         seat.isSelect = !seat.isSelect;
-        //         this.result.push(seat.name);
-        //         this.data = [...this.result];
-        //     }
-        // });
+        this.seatsDto.forEach((seat) => {
+            if (id === seat.seatId) {
+                seat.isSelected = !seat.isSelected;
+                
+            }
+        });
     }
     getCinema() {
         this.getShowTime();

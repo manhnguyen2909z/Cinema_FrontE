@@ -24,6 +24,8 @@ import { ListCsComponent } from './admin/categoryseat/list-cs/list-cs.component'
 
 import { MoviesComingComponent } from './user/movies/movies-coming/movies-coming.component';
 import { PaymentComponent } from './user/payment/payment.component';
+import { MyProfileComponent } from './user/my-profile/my-profile.component';
+import { MyTicketComponent } from './user/my-ticket/my-ticket.component';
 
 
 const routes: Routes = [
@@ -55,6 +57,8 @@ const routes: Routes = [
             { path: 'moviesComing', component: MoviesComingComponent },
             { path: 'forgot', component: ForgotPasswordComponent },
             { path: 'payment', component: PaymentComponent },
+            { path: 'myTicket', component:MyTicketComponent },
+            { path: 'myProfile', component:MyProfileComponent },
             { path: '', component: HomeComponent },
 
         ],

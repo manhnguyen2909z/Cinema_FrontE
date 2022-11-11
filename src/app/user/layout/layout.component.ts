@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-layout',
@@ -10,6 +10,13 @@ export class LayoutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  @Input() isLogin= true
+  logout(){
+    this.isLogin = false
+  }
+  login(){
+    this.isLogin =true
   }
 
 }

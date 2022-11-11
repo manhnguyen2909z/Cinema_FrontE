@@ -34,6 +34,7 @@ import { MyTicketComponent } from './user/my-ticket/my-ticket.component';
 import { CommonModule } from '@angular/common';
 import { CreateComponent } from './admin/film/create/create.component';
 import { EditComponent } from './admin/film/edit/edit.component';
+import { MyProfileComponent } from './user/my-profile/my-profile.component';
 
 @NgModule({
     declarations: [
@@ -67,6 +68,7 @@ import { EditComponent } from './admin/film/edit/edit.component';
         MyTicketComponent,
         CreateComponent,
         EditComponent,
+        MyProfileComponent,
     ],
     imports: [BrowserModule, CommonModule, AppRoutingModule, NgxPaginationModule, HttpClientModule, FormsModule],
     providers: [],

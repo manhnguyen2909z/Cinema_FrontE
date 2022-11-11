@@ -43,24 +43,28 @@
                         <a class="nav-link active" aria-current="page" routerLink="/aboutUs">About Us</a>
                     </li>
                     <!--HIển thị cái này nếu đã đăng nhập rồi -->
-                    <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" routerLink="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 35px;"alt="Avatar" /> Mạnh Nguyễn
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" routerLink="#">Thông tin tài khoản</a></li>
-                <li><a class="dropdown-item" routerLink="#">Vé của tôi</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" routerLink="#">Đăng xuất</a></li>
-              </ul>
-            </li> -->
+                    
                 </ul>
-                <li class="list-unstyled nav-item mx-2">
-                    <a class="nav-link active" aria-current="page" routerLink="/signIn">Đăng Nhập</a>
-                </li>
-                <li class="list-unstyled nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="/signUp">Đăng Ký</a>
-                </li>
+                <div class="nav-item dropdown me-4" *ngIf="isLogin">
+                    <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 35px" alt="Avatar" /> Mạnh
+                        Nguyễn
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/myProfile">Thông tin tài khoản</a></li>
+                        <li><a class="dropdown-item" routerLink="/myTicket">Vé của tôi</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" (click)="logout()"  routerLink="/">Đăng xuất</a></li>
+                    </ul>
+                </div>
+  
+                    <li class="list-unstyled nav-item mx-2" *ngIf="!isLogin">
+                        <a class="nav-link active" aria-current="page" routerLink="/signIn">Đăng Nhập</a>
+                    </li>
+                    <li class="list-unstyled nav-item" *ngIf="!isLogin">
+                        <a class="nav-link active" aria-current="page" routerLink="/signUp">Đăng Ký</a>
+                    </li>
+
             </div>
         </div>
     </nav>
@@ -121,8 +125,7 @@
                     <!-- Grid column -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">Điều khoản sử dụng
-                        </h6>
+                        <h6 class="text-uppercase fw-bold mb-4">Điều khoản sử dụng</h6>
                         <p>
                             <a class="">Điều Khoản Chung</a>
                         </p>
