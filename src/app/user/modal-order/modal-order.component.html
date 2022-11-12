@@ -45,7 +45,7 @@
                             aria-label="Default select example "
                             [(ngModel)]="showtimeId"
                         >
-                            <option *ngFor="let showtime of showtimeDto" [ngValue]="showtime.showTimeId">{{ showtime.startTime }}</option>
+                            <option *ngFor="let showtime of filterShowTime" [ngValue]="showtime.showTimeId">{{ showtime.startTime }}</option>
                             <option>{{ noShowTime }}</option>
                         </select>
                     </div>

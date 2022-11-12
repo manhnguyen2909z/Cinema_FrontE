@@ -8,18 +8,22 @@ import { Billdto } from '../../model/billdto';
 @Injectable({
     providedIn: 'root',
 })
-export class BillService extends BaseApiService {
+export class TicketService extends BaseApiService {
     constructor(http: HttpClient) {
         super(http);
     }
 
     name() {
-        return 'Bill';
+        return 'Ticket';
     }
 
     // GET
 
-    public getBill(): Observable<Billdto> {
-        return this.http.get<Billdto>(this.rootUrl + '/Bill')
+    public addTicket(bill: Billdto): Observable<Billdto> {
+        return this.http.post<Billdto>(this.rootUrl,bill,{
+            headers: new HttpHeaders({
+                'Content-Type' :'application/json'
+            })
+        })
     }
 }

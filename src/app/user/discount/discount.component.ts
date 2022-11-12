@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from 'src/app/services/api/user/news.service';
 
 @Component({
   selector: 'app-discount',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiscountComponent implements OnInit {
 
-  constructor() { }
-  
+  constructor(private news: NewsService) { }
+  NewDto:any
   ngOnInit(): void {
+    this.news.getAllNews().subscribe(res=>{
+      this.NewDto =res
+    })
   }
   p = 1;
   discounts = [

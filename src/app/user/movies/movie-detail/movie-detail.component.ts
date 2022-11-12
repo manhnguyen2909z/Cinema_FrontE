@@ -6,47 +6,42 @@ import { categorymoviedto } from 'src/app/services/model/categorymoviedto';
 import { Moviesdto } from 'src/app/services/model/moviesdto';
 
 @Component({
-  selector: 'app-movie-detail',
-  templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.css']
+    selector: 'app-movie-detail',
+    templateUrl: './movie-detail.component.html',
+    styleUrls: ['./movie-detail.component.css'],
 })
 export class MovieDetailComponent implements OnInit {
-detailmoviedto!: Moviesdto;
-listCategorty= new String();
-constructor(private detailMovie: MoviesService, private route: ActivatedRoute) { }
+    detailmoviedto!: Moviesdto;
+    listCategorty = new String();
+    constructor(private detailMovie: MoviesService, private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
-    this.getMovieDetail();
-  }
-  @Input() isNow !: boolean
-  date = new Date();
-  
-  getMovieDetail(){
-    const id = this.route.snapshot.paramMap.get('id') as any
-    this.detailMovie.getDetailMovie(id).subscribe((res) => {
-      let dateComing = moment(res.releaseDate).format('DD-MM-YYYY'); 
-      this.detailmoviedto = res;
-      if(dateComing > moment(this.date).format('DD-MM-YYYY')){
-        this.isNow == false
-      }else{
-        this.isNow == true
-      }
-      this.getCategoryMovie();
-    });
-  }
+    ngOnInit(): void {
+        this.getMovieDetail();
+    }
+    @Input() isNow!: boolean;
+    date = new Date();
 
-  getCategoryMovie(){
-    this.detailmoviedto.categoryMovies.forEach( (categoryMovie: any) =>{
-      this.listCategorty += categoryMovie.categoryMovieName +", ";
-    });
-    this.listCategorty = this.listCategorty.substring(0, this.listCategorty.length-2);
-  }
+    getMovieDetail() {
+        const id = this.route.snapshot.paramMap.get('id') as any;
+        this.detailMovie.getDetailMovie(id).subscribe((res) => {
+            let dateComing = moment(res.releaseDate).format('DD-MM-YYYY');
+            this.detailmoviedto = res;
+            console.log(res);
+            
+            this.getCategoryMovie();
+        });
+    }
 
-  fomartReleaseDate(releaseDate: Date){
-    let formattedDate = (moment(releaseDate)).format('DD-MM-YYYY');
-    // console.log(formattedDate);
-    return formattedDate;
-  }
+    getCategoryMovie() {
+        this.detailmoviedto.categoryMovies.forEach((categoryMovie: any) => {
+            this.listCategorty += categoryMovie.categoryMovieName + ', ';
+        });
+        this.listCategorty = this.listCategorty.substring(0, this.listCategorty.length - 2);
+    }
 
-
+    fomartReleaseDate(releaseDate: Date) {
+        let formattedDate = moment(releaseDate).format('DD-MM-YYYY');
+        // console.log(formattedDate);
+        return formattedDate;
+    }
 }
