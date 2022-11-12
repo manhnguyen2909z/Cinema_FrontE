@@ -15,13 +15,10 @@ import * as moment from 'moment';
     styleUrls: ['./modal-order.component.css'],
 })
 export class ModalOrderComponent implements OnInit {
-    constructor(private cinema: CinemaService, private seat: SeatsService, private showtime: ShowTimeService, private bill: BillService) {
-       
-    }
+    constructor(private cinema: CinemaService, private seat: SeatsService, private showtime: ShowTimeService, private bill: BillService) {}
     ngOnInit(): void {
         // [GET] cinmea/user
-        this.date = new Date()
-  
+        this.date = new Date();
         this.cinema.getAllCinema().subscribe((res) => {
             this.cinemaDto = res.data;
         });
@@ -29,6 +26,7 @@ export class ModalOrderComponent implements OnInit {
     @Input() modalId: any;
     cinemaDto = [] as Cinemadto[];
     showtimeDto = [] as Showtimedto[];
+    filterShowTime = [] as Showtimedto[];
     seatsDto = [] as Seatsdto[];
     cinemaId!: string;
     showtimeId!: string;
@@ -56,7 +54,6 @@ export class ModalOrderComponent implements OnInit {
             console.log(res);
             console.log(this.seatSelect);
         });
-        
     }
     close() {
         // this.seats.forEach((seat) => {
@@ -66,10 +63,10 @@ export class ModalOrderComponent implements OnInit {
         this.showtimeDto = [];
         this.seatsDto = [];
         this.noShowTime = '';
-
     }
     getdate() {
         this.getShowTime();
+        this.filterShowTime = [];
         this.close();
     }
     select(id: string) {
@@ -80,22 +77,32 @@ export class ModalOrderComponent implements OnInit {
         });
     }
     getCinema() {
-        this.getShowTime();
+        // this.getShowTime();
         this.cinema.getAllCinema().subscribe((res) => {
             this.cinemaDto = res.data;
         });
     }
     getShowTime() {
+        // console.log('getshowtime');
+        this.filterShowTime = [];
         this.showtime.getShowTime(this.cinemaId).subscribe((res: any) => {
-            // if (moment(res[0].showDate).format('YYYY-MM-DD') != this.date.toISOString()) {
+            // if (moment(res[0].showDate).format('YYYY-MM-DD') <> this.date.toISOString()) {
             //     this.noShowTime = 'Không có ca chiếu nào';
             //     this.showtimeDto = [];
             //     console.log(this.date);
             // } else {
             // this.noShowTime = '';
             this.showtimeDto = res;
+            console.log(this.cinemaId);
+            this.showtimeDto.forEach((element: any) => {
+        
+                if (moment(element.showDate).format('YYYY-MM-DD') == moment(this.date).format('YYYY-MM-DD')) {
+                    console.log('push');
+                    this.filterShowTime.push(element);
+                }
+            });
             this.showtimeDto = this.showtimeDto.filter((showtime) => {
-                return showtime.movieId == this.modalId && moment(res[0].showDate).format('YYYY-MM-DD') == moment(this.date).format('YYYY-MM-DD') ;
+                return showtime.movieId == this.modalId;
             });
             // }
         });
