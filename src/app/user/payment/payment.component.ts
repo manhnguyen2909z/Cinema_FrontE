@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { Billdto } from 'src/app/services/model/billdto';
+
+
 
 @Component({
   selector: 'app-payment',
@@ -8,8 +12,10 @@ import { Component, OnInit } from '@angular/core';
 export class PaymentComponent implements OnInit {
 
   constructor() { }
-
   ngOnInit(): void {
   }
-
+  @Input() billDto = [] as Billdto[];
+  done(){
+    this.billDto = []
+  }
 }

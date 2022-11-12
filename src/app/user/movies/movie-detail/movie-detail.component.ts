@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from 'src/app/services/api/user/movie.service';
 import * as moment from 'moment';
@@ -18,11 +18,19 @@ constructor(private detailMovie: MoviesService, private route: ActivatedRoute) {
   ngOnInit(): void {
     this.getMovieDetail();
   }
-
+  @Input() isNow !: boolean
+  date = new Date();
+  
   getMovieDetail(){
     const id = this.route.snapshot.paramMap.get('id') as any
     this.detailMovie.getDetailMovie(id).subscribe((res) => {
+      let dateComing = moment(res.releaseDate).format('DD-MM-YYYY'); 
       this.detailmoviedto = res;
+      if(dateComing > moment(this.date).format('DD-MM-YYYY')){
+        this.isNow == false
+      }else{
+        this.isNow == true
+      }
       this.getCategoryMovie();
     });
   }

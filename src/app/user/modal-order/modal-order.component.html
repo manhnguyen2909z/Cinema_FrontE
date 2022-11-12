@@ -11,7 +11,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title fs-1" id="exampleModalLabel">Đặt vé</h5>
-                <button type="button" (click)="close()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-dark mx-2">
                 <div class="row mt-4">
@@ -24,6 +23,7 @@
                                 [ngModel]="date | date: 'yyyy-MM-dd'"
                                 (ngModelChange)="date = $event"
                                 class="form-select"
+                                name="date"
                             />
                         </div>
 
@@ -73,10 +73,18 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button (click)="close()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                <button data-bs-toggle="modal" data-bs-target="#modalOrder2" class="btn btn-primary">Xác nhận</button>
+                <a (click)="close()" type="button" href="/" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</a>
+                <button
+                    (click)="addBill()"
+                    (click)="payment.billDto = billDto"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalOrder2"
+                    class="btn btn-primary"
+                >
+                    Xác nhận
+                </button>
             </div>
         </div>
     </div>
 </div>
-<app-payment></app-payment>
+<app-payment #payment></app-payment>

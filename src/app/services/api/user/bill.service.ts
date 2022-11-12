@@ -1,24 +1,25 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 import { BaseApiService } from '../base-api.service';
-import { Cinemadto } from '../../model/cinemadto';
+import { Billdto } from '../../model/billdto';
+
 
 @Injectable({
     providedIn: 'root',
 })
-export class CinemaService extends BaseApiService {
+export class BillService extends BaseApiService {
     constructor(http: HttpClient) {
         super(http);
     }
 
     name() {
-        return 'Cinema';
+        return 'Bill';
     }
 
     // GET
 
-    public getAllCinema(): Observable<any> {
-        return this.http.get<any>(this.rootUrl);
+    public getBill(): Observable<Billdto> {
+        return this.http.get<Billdto>(this.rootUrl + '/Bill')
     }
 }
