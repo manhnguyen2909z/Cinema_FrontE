@@ -19,7 +19,7 @@
                 <div class="my-1">Thời lượng: {{detailmoviedto.duration}} phút</div>
                 <div class="my-1">Ngôn ngữ: Tiếng Anh - Phụ đề Tiếng Việt</div>
                 <button class="mt-4 btn btn-lg btn-secondary" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">Đặt vé</button>
+                data-bs-target="#modalOrder" *ngIf="isNow">Đặt vé</button>
             </div>
             <app-modal-order  #child></app-modal-order>
         </div>
