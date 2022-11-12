@@ -16,12 +16,15 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
   }
   billDto = [] as Billdto[];
-  
+
   done(){
-    
     this.ticket.addTicket(this.billDto[0]).subscribe(res =>
      console.log(res)
       )
+  }
+
+  reset(){
+    this.billDto = [];
   }
 
 }

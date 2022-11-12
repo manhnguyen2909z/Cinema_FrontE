@@ -3,5 +3,5 @@ export class Seatsdto  {
     seatId!: string;
     isSelected!:boolean;
     price!: number;
-
+    canSelected!: boolean;
 }

@@ -66,6 +66,7 @@
                         (click)="select(seat.seatId)"
                         [ngClass]="seat.isSelected ? 'btn-secondary' : 'btn-outline-secondary'"
                         *ngFor="let seat of seatsDto"
+                        [disabled]="seat.canSelected === false"
                         class="col-sm-1 btn-ticket btn m-1 btn"
                     >
                         {{ seat.seatName }}
