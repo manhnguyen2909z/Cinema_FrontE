@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from 'src/app/services/api/user/news.service';
+import { NewService } from 'src/app/services/api/user/new.service';
 
 @Component({
   selector: 'app-discount',
@@ -8,7 +8,7 @@ import { NewsService } from 'src/app/services/api/user/news.service';
 })
 export class DiscountComponent implements OnInit {
 
-  constructor(private news: NewsService) { }
+  constructor(private news: NewService) { }
   NewDto:any
   ngOnInit(): void {
     this.news.getAllNews().subscribe(res=>{
