@@ -16,7 +16,9 @@ export class SeatsService extends BaseApiService {
     }
 
     // GET
-
+    public getAllSeats(): Observable<any> {
+        return this.http.get<any>(this.rootUrl);
+    }
     public getSeats(id:string): Observable<any> {
         return this.http.get<any>(this.rootUrl +id);
     }

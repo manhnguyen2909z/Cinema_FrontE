@@ -51,6 +51,12 @@ import { ListShiftComponent } from './admin/shift/list-shift/list-shift.componen
 import { CreateRoomComponent } from './admin/room/create-room/create-room.component';
 import { EditRoomComponent } from './admin/room/edit-room/edit-room.component';
 import { ListRoomComponent } from './admin/room/list-room/list-room.component';
+import { CreateShowtimeComponent } from './admin/showtime/create-showtime/create-showtime.component';
+import { EditShowtimeComponent } from './admin/showtime/edit-showtime/edit-showtime.component';
+import { ListShowtimeComponent } from './admin/showtime/list-showtime/list-showtime.component';
+import { CreateSeatComponent } from './admin/seat/create-seat/create-seat.component';
+import { EditSeatComponent } from './admin/seat/edit-seat/edit-seat.component';
+import { ListSeatComponent } from './admin/seat/list-seat/list-seat.component';
 
 
 
@@ -102,7 +108,16 @@ import { ListRoomComponent } from './admin/room/list-room/list-room.component';
         CreateRoomComponent,
         EditRoomComponent,
         ListRoomComponent,
+<<<<<<< Updated upstream
 
+=======
+        CreateShowtimeComponent,
+        EditShowtimeComponent,
+        ListShowtimeComponent,
+        CreateSeatComponent,
+        EditSeatComponent,
+        ListSeatComponent,
+>>>>>>> Stashed changes
     ],
     imports: [BrowserModule, CommonModule, AppRoutingModule, NgxPaginationModule, HttpClientModule, FormsModule],
     providers: [

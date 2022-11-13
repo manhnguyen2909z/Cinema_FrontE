@@ -42,6 +42,16 @@ import { ListRoomComponent } from './admin/room/list-room/list-room.component';
 import { CreateRoomComponent } from './admin/room/create-room/create-room.component';
 import { EditRoomComponent } from './admin/room/edit-room/edit-room.component';
 
+<<<<<<< Updated upstream
+=======
+import { ListSeatComponent } from './admin/seat/list-seat/list-seat.component';
+import { CreateSeatComponent } from './admin/seat/create-seat/create-seat.component';
+import { EditSeatComponent } from './admin/seat/edit-seat/edit-seat.component';
+
+import { ListShowtimeComponent } from './admin/showtime/list-showtime/list-showtime.component';
+import { CreateShowtimeComponent } from './admin/showtime/create-showtime/create-showtime.component';
+import { EditShowtimeComponent } from './admin/showtime/edit-showtime/edit-showtime.component';
+>>>>>>> Stashed changes
 
 import { MoviesComingComponent } from './user/movies/movies-coming/movies-coming.component';
 import { PaymentComponent } from './user/payment/payment.component';
@@ -76,6 +86,14 @@ const routes: Routes = [
             { path: 'list-room', component: ListRoomComponent },
             { path: 'edit-room', component: EditRoomComponent },
             { path: 'create-room', component: CreateRoomComponent },
+
+            { path: 'list-seat', component: ListSeatComponent },
+            { path: 'edit-seat', component: EditSeatComponent },
+            { path: 'create-seat', component: CreateSeatComponent },
+
+            { path: 'list-showtime', component: ListShowtimeComponent },
+            { path: 'edit-showtime', component: EditShowtimeComponent },
+            { path: 'create-showtime', component: CreateShowtimeComponent },
 
             { path: 'film', component: FilmComponent },
             { path: 'profile', component: ProfileComponent },
