@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BaseApiService } from '../base-api.service';
-import { Showtimedto } from '../../model/showtimedto';
+import { ShowTimedto } from '../../model/showtimedto';
 
 @Injectable({
     providedIn: 'root',
@@ -17,7 +17,10 @@ export class ShowTimeService extends BaseApiService {
     }
 
     // GET
-    public getShowTime(id:string): Observable<Showtimedto> {
-        return this.http.get<Showtimedto>(this.rootUrl +id);
+    public getAllShowTimes(): Observable<any> {
+        return this.http.get<any>(this.rootUrl);
+    }
+    public getShowTime(id:string): Observable<ShowTimedto> {
+        return this.http.get<ShowTimedto>(this.rootUrl +id);
     }  
 }

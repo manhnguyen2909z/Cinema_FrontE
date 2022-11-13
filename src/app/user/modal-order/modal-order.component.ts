@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { CinemaService } from '../../services/api/user/cinema.service';
 import { Seatsdto } from '../../services/model/seatsdto';
 import { SeatsService } from '../../services/api/user/seats.service';
-import { Showtimedto } from '../../services/model/showtimedto';
+import { ShowTimedto } from '../../services/model/showtimedto';
 import { ShowTimeService } from '../../services/api/user/showtime.service';
 import { Cinemadto } from '../../services/model/cinemadto';
 import { Billdto } from '../../services/model/billdto';
@@ -25,8 +25,8 @@ export class ModalOrderComponent implements OnInit {
     }
     @Input() modalId: any;
     cinemaDto = [] as Cinemadto[];
-    showtimeDto = [] as Showtimedto[];
-    filterShowTime = [] as Showtimedto[];
+    showtimeDto = [] as ShowTimedto[];
+    filterShowTime = [] as ShowTimedto[];
     seatsDto = [] as Seatsdto[];
     cinemaId!: string;
     showtimeId!: string;
