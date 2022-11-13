@@ -22,5 +22,5 @@ export class CatmovielistComponent implements OnInit {
             console.log(this.categoryMovieDto);
         });
     }
-
+    items = 1
 }

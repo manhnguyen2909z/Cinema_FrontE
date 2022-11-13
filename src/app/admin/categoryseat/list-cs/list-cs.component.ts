@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategorySeatsService } from 'src/app/services/api/categoryseat.service';
+import { categorySeatdto } from 'src/app/services/model/categoryseatdto';
 
 @Component({
   selector: 'app-list-cs',
@@ -19,5 +20,6 @@ export class ListCsComponent implements OnInit {
   });
 
   }
-
+  categorySeats = [] as categorySeatdto[]
+  items = 1
 }

@@ -35,7 +35,22 @@ import { CommonModule } from '@angular/common';
 import { CreateComponent } from './admin/film/create/create.component';
 import { EditComponent } from './admin/film/edit/edit.component';
 import { MyProfileComponent } from './user/my-profile/my-profile.component';
+
 import { AuthInterceptor } from './services/api/auth.interceptor';
+
+import { CreateCinemaComponent } from './admin/cinema/create-cinema/create-cinema.component';
+import { EditCinemaComponent } from './admin/cinema/edit-cinema/edit-cinema.component';
+import { ListCinemaComponent } from './admin/cinema/list-cinema/list-cinema.component';
+import { CreateNewComponent } from './admin/new/create-new/create-new.component';
+import { EditNewComponent } from './admin/new/edit-new/edit-new.component';
+import { ListNewComponent } from './admin/new/list-new/list-new.component';
+import { CreateShiftComponent } from './admin/shift/create-shift/create-shift.component';
+import { EditShiftComponent } from './admin/shift/edit-shift/edit-shift.component';
+import { ListShiftComponent } from './admin/shift/list-shift/list-shift.component';
+import { CreateRoomComponent } from './admin/room/create-room/create-room.component';
+import { EditRoomComponent } from './admin/room/edit-room/edit-room.component';
+import { ListRoomComponent } from './admin/room/list-room/list-room.component';
+
 
 @NgModule({
     declarations: [
@@ -70,6 +85,18 @@ import { AuthInterceptor } from './services/api/auth.interceptor';
         CreateComponent,
         EditComponent,
         MyProfileComponent,
+        CreateCinemaComponent,
+        EditCinemaComponent,
+        ListCinemaComponent,
+        CreateNewComponent,
+        EditNewComponent,
+        ListNewComponent,
+        CreateShiftComponent,
+        EditShiftComponent,
+        ListShiftComponent,
+        CreateRoomComponent,
+        EditRoomComponent,
+        ListRoomComponent,
     ],
     imports: [BrowserModule, CommonModule, AppRoutingModule, NgxPaginationModule, HttpClientModule, FormsModule],
     providers: [
