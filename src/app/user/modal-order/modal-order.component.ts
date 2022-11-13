@@ -66,7 +66,6 @@ export class ModalOrderComponent implements OnInit {
     }
     getdate() {
         this.getShowTime();
-        this.filterShowTime = [];
         this.close();
     }
     select(id: string) {
@@ -95,13 +94,13 @@ export class ModalOrderComponent implements OnInit {
             this.showtimeDto = res;
             console.log(this.cinemaId);
             this.showtimeDto.forEach((element: any) => {
-        
+
                 if (moment(element.showDate).format('YYYY-MM-DD') == moment(this.date).format('YYYY-MM-DD')) {
                     console.log('push');
                     this.filterShowTime.push(element);
                 }
             });
-            this.showtimeDto = this.showtimeDto.filter((showtime) => {
+            this.filterShowTime = this.filterShowTime.filter((showtime) => {
                 return showtime.movieId == this.modalId;
             });
             // }
