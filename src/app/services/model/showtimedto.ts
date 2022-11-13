@@ -4,6 +4,4 @@ export class Showtimedto  {
     movieId!: string;
     roomId!: Date;
     startTime!:Date
-
-
 }

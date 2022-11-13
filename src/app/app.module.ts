@@ -14,7 +14,7 @@ import { ModalOrderComponent } from './user/modal-order/modal-order.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ForgotPasswordComponent } from './shared/forgot-password/forgot-password.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LayoutComponent } from './user/layout/layout.component';
 import { FilmComponent } from './admin/film/movies/film.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
@@ -35,6 +35,9 @@ import { CommonModule } from '@angular/common';
 import { CreateComponent } from './admin/film/create/create.component';
 import { EditComponent } from './admin/film/edit/edit.component';
 import { MyProfileComponent } from './user/my-profile/my-profile.component';
+
+import { AuthInterceptor } from './services/api/auth.interceptor';
+
 import { CreateCinemaComponent } from './admin/cinema/create-cinema/create-cinema.component';
 import { EditCinemaComponent } from './admin/cinema/edit-cinema/edit-cinema.component';
 import { ListCinemaComponent } from './admin/cinema/list-cinema/list-cinema.component';
@@ -47,6 +50,7 @@ import { ListShiftComponent } from './admin/shift/list-shift/list-shift.componen
 import { CreateRoomComponent } from './admin/room/create-room/create-room.component';
 import { EditRoomComponent } from './admin/room/edit-room/edit-room.component';
 import { ListRoomComponent } from './admin/room/list-room/list-room.component';
+
 
 @NgModule({
     declarations: [
@@ -95,7 +99,13 @@ import { ListRoomComponent } from './admin/room/list-room/list-room.component';
         ListRoomComponent,
     ],
     imports: [BrowserModule, CommonModule, AppRoutingModule, NgxPaginationModule, HttpClientModule, FormsModule],
-    providers: [],
+    providers: [
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthInterceptor,
+        multi: true,
+      },
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

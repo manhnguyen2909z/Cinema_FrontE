@@ -39,26 +39,23 @@ export class ModalOrderComponent implements OnInit {
     seatSelect = [] as Seatsdto[];
 
     addBill() {
+        this.billDto = [];
         const newBill: Billdto = new Billdto();
         newBill.cinemaId = this.cinemaId;
         newBill.showTimeId = this.showtimeId;
         newBill.date = this.date;
-        newBill.listSeat = this.seatSelect;
+        newBill.listSeat = [] as Seatsdto[];
         this.seatsDto.forEach((seat) => {
-            if (seat.isSelected == true) {
+            if (seat.isSelected === true && seat.canSelected === true) {
                 newBill.listSeat.push(seat);
             }
         });
         this.bill.addBill(newBill).subscribe((res: any) => {
             this.billDto.push(res);
-            console.log(res);
-            console.log(this.seatSelect);
         });
     }
     close() {
-        // this.seats.forEach((seat) => {
-        //     seat.isSelect = false;
-        // });
+        this.filterShowTime = [];
         this.cinemaDto = [];
         this.showtimeDto = [];
         this.seatsDto = [];
@@ -69,46 +66,45 @@ export class ModalOrderComponent implements OnInit {
         this.close();
     }
     select(id: string) {
-        this.seatsDto.forEach((seat) => {
-            if (id === seat.seatId) {
-                seat.isSelected = !seat.isSelected;
-            }
-        });
+      console.log("selected");
+      this.seatsDto.forEach((seat) => {
+          if (id === seat.seatId) {
+              seat.isSelected = !seat.isSelected;
+          }
+      });
     }
     getCinema() {
-        // this.getShowTime();
         this.cinema.getAllCinema().subscribe((res) => {
             this.cinemaDto = res.data;
         });
     }
     getShowTime() {
-        // console.log('getshowtime');
         this.filterShowTime = [];
         this.showtime.getShowTime(this.cinemaId).subscribe((res: any) => {
-            // if (moment(res[0].showDate).format('YYYY-MM-DD') <> this.date.toISOString()) {
-            //     this.noShowTime = 'Không có ca chiếu nào';
-            //     this.showtimeDto = [];
-            //     console.log(this.date);
-            // } else {
-            // this.noShowTime = '';
             this.showtimeDto = res;
             console.log(this.cinemaId);
             this.showtimeDto.forEach((element: any) => {
 
                 if (moment(element.showDate).format('YYYY-MM-DD') == moment(this.date).format('YYYY-MM-DD')) {
-                    console.log('push');
                     this.filterShowTime.push(element);
                 }
             });
             this.filterShowTime = this.filterShowTime.filter((showtime) => {
                 return showtime.movieId == this.modalId;
             });
-            // }
         });
     }
     getSeats() {
         this.seat.getSeats(this.showtimeId).subscribe((res) => {
             this.seatsDto = res;
+            this.seatsDto.forEach((seat) =>{
+              if(seat.isSelected === true){
+                console.log(seat.seatName);
+                seat.canSelected = false;
+              }else{
+                seat.canSelected = true;
+              }
+            });
         });
     }
 }
