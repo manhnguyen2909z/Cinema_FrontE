@@ -10,41 +10,36 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Tạo tài khoản!</h1>
                         </div>
-                        <form class="user">
-                            <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Họ và tên đệm">
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Tên">
-                                </div>
+                        <!-- <form class="user"> -->
+                        <div class="user">
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="userdto.fullNamme" class="form-control form-control-user" id="exampleFirstName" placeholder="Họ và tên">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Địa chỉ email">
+                                <input type="email" [(ngModel)]="userdto.email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Địa chỉ email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" [(ngModel)]="userdto.phoneNumber" class="form-control form-control-user" id="exampleInputEmail" placeholder="Số điện thoại">
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Mật khẩu">
+                                    <input type="password" [(ngModel)]="userdto.password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Mật khẩu">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Nhập lại mật khẩu">
+                                    <input type="password" [(ngModel)]="userdto.conFirmPassword" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Nhập lại mật khẩu">
                                 </div>
                             </div>
-                            <a class="btn btn-primary btn-user btn-block">
-                                Đăng Ký
-                            </a>
-                            <hr>
-                            <a class="btn btn-google btn-user btn-block">
-                                <i class="fab fa-google fa-fw"></i> Đăng nhập với Google
-                            </a>
-                            <a class="btn btn-facebook btn-user btn-block">
-                                <i class="fab fa-facebook-f fa-fw"></i> Đăng nhập với Facebook
-                            </a>
-                        </form>
-                        <hr>
-                        <div class="text-center">
-                            <a class="small" href="/forgot">Quên mật khẩu?</a>
+                            <div (click)="register()">
+                                <a class="btn btn-primary btn-user btn-block">
+                                  Đăng Ký
+                              </a>
+                            </div>
                         </div>
+                        <!-- </form> -->
+                        <hr>
+                        <!-- <div class="text-center">
+                            <a class="small" href="/forgot">Quên mật khẩu?</a>
+                        </div> -->
                         <div class="text-center">
                             <a class="small" href="/signIn">Bạn đã có tài khoản rồi? Đăng nhập!</a>
                         </div>

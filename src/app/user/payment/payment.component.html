@@ -16,7 +16,7 @@
             </div>
             <div class="modal-body">
                 <div class="container row">
-                    
+
                     <div class="box-2 col-sm-12" *ngFor="let detail of billDto">
                         <div class="box-inner-2">
                             <div >
@@ -48,7 +48,7 @@
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mb-2">
                                                 <p>Giá</p>
-                                                <!-- <p>{{detail.listSeat.length}} x {{detail.listSeat}} VND</p> -->
+                                                <p>{{detail.listSeat.length}} x {{detail.listSeat[0].price}} VND</p>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mb-2">
                                                 <p class="fw-bold">Tổng tiền</p>
@@ -63,11 +63,11 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#modalOrder">Quay lại</button>
+                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#modalOrder" (click)="reset()">Quay lại</button>
                 <a class="btn btn-primary"  (click)="done()" >Thanh Toán</a>
-                
+
             </div>
         </div>
-      
+
     </div>
 </div>

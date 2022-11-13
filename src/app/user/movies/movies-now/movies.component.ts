@@ -13,8 +13,8 @@ export class MoviesComponent implements OnInit {
     p: number = 1;
    @Input() item: number = 8
    @Input() isShow:boolean = true
-  
-  
+
+
     constructor(private movie: MoviesService) {}
     movieDto= [] as Moviesdto[];
     movieShowing = [] as Moviesdto[];
@@ -31,12 +31,16 @@ export class MoviesComponent implements OnInit {
     ngOnInit(): void {
         this.movie.getAllMovies().subscribe((res:any) => {
             this.movieDto = res;
+
             this.movieShowing = this.movieDto.filter((movie) => {
             let dateComing = moment(movie.releaseDate).format('DD-MM-YYYY');
                 
             return dateComing < moment(this.date).format('DD-MM-YYYY');});
             
             // console.log('dang chieu')
+
+            this.movieShowing = this.movieDto.filter((movie) => movie.isShowing === true);
+
         });
     }
 }

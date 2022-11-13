@@ -21,16 +21,41 @@
             <div class="sidebar-heading">Addons</div>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" >
-                    <i class="fas fa-fw fa-chair"></i>
-                    <span>Danh Sách Ghế</span></a
+                <a class="nav-link" routerLink="/admin/list-cs" >
+                    <i class="fas fa-fw fa-chair" ></i>
+                    <span>Danh Sách Loại Ghế</span></a
                 >
             </li>
+            
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" >
+                <a class="nav-link" routerLink="/admin/catmovielist" >
                     <i class="fas fa-fw fa-table"></i>
                     <span>DS Thể Loại Phim</span></a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/admin/list-cinema" >
+                    <i class="fas fa-fw fa-chair" ></i>
+                    <span>Danh Sách Rạp</span></a
+                >
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/admin/list-new" >
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Danh Sách Tin tức</span></a
+                >
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/admin/list-shift" >
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Danh Sách ca chiếu</span></a
+                >
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/admin/list-room" >
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Danh Sách phòng chiếu</span></a
                 >
             </li>
             <!-- Divider -->
@@ -50,18 +75,7 @@
                 </button>
             </form>
 
-            <!-- Topbar Search -->
-            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-
+          
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
 
