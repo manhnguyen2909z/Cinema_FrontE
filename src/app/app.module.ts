@@ -32,9 +32,10 @@ import { MoviesComingComponent } from './user/movies/movies-coming/movies-coming
 import { PaymentComponent } from './user/payment/payment.component';
 import { MyTicketComponent } from './user/my-ticket/my-ticket.component';
 import { CommonModule } from '@angular/common';
-import { CreateComponent } from './admin/film/create/create.component';
-import { EditComponent } from './admin/film/edit/edit.component';
+import { CreateComponent } from './admin/film/filmcreate/create.component';
+import { EditComponent } from './admin/film/filmedit/edit.component';
 import { MyProfileComponent } from './user/my-profile/my-profile.component';
+
 
 @NgModule({
     declarations: [
@@ -69,6 +70,7 @@ import { MyProfileComponent } from './user/my-profile/my-profile.component';
         CreateComponent,
         EditComponent,
         MyProfileComponent,
+ 
     ],
     imports: [BrowserModule, CommonModule, AppRoutingModule, NgxPaginationModule, HttpClientModule, FormsModule],
     providers: [],

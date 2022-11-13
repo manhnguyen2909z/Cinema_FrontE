@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MoviesService } from '../../../services/api/user/movie.service';
 import { Moviesdto } from 'src/app/services/model/moviesdto';
+import * as moment from 'moment';
+
 
 @Component({
     selector: 'app-movies',
@@ -17,6 +19,8 @@ export class MoviesComponent implements OnInit {
     movieDto= [] as Moviesdto[];
     movieShowing = [] as Moviesdto[];
     detailMovieDto: any;
+    date = new Date();
+
 
     detail(id: string) {
         this.movie.getDetailMovie(id).subscribe((res) => {
@@ -27,7 +31,10 @@ export class MoviesComponent implements OnInit {
     ngOnInit(): void {
         this.movie.getAllMovies().subscribe((res:any) => {
             this.movieDto = res;
-            this.movieShowing = this.movieDto.filter((movie) => movie.isShowing === true);
+            this.movieShowing = this.movieDto.filter((movie) => {
+            let dateComing = moment(movie.releaseDate).format('DD-MM-YYYY');
+                
+            return dateComing < moment(this.date).format('DD-MM-YYYY');});
             
             // console.log('dang chieu')
         });
