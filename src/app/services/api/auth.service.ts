@@ -26,4 +26,8 @@ export class AuthService extends BaseApiService{
     });
   }
 
+  public getUserInfo(): Observable<any>{
+    return this.http.get<any>(this.rootUrl + '/getUserInfo');
+  }
+
 }

@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <img src="https://cdn-icons-png.flaticon.com/128/4291/4291571.png" width="50" />
             <a href="/"></a>
-            <h3 class="mx-4"><a class="text-decoration-none text-dark" routerLink="/">Home</a></h3>
+            <h3 class="mx-4"><a class="text-decoration-none text-dark" href="/">Home</a></h3>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -44,12 +44,12 @@
                         <a class="nav-link active" aria-current="page" routerLink="/aboutUs">About Us</a>
                     </li>
                     <!--HIển thị cái này nếu đã đăng nhập rồi -->
-                    
+
                 </ul>
                 <div class="nav-item dropdown me-4" *ngIf="isLogin">
                     <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 35px" alt="Avatar" /> Mạnh
-                        Nguyễn
+                        <i class="fa fa-user"></i>
+                       {{user.fullNamme}}
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" routerLink="/myProfile">Thông tin tài khoản</a></li>
@@ -58,7 +58,7 @@
                         <li><a class="dropdown-item" (click)="logout()"  routerLink="/">Đăng xuất</a></li>
                     </ul>
                 </div>
-  
+
                     <li class="list-unstyled nav-item mx-2" *ngIf="!isLogin">
                         <a class="nav-link active" aria-current="page" routerLink="/signIn">Đăng Nhập</a>
                     </li>
