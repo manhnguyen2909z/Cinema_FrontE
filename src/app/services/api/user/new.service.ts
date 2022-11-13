@@ -7,7 +7,7 @@ import { Cinemadto } from '../../model/cinemadto';
 @Injectable({
     providedIn: 'root',
 })
-export class NewsService extends BaseApiService {
+export class NewService extends BaseApiService {
     constructor(http: HttpClient) {
         super(http);
     }
