@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TicketService } from 'src/app/services/api/user/ticket.service';
 
 @Component({
   selector: 'app-my-ticket',

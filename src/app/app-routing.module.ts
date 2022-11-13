@@ -4,13 +4,9 @@ import { HomeComponent } from './user/home/home.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
 import { MovieDetailComponent } from './user/movies/movie-detail/movie-detail.component';
 
-import { MoviesComponent } from './user/movies/movies-now/movies.component'; 
+import { MoviesComponent } from './user/movies/movies-now/movies.component';
 import { CreateComponent } from './admin/film/filmcreate/create.component';
 import { EditComponent } from './admin/film/filmedit/edit.component';
-
-import { MoviesComponent } from './user/movies/movies-now/movies.component';
-import { CreateComponent } from './admin/film/create/create.component';
-import { EditComponent } from './admin/film/edit/edit.component';
 
 import { FilmComponent } from './admin/film/movies/film.component';
 import { RegistrationFormComponent } from './shared/registration-form/registration-form.component';

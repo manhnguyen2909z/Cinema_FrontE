@@ -26,4 +26,8 @@ export class TicketService extends BaseApiService {
             })
         })
     }
+
+    public getMyTicket(): Observable<any> {
+      return this.http.get<any>(this.rootUrl + 'GetMyTicket');
+    }
 }
