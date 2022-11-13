@@ -1,3 +1,5 @@
+import { categorymoviedto } from "./categorymoviedto";
+
 export class Moviesdto  {
     movieId!: string;
     movieName!: string;
@@ -9,17 +11,6 @@ export class Moviesdto  {
     isShowing!:boolean
     releaseDate!: Date;
     endShowDate!:Date;
-    categoryMovies =  [] as Category[];
-}
-
-class Category{
-  categoryMovieId!: string;
-  categoryMovieName!: string;
-  createdByUser!: null;
-  createdTime!: null;
-  deletedTime!: null;
-  isDeleted!: false;
-  modifiedByUser!: null;
-  modifiedTime!: null;
+    categoryMovies =  [] as categorymoviedto[];
 }
 

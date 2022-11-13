@@ -52,6 +52,7 @@ export class ModalOrderComponent implements OnInit {
         });
         this.bill.addBill(newBill).subscribe((res: any) => {
             this.billDto.push(res);
+
         });
     }
     close() {
@@ -84,8 +85,8 @@ export class ModalOrderComponent implements OnInit {
             this.showtimeDto = res;
             console.log(this.cinemaId);
             this.showtimeDto.forEach((element: any) => {
-
                 if (moment(element.showDate).format('YYYY-MM-DD') == moment(this.date).format('YYYY-MM-DD')) {
+
                     this.filterShowTime.push(element);
                 }
             });

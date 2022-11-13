@@ -7,19 +7,19 @@ import { Moviesdto } from '../../model/moviesdto';
 @Injectable({
     providedIn: 'root',
 })
-export class MoviesAdminService extends BaseApiService {
+export class CategoryMovieAdminService extends BaseApiService {
   constructor(http: HttpClient) {
     super(http);
   }
 
   name() {
-    return 'Movie';
+    return 'CategoryMovie';
   }
 
 
   // GET
-  public getAllMovies(): Observable<any> {
-    return this.http.get<any>(this.rootUrl+'/getall');
+  public getAllCategory(): Observable<any> {
+    return this.http.get<any>(this.rootUrl);
   }
   
 

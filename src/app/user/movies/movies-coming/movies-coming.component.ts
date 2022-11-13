@@ -32,7 +32,7 @@ export class MoviesComingComponent implements OnInit {
                 // if( dateComing > (moment(this.date)).format('DD-MM-YYYY') &&movie.isShowing === false){
                 //     console.log('hehe')
                 //    }
-                return movie.isShowing === false && dateComing > moment(this.date).format('DD-MM-YYYY');
+                return dateComing > moment(this.date).format('DD-MM-YYYY');
             });
         });
     }

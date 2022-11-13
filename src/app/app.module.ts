@@ -32,9 +32,10 @@ import { MoviesComingComponent } from './user/movies/movies-coming/movies-coming
 import { PaymentComponent } from './user/payment/payment.component';
 import { MyTicketComponent } from './user/my-ticket/my-ticket.component';
 import { CommonModule } from '@angular/common';
-import { CreateComponent } from './admin/film/create/create.component';
-import { EditComponent } from './admin/film/edit/edit.component';
+import { CreateComponent } from './admin/film/filmcreate/create.component';
+import { EditComponent } from './admin/film/filmedit/edit.component';
 import { MyProfileComponent } from './user/my-profile/my-profile.component';
+
 
 import { AuthInterceptor } from './services/api/auth.interceptor';
 
@@ -50,6 +51,7 @@ import { ListShiftComponent } from './admin/shift/list-shift/list-shift.componen
 import { CreateRoomComponent } from './admin/room/create-room/create-room.component';
 import { EditRoomComponent } from './admin/room/edit-room/edit-room.component';
 import { ListRoomComponent } from './admin/room/list-room/list-room.component';
+
 
 
 @NgModule({
@@ -85,6 +87,9 @@ import { ListRoomComponent } from './admin/room/list-room/list-room.component';
         CreateComponent,
         EditComponent,
         MyProfileComponent,
+
+ 
+
         CreateCinemaComponent,
         EditCinemaComponent,
         ListCinemaComponent,
@@ -97,6 +102,7 @@ import { ListRoomComponent } from './admin/room/list-room/list-room.component';
         CreateRoomComponent,
         EditRoomComponent,
         ListRoomComponent,
+
     ],
     imports: [BrowserModule, CommonModule, AppRoutingModule, NgxPaginationModule, HttpClientModule, FormsModule],
     providers: [
