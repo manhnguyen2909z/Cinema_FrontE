@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { catchError } from 'rxjs';
 import { ShowTimeService } from 'src/app/services/api/user/showtime.service';
 import { ShowTimedto } from 'src/app/services/model/showtimedto';
 
@@ -13,8 +14,9 @@ export class ListShowtimeComponent implements OnInit {
   showtimedto:any;
   ngOnInit(): void {
     this.showtime.getAllShowTimes().subscribe((res) => {
+      console.log(res);
       this.showtimedto = res;
-      console.log(this.showtimedto);
+      
   });
   
 }

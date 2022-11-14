@@ -68,7 +68,7 @@ const routes: Routes = [
             { path: 'edit-seat', component: EditSeatComponent },
             { path: 'create-seat', component: CreateSeatComponent },
             { path: 'list-showtime', component: ListShowtimeComponent },
-            { path: 'edit-showtime', component: EditShowtimeComponent },
+            { path: 'edit-showtime/:showtimeId', component: EditShowtimeComponent },
             { path: 'create-showtime', component: CreateShowtimeComponent },
             { path: 'film', component: FilmComponent },
             { path: 'profile', component: ProfileComponent },
