@@ -7,8 +7,8 @@ import { MoviesComponent } from './user/movies/movies-now/movies.component';
 import { CreateComponent } from './admin/film/filmcreate/create.component';
 import { EditComponent } from './admin/film/filmedit/edit.component';
 import { FilmComponent } from './admin/film/movies/film.component';
-import { RegistrationFormComponent } from './shared/registration-form/registration-form.component';
-import { SignInComponent } from './shared/sign-in/sign-in.component';
+import { RegistrationFormComponent } from './user/registration-form/registration-form.component';
+import { SignInComponent } from './user/sign-in/sign-in.component';
 import { LayoutComponent } from './user/layout/layout.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
@@ -41,6 +41,7 @@ import { PaymentComponent } from './user/payment/payment.component';
 import { MyProfileComponent } from './user/my-profile/my-profile.component';
 import { MyTicketComponent } from './user/my-ticket/my-ticket.component';
 import { DiscountComponent } from './user/discount/discount.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 
 const routes: Routes = [
     {
@@ -75,6 +76,10 @@ const routes: Routes = [
             { path: 'catmovielist', component: CatmovielistComponent },
             { path: '', component: FilmComponent },
         ],
+    },
+    {
+        path: 'adminLogin',
+        component: AdminLoginComponent,
     },
     {
         path: '',

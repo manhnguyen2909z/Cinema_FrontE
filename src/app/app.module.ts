@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './user/home/home.component';
-import { RegistrationFormComponent } from './shared/registration-form/registration-form.component';
-import { SignInComponent } from './shared/sign-in/sign-in.component';
+import { RegistrationFormComponent } from './user/registration-form/registration-form.component';
+import { SignInComponent } from './user/sign-in/sign-in.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
 import { MovieDetailComponent } from './user/movies/movie-detail/movie-detail.component';
 import { MoviesComponent } from './user/movies/movies-now/movies.component';
@@ -54,6 +54,7 @@ import { EditSeatComponent } from './admin/seat/edit-seat/edit-seat.component';
 import { ListSeatComponent } from './admin/seat/list-seat/list-seat.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 
 
 
@@ -105,6 +106,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         CreateSeatComponent,
         EditSeatComponent,
         ListSeatComponent,
+        AdminLoginComponent,
 
     ],
     imports: [BrowserModule, CommonModule, AppRoutingModule,NgxPaginationModule, HttpClientModule, FormsModule,ReactiveFormsModule],
