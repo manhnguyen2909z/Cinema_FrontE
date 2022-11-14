@@ -13,18 +13,23 @@ export class RegistrationFormComponent implements OnInit {
     notName!: boolean;
     notEmail!: boolean;
     notPhoneNumber!: boolean;
-    wrongPass!: boolean;
+    wrongPassConFirm!: boolean;
+    wrongPass!:boolean
     expression: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    reg = new RegExp('^([0-9\(\)\/\+ \-]*)$');
 
+    
     constructor(private authService: AuthService) {}
 
     ngOnInit(): void {
         this.userdto = new UserDto();
+    
     }
 
     register() {
         this.validate();
     }
+    
     validate() {
         // check name
         if (this.userdto.fullNamme == '') {
@@ -39,18 +44,25 @@ export class RegistrationFormComponent implements OnInit {
             this.notEmail = true;
         }
         // check phone
-        if (this.userdto.phoneNumber.length < 10) {
+        if (this.userdto.phoneNumber.length < 10 || this.userdto.phoneNumber.trim().length ==0|| this.reg.test(this.userdto.phoneNumber) ){
             this.notPhoneNumber = true;
         } else {
             this.notPhoneNumber = false;
         }
-        //check pass
+        //check passConFirm
         if (this.userdto.password != this.userdto.conFirmPassword) {
+            this.wrongPassConFirm = true;
+        } else {
+            this.wrongPassConFirm = false;
+        }
+        //check Pass
+        if (this.userdto.password.length == 0 ) {
             this.wrongPass = true;
         } else {
             this.wrongPass = false;
         }
-        if (!this.notName && !this.notEmail && !this.notPhoneNumber && !this.wrongPass) {
+        //
+        if (!this.notName && !this.notEmail && !this.notPhoneNumber && !this.wrongPassConFirm) {
             console.log('Đăng ký thành công');
             this.authService.signup(this.userdto).subscribe(
               res =>{

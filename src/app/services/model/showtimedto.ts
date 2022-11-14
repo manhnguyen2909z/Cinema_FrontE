@@ -3,7 +3,7 @@ export class ShowTimedto  {
     showDate!: Date;
     movieId!: string;
 
-
+    shiftId!:string
     roomId!: string;
     roomName!:string;
     cinemaName!:string;

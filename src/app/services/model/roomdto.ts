@@ -1,6 +1,5 @@
-import { Cinemadto } from "./cinemadto";
 export class Roomdto  {
-    roomid!: string;
+    roomId!: string;
     roomName!: string;
     status!:boolean;
     cinemaId!:string;

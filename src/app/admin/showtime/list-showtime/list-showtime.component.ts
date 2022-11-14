@@ -13,13 +13,13 @@ export class ListShowtimeComponent implements OnInit {
   showtimedto:any;
   ngOnInit(): void {
     this.showtime.getAllShowTimes().subscribe((res) => {
-      this.showtimedto = res.data;
+      this.showtimedto = res;
       console.log(this.showtimedto);
   });
   
 }
 showtimes = [] as ShowTimedto[]
-items=1
+items=5
   p: number = 1;
 
 }
