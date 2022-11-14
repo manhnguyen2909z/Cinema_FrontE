@@ -13,14 +13,17 @@ export class ShowTimeService extends BaseApiService {
     }
 
     name() {
-        return 'ShowTime/bookingshowtime?CinemaId=';
+        return 'ShowTime';
     }
 
     // GET
-    public getAllShowTimes(): Observable<any> {
+    public getBookingShowTimes(): Observable<any> {
         return this.http.get<any>(this.rootUrl);
     }
+    public getAllShowTimes(): Observable<any> {
+        return this.http.get<any>(this.rootUrl+'/getall');
+    }
     public getShowTime(id:string): Observable<ShowTimedto> {
-        return this.http.get<ShowTimedto>(this.rootUrl +id);
+        return this.http.get<ShowTimedto>(this.rootUrl+'/bookingshowtime?CinemaId=' +id);
     }  
 }

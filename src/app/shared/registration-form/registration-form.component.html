@@ -12,7 +12,6 @@
 
                         <div class="user">
                             <div class="form-group">
-                                <span *ngIf="notName" class="form-text">Tên không được để trống!</span>
                                 <input
                                     (blur)="validate()"
                                     type="text"
@@ -21,9 +20,10 @@
                                     id="exampleFirstName"
                                     placeholder="Họ và tên"
                                 />
+                                <span *ngIf="notName" class="form-text text-danger">Tên không được để trống!</span>
+
                             </div>
                             <div class="form-group">
-                                <span *ngIf="notEmail" class="form-text">Email không phù hợp!</span>
 
                                 <input
                                     type="email"
@@ -33,9 +33,10 @@
                                     id="exampleInputEmail"
                                     placeholder="Địa chỉ email"
                                 />
+                                <span *ngIf="notEmail" class="form-text text-danger">Email không phù hợp!</span>
+
                             </div>
                             <div class="form-group">
-                                <span *ngIf="notPhoneNumber" class="form-text">Số điện thoại không đúng!</span>
 
                                 <input
                                     type="text"
@@ -43,10 +44,11 @@
                                     [(ngModel)]="userdto.phoneNumber"
                                     class="form-control form-control-user"
                                     id="exampleInputEmail"
-                                    placeholder="Số điện thoại"
+                                    placeholder="(xxx) xxx-xxxx"
                                 />
+                                <span *ngIf="notPhoneNumber" class="form-text text-danger">Số điện thoại không đúng!</span>
+
                             </div>
-                            <span *ngIf="wrongPass" class="form-text">Mật khẩu không khớp!</span>
 
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
@@ -58,6 +60,7 @@
                                         id="exampleInputPassword"
                                         placeholder="Mật khẩu"
                                     />
+                                    <span *ngIf="wrongPass" class="form-text text-danger">Mật khẩu không được để trống!</span>
                                 </div>
 
                                 <div class="col-sm-6">
@@ -69,6 +72,7 @@
                                         id="exampleRepeatPassword"
                                         placeholder="Nhập lại mật khẩu"
                                     />
+                                    <span *ngIf="wrongPassConFirm" class="form-text text-danger">Mật khẩu không khớp!</span>
                                 </div>
                             </div>
                             <div (click)="register()">

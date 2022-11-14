@@ -1,6 +1,6 @@
 <div style="background-color: #eee">
     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-        <div class="container-fluid">
+        <div class="container-fluid ">
             <img src="https://cdn-icons-png.flaticon.com/128/4291/4291571.png" width="50" />
             <a href="/"></a>
             <h3 class="mx-4"><a class="text-decoration-none text-dark" href="/">Home</a></h3>
@@ -46,9 +46,9 @@
                     <!--HIển thị cái này nếu đã đăng nhập rồi -->
 
                 </ul>
-                <div class="nav-item dropdown me-4" *ngIf="isLogin">
-                    <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-user"></i>
+                <div class="nav-item dropdown me-5" *ngIf="isLogin">
+                    <a class="nav-link dropdown-toggle me-5"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img width="32" height="32" class="me-1 rounded-circle" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="">
                        {{user.fullNamme}}
                     </a>
                     <ul class="dropdown-menu">

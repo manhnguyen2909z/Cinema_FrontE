@@ -1,39 +1,41 @@
-<div class="my-4 container">
+<div class="me-5 container px-5">
     <h3>Thêm lịch chiếu</h3>
-    <form method="GET" action="admin/room">
-        <div>
-            <label for="name">Tên phim</label>
-            <select            
-            class="form-select mt-2 mb-4 w-100"
-            aria-label="Default select example">
-            <option >đầu b</option>
-            </select>
-        </div>   
-        <div>
-            <label for="name">Tên rạp</label>
-            <select            
-            class="form-select mt-2 mb-4 w-100"
-            aria-label="Default select example">
-            <option >đầu b</option>
-            </select>
-        </div>
-        <div>
-            <label for="name">Tên Phòng</label>
-            <select            
-            class="form-select mt-2 mb-4 w-100"
-            aria-label="Default select example">
-            <option >đầu b</option>
-            </select>
-        </div> 
-        <div>
-            <label for="name">Ngày chiếu</label>
-            <select            
-            class="form-select mt-2 mb-4 w-100"
-            aria-label="Default select example">
-            <option >đầu b</option>
-            </select>
-        </div>      
-        <button type="submit" class="btn btn-primary mt-4">Thêm</button>
-    </form>
-</div>
 
+    <div>
+        <label for="name">Tên phim</label>
+        <select  [(ngModel)]="movieId" class="form-select mt-2 mb-4 w-100" aria-label="Default select example">
+            <option *ngFor="let nameMovie of movieDto" [ngValue]="nameMovie.movieId">{{ nameMovie.movieName }}</option>
+        </select>
+    </div>
+    <div>
+        <label for="name">Tên rạp</label>
+        <select (change)="getRoom()" [(ngModel)]="cinemaId" class="form-select mt-2 mb-4 w-100" aria-label="Default select example">
+            <option *ngFor="let cinemaName of cinemadto" [ngValue]="cinemaName.cinemaId">{{ cinemaName.cinemaName }}</option>
+        </select>
+    </div>
+    <div>
+        <label for="name">Tên Phòng</label>
+        <select [(ngModel)]="roomId" class="form-select mt-2 mb-4 w-100" aria-label="Default select example">
+            <option *ngFor="let roomName of roomdto" [ngValue]="roomName.roomId">{{ roomName.roomName }}</option>
+        </select>
+    </div>
+    <div class="my-4">
+        <label for="name">Ngày chiếu</label>
+        <input
+            type="date"
+            (change)="getDate()"
+            [ngModel]="date | date: 'yyyy-MM-dd'"
+            (ngModelChange)="date = $event"
+            class="form-select"
+            name="date"
+        />
+        <span *ngIf="checkDate" class="text-danger">Ngày phải lớn hơn {{ today | date: 'yyyy-MM-dd' }}</span>
+    </div>
+    <div>
+        <label for="name">Ca Chiếu</label>
+        <select [(ngModel)]="shiftId" class="form-select mt-2 mb-4 w-100" aria-label="Default select example">
+            <option *ngFor="let shift of shiftDto" [ngValue]="shift.shiftId">Bắt đầu từ {{ shift.startTime }} đến {{ shift.endTime }}</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-4" (click)="addShowtime()">Thêm</button>
+</div>
