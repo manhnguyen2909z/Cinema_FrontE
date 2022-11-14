@@ -46,7 +46,6 @@ import { ListShiftComponent } from './admin/shift/list-shift/list-shift.componen
 import { CreateRoomComponent } from './admin/room/create-room/create-room.component';
 import { EditRoomComponent } from './admin/room/edit-room/edit-room.component';
 import { ListRoomComponent } from './admin/room/list-room/list-room.component';
-import { NgxMaskModule } from 'ngx-mask';
 import { CreateShowtimeComponent } from './admin/showtime/create-showtime/create-showtime.component';
 import { EditShowtimeComponent } from './admin/showtime/edit-showtime/edit-showtime.component';
 import { ListShowtimeComponent } from './admin/showtime/list-showtime/list-showtime.component';
@@ -91,9 +90,6 @@ import { ReactiveFormsModule } from '@angular/forms';
         CreateComponent,
         EditComponent,
         MyProfileComponent,
-
- 
-
         CreateCinemaComponent,
         EditCinemaComponent,
         ListCinemaComponent,
@@ -115,7 +111,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         ListSeatComponent,
 
     ],
-    imports: [BrowserModule, CommonModule, AppRoutingModule, NgxMaskModule,NgxPaginationModule, HttpClientModule, FormsModule,ReactiveFormsModule],
+    imports: [BrowserModule, CommonModule, AppRoutingModule,NgxPaginationModule, HttpClientModule, FormsModule,ReactiveFormsModule],
     providers: [
       {
         provide: HTTP_INTERCEPTORS,

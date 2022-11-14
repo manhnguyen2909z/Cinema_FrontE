@@ -7,6 +7,7 @@ export class Billdto {
     cinemaId!: string;
     date!: Date;
     showTimeId!: string;
+    showDate!: string;
     movieName!: string;
     startTime!: Date;
     roomName!: string;
