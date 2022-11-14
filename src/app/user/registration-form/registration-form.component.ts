@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/services/api/auth.service';
 import { UserDto } from 'src/app/services/model/userdto';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-registration-form',
@@ -18,32 +17,19 @@ export class RegistrationFormComponent implements OnInit {
     wrongPass!:boolean
     expression: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     reg = new RegExp('^([0-9\(\)\/\+ \-]*)$');
-    IsSuccess!: boolean;
 
-
-    constructor(private authService: AuthService, private router:Router) {}
+    
+    constructor(private authService: AuthService) {}
 
     ngOnInit(): void {
         this.userdto = new UserDto();
-
+    
     }
-
+    
     register() {
         this.validate();
-        if (!this.notName && !this.notEmail && !this.notPhoneNumber && !this.wrongPassConFirm && !this.wrongPass) {
-          this.authService.signup(this.userdto).subscribe(
-            res =>{
-              this.IsSuccess = res;
-              console.log(res);
-              console.log(this.IsSuccess);
-              if(this.IsSuccess===true){
-                this.router.navigate(['/signIn'])
-              }
-            }
-          );
-      }
     }
-
+    
     validate() {
         // check name
         if (this.userdto.fullNamme == '') {
@@ -58,7 +44,7 @@ export class RegistrationFormComponent implements OnInit {
             this.notEmail = true;
         }
         // check phone
-        if (this.userdto.phoneNumber.length < 10 || this.userdto.phoneNumber.trim().length == 0|| !this.reg.test(this.userdto.phoneNumber) ){
+        if (this.userdto.phoneNumber.length < 10 || this.userdto.phoneNumber.trim().length ==0 || !this.reg.test(this.userdto.phoneNumber) ){
             this.notPhoneNumber = true;
         } else {
             this.notPhoneNumber = false;
@@ -74,6 +60,15 @@ export class RegistrationFormComponent implements OnInit {
             this.wrongPass = true;
         } else {
             this.wrongPass = false;
+        }
+        //
+        if (!this.notName && !this.notEmail && !this.notPhoneNumber && !this.wrongPassConFirm) {
+            console.log('Đăng ký thành công');
+            this.authService.signup(this.userdto).subscribe(
+              res =>{
+                console.log(res)
+              }
+            );
         }
     }
 }

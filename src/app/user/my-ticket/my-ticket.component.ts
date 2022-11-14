@@ -10,13 +10,19 @@ import { Billdto } from 'src/app/services/model/billdto';
 export class MyTicketComponent implements OnInit {
 
   constructor(private billservice: BillService ) { }
-  bill!: any;
+  // b!: Billdto;
 
   ngOnInit(): void {
-    this.billservice.getMyBill().subscribe( (res)=>{
-      this.bill = res;
-    });
+    // this.b = new Billdto();
+    // this.billservice.getMyBill().subscribe( (res)=>{
+    // //   this.b = res;
+    // });
   }
 
-
+bill= [
+  {
+    name:'ad',
+    id:'asd'
+  }
+]
 }

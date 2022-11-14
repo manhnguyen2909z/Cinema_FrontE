@@ -44,7 +44,7 @@
                                     [(ngModel)]="userdto.phoneNumber"
                                     class="form-control form-control-user"
                                     id="exampleInputEmail"
-                                    placeholder="(xxx) xxx-xxxx"
+                                    placeholder="Số điện thoại"
                                 />
                                 <span *ngIf="notPhoneNumber" class="form-text text-danger">Số điện thoại không đúng!</span>
 
@@ -75,7 +75,6 @@
                                     <span *ngIf="wrongPassConFirm" class="form-text text-danger">Mật khẩu không khớp!</span>
                                 </div>
                             </div>
-                            <span style="color: red;font-size: 20px;" *ngIf="IsSuccess===false">Tên đăng nhập đã tồn tại</span>
                             <div (click)="register()">
                                 <button type="submit" class="btn btn-primary btn-user btn-block">Đăng Ký</button>
                             </div>
