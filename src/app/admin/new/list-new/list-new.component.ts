@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewService } from 'src/app/services/api/user/new.service';
 import { Newdto } from 'src/app/services/model/newdto';
+import { AuthService } from '../../../services/api/auth.service';
 
 @Component({
   selector: 'app-list-new',
@@ -9,16 +10,16 @@ import { Newdto } from 'src/app/services/model/newdto';
 })
 export class ListNewComponent implements OnInit {
 
-  constructor(private news: NewService) { }
-  newdto:any;
+  constructor(private users: AuthService) { }
+  userdto:any;
   ngOnInit(): void {
-    this.news.getAllNews().subscribe((res) => {
-      this.newdto = res.data;
-      console.log(this.newdto);
+    this.users.getAllUser().subscribe((res) => {
+      this.userdto = res;
+      console.log(this.userdto);
   });
   
 }
 newss = [] as Newdto[]
-items=1
+items=5
   p: number = 1;
 }

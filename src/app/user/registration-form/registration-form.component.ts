@@ -25,7 +25,7 @@ export class RegistrationFormComponent implements OnInit {
         this.userdto = new UserDto();
     
     }
-
+    
     register() {
         this.validate();
     }
@@ -44,7 +44,7 @@ export class RegistrationFormComponent implements OnInit {
             this.notEmail = true;
         }
         // check phone
-        if (this.userdto.phoneNumber.length < 10 || this.userdto.phoneNumber.trim().length ==0|| this.reg.test(this.userdto.phoneNumber) ){
+        if (this.userdto.phoneNumber.length < 10 || this.userdto.phoneNumber.trim().length ==0 || !this.reg.test(this.userdto.phoneNumber) ){
             this.notPhoneNumber = true;
         } else {
             this.notPhoneNumber = false;
