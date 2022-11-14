@@ -11,6 +11,7 @@ export class Moviesdto  {
     isShowing!:boolean
     releaseDate!: Date;
     endShowDate!:Date;
+    isDeleted!:boolean
     categoryMovies =  [] as categorymoviedto[];
 }
 

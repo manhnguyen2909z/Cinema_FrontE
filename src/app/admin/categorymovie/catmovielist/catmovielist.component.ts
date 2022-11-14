@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryMovieService } from 'src/app/services/api/categorymovie.service';
+import { CategoryMovieService } from 'src/app/services/api/user/categorymovie.service';
 
 @Component({
   selector: 'app-catmovielist',

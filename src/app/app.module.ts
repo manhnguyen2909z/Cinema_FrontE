@@ -23,11 +23,9 @@ import { FormsModule } from '@angular/forms';
 import { CatmoviecreateComponent } from './admin/categorymovie/catmoviecreate/catmoviecreate.component';
 import { CatmovieeditComponent } from './admin/categorymovie/catmovieedit/catmovieedit.component';
 import { CatmovielistComponent } from './admin/categorymovie/catmovielist/catmovielist.component';
-
 import { CreateCsComponent } from './admin/categoryseat/create-cs/create-cs.component';
 import { EditCsComponent } from './admin/categoryseat/edit-cs/edit-cs.component';
 import { ListCsComponent } from './admin/categoryseat/list-cs/list-cs.component';
-
 import { MoviesComingComponent } from './user/movies/movies-coming/movies-coming.component';
 import { PaymentComponent } from './user/payment/payment.component';
 import { MyTicketComponent } from './user/my-ticket/my-ticket.component';
@@ -35,10 +33,7 @@ import { CommonModule } from '@angular/common';
 import { CreateComponent } from './admin/film/filmcreate/create.component';
 import { EditComponent } from './admin/film/filmedit/edit.component';
 import { MyProfileComponent } from './user/my-profile/my-profile.component';
-
-
 import { AuthInterceptor } from './services/api/auth.interceptor';
-
 import { CreateCinemaComponent } from './admin/cinema/create-cinema/create-cinema.component';
 import { EditCinemaComponent } from './admin/cinema/edit-cinema/edit-cinema.component';
 import { ListCinemaComponent } from './admin/cinema/list-cinema/list-cinema.component';
@@ -51,12 +46,15 @@ import { ListShiftComponent } from './admin/shift/list-shift/list-shift.componen
 import { CreateRoomComponent } from './admin/room/create-room/create-room.component';
 import { EditRoomComponent } from './admin/room/edit-room/edit-room.component';
 import { ListRoomComponent } from './admin/room/list-room/list-room.component';
+
 import { CreateShowtimeComponent } from './admin/showtime/create-showtime/create-showtime.component';
 import { EditShowtimeComponent } from './admin/showtime/edit-showtime/edit-showtime.component';
 import { ListShowtimeComponent } from './admin/showtime/list-showtime/list-showtime.component';
 import { CreateSeatComponent } from './admin/seat/create-seat/create-seat.component';
 import { EditSeatComponent } from './admin/seat/edit-seat/edit-seat.component';
 import { ListSeatComponent } from './admin/seat/list-seat/list-seat.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -117,7 +115,7 @@ import { ListSeatComponent } from './admin/seat/list-seat/list-seat.component';
         ListSeatComponent,
 
     ],
-    imports: [BrowserModule, CommonModule, AppRoutingModule, NgxPaginationModule, HttpClientModule, FormsModule],
+    imports: [BrowserModule, CommonModule, AppRoutingModule, NgxPaginationModule, HttpClientModule, FormsModule,ReactiveFormsModule],
     providers: [
       {
         provide: HTTP_INTERCEPTORS,

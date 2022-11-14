@@ -17,7 +17,6 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
    this.listCategoryMovie.getAllCategory().subscribe(res =>{
     this.listCategorySelect = res
-    console.log( this.listCategorySelect)
    })
     
     const movieId = this.route.snapshot.paramMap.get('movieId') as any;
