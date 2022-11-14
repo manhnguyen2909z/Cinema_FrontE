@@ -23,13 +23,6 @@ export class SignInComponent implements OnInit {
   show(){
     this.isShow = !this.isShow
   }
-
-  getuser(){
-    this.authService.getUserInfo().subscribe( (res: any) =>{
-      console.log(res);
-      this.userdto = res;
-    })
-  }
   signin() {
     this.authService.signin(this.userdto).subscribe( (token: string) =>{
       localStorage.setItem('authToken', token);
@@ -38,22 +31,20 @@ export class SignInComponent implements OnInit {
         this.messageError = "Email hoặc mật khẩu không chính xác";
         return;
       }
-      this.getuser();
-      console.log(this.userdto);
+      // this.router.navigate(['/'])
       window.location.href = 'http://localhost:4200/';
-      this.validate();
-
+      this.validate()
     });
   }
   validate() {
-
+   
     // check mail
     if (this.expression.test(this.userdto.email)) {
         this.notEmail = false;
     } else {
         this.notEmail = true;
     }
-
+   
     //check Pass
     if (this.userdto.password.length == 0 ) {
         this.wrongPass = true;
