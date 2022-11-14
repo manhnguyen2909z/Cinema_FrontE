@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './user/home/home.component';
 import { RegistrationFormComponent } from './user/registration-form/registration-form.component';
-import { SignInComponent } from './user/sign-in/sign-in.component'; 
+import { SignInComponent } from './user/sign-in/sign-in.component';
 import { AboutUsComponent } from './user/about-us/about-us.component';
 import { MovieDetailComponent } from './user/movies/movie-detail/movie-detail.component';
 import { MoviesComponent } from './user/movies/movies-now/movies.component';

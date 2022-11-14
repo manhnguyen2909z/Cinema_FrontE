@@ -28,24 +28,33 @@ export class AdminLoginComponent implements OnInit {
     this.authService.signin(this.userdto).subscribe( (token: string) =>{
       localStorage.setItem('authToken', token);
       this.messageError = '';
-      if(token === "failed"){
+      this.getuser();
+      if(token === "failed" || this.userdto.role != 'admin'){
         this.messageError = "Email hoặc mật khẩu không chính xác";
         return;
       }
+
       // this.router.navigate(['/'])
-      window.location.href = 'http://localhost:4200/';
+      window.location.href = 'http://localhost:4200/admin';
       this.validate()
     });
   }
+
+  getuser(){
+    this.authService.getUserInfo().subscribe( (res: any) =>{
+      console.log(res);
+      this.userdto = res;
+    })
+  }
   validate() {
-   
+
     // check mail
     if (this.expression.test(this.userdto.email)) {
         this.notEmail = false;
     } else {
         this.notEmail = true;
     }
-   
+
     //check Pass
     if (this.userdto.password.length == 0 ) {
         this.wrongPass = true;

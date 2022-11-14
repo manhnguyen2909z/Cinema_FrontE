@@ -38,7 +38,7 @@ export class MoviesComponent implements OnInit {
         }
             console.log(this.btn)
         }, 2000)
-      
+
         this.toLogin();
         if (!this.login) {
             this.link = '/signIn';
@@ -58,5 +58,5 @@ export class MoviesComponent implements OnInit {
             this.movieShowing = this.movieDto.filter((movie) => movie.isShowing === true);
         });
     }
- 
+
 }
