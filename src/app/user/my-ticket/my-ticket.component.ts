@@ -10,10 +10,9 @@ import { Billdto } from 'src/app/services/model/billdto';
 export class MyTicketComponent implements OnInit {
 
   constructor(private billservice: BillService ) { }
-  bill!: Billdto;
+  bill!: any;
 
   ngOnInit(): void {
-    this.bill = new Billdto();
     this.billservice.getMyBill().subscribe( (res)=>{
       this.bill = res;
     });

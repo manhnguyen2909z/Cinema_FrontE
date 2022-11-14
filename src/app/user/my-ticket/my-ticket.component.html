@@ -17,15 +17,15 @@
 
 </div>
         <tbody>
-            <tr >
-                <!-- <th scope="row">{{i}}</th>
+            <tr *ngFor="let b of bill; let i = index">
+                <th scope="row">{{i + 1}}</th>
                 <td>{{b.billId}}</td>
                 <td>{{b.movieName}}</td>
                 <td>{{b.cinemaName}}</td>
                 <td>{{b.roomName}}</td>
                 <td>{{b.showDate}}</td>
                 <td>{{b.startTime}}</td>
-                <td>{{b.totalAmount}}</td> -->
+                <td>{{b.totalAmount}}</td>
             </tr>
         </tbody>
     </table>

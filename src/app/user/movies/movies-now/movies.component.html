@@ -15,7 +15,7 @@
                             data-bs-toggle="modal"
                             data-bs-target="#modalOrder"
                             style="bottom: 40px; right: 16%"
-                            (click)="child.modalId = movie.movieId"
+                            (click)="isLogin === true ? child.modalId = movie.movieId : goToLogin()"
                         >
                             Đặt vé
                         </button>
@@ -32,12 +32,12 @@
                     </div>
                     <!-- dialog đặt vé -->
                 </div>
-               
+
                 <div class="mt-2">{{movie.movieName}}</div>
                 <!-- <div class="fw-lighter">GIRL FROM THE PAST</div> -->
             </div>
             <app-modal-order #child></app-modal-order>
-            
+
             <pagination-controls nextLabel="" previousLabel="" (pageChange)="p = $event" class="text-center mt-4"></pagination-controls>
         </div>
     </div>
