@@ -4,11 +4,11 @@ export class Seatsdto  {
     categorySeatId!:string;
     isSelected!:boolean;
     price!: number;
-<<<<<<< Updated upstream
+
     canSelected!: boolean;
-=======
+
     roomName!:string;
     cinemaName!:string;
     categorySeatName!:string;
->>>>>>> Stashed changes
+
 }

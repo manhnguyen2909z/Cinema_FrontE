@@ -2,10 +2,8 @@ export class ShowTimedto  {
     showTimeId!: string;
     showDate!: Date;
     movieId!: string;
-<<<<<<< Updated upstream
-    roomId!: Date;
-    startTime!:Date
-=======
+
+
     roomId!: string;
     roomName!:string;
     cinemaName!:string;
@@ -13,5 +11,5 @@ export class ShowTimedto  {
     startTime!:Date;
 
 
->>>>>>> Stashed changes
+
 }

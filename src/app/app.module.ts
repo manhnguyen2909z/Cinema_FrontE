@@ -108,16 +108,14 @@ import { ListSeatComponent } from './admin/seat/list-seat/list-seat.component';
         CreateRoomComponent,
         EditRoomComponent,
         ListRoomComponent,
-<<<<<<< Updated upstream
 
-=======
         CreateShowtimeComponent,
         EditShowtimeComponent,
         ListShowtimeComponent,
         CreateSeatComponent,
         EditSeatComponent,
         ListSeatComponent,
->>>>>>> Stashed changes
+
     ],
     imports: [BrowserModule, CommonModule, AppRoutingModule, NgxPaginationModule, HttpClientModule, FormsModule],
     providers: [

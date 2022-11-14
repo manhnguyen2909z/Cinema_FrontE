@@ -38,8 +38,7 @@ import { ListRoomComponent } from './admin/room/list-room/list-room.component';
 import { CreateRoomComponent } from './admin/room/create-room/create-room.component';
 import { EditRoomComponent } from './admin/room/edit-room/edit-room.component';
 
-<<<<<<< Updated upstream
-=======
+
 import { ListSeatComponent } from './admin/seat/list-seat/list-seat.component';
 import { CreateSeatComponent } from './admin/seat/create-seat/create-seat.component';
 import { EditSeatComponent } from './admin/seat/edit-seat/edit-seat.component';
@@ -47,7 +46,7 @@ import { EditSeatComponent } from './admin/seat/edit-seat/edit-seat.component';
 import { ListShowtimeComponent } from './admin/showtime/list-showtime/list-showtime.component';
 import { CreateShowtimeComponent } from './admin/showtime/create-showtime/create-showtime.component';
 import { EditShowtimeComponent } from './admin/showtime/edit-showtime/edit-showtime.component';
->>>>>>> Stashed changes
+
 
 import { MoviesComingComponent } from './user/movies/movies-coming/movies-coming.component';
 import { PaymentComponent } from './user/payment/payment.component';
