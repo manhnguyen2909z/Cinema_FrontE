@@ -20,6 +20,16 @@ export class FilmComponent implements OnInit {
     isHiddenName!: boolean;
     movieId!: string;
     isSortDec = false;
+    search!: string;
+
+    getsearch(){
+      if(this.search.trim() !== ''){
+        this.movies.getAllMoviesSearch(this.search).subscribe( (res)=>{
+            this.films = res
+        });
+      }
+    }
+
     sortByName() {
         this.isSortDec = !this.isSortDec;
         if (this.isSortDec) {
@@ -39,40 +49,7 @@ export class FilmComponent implements OnInit {
             });
         }
     }
-    // films = [
-    //     {
-    //       movieName:'Black Adam2',
-    //       movieDescription: 'Phim này rât là ok',
-    //       category:'Khoa học viễn tưởng, hài',
-    //       filmId:' 123456',
-    //       releaseDate:'2008/11/28',
-    //       duration:'129 phút'
-    //     },
-    //     {
-    //       movieName:'Black Adam1',
-    //       movieDescription: 'Phim này rât là ok1',
-    //       category:'Khoa học viễn tưởng, hài',
-    //       filmId:' 123456',
-    //       releaseDate:'2008/11/28',
-    //       duration:'129 phút'
-    //     },
-    //     {
-    //       movieName:'Black Adam3',
-    //       movieDescription: 'Phim này rât là ok1',
-    //       category:'Khoa học viễn tưởng, hài',
-    //       filmId:' 123456',
-    //       releaseDate:'2008/11/28',
-    //       duration:'129 phút'
-    //     },
-    //     {
-    //       movieName:'Black Adam1',
-    //       movieDescription: 'Phim này rât là ok1',
-    //       category:'Khoa học viễn tưởng, hài',
-    //       filmId:' 123456',
-    //       releaseDate:'2008/11/28',
-    //       duration:'129 phút'
-    //     }
-    //   ]
+
     items = 5;
     // films: any;
     p: number = 1;

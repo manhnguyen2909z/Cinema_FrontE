@@ -20,6 +20,8 @@ export class MoviesService extends BaseApiService {
     public getAllMovies(): Observable<Moviesdto> {
         return this.http.get<Moviesdto>(this.rootUrl + '/getall');
     }
+
+
     // get detailFilm
     public getDetailMovie(id: String): Observable<any> {
         return this.http.get<any>(this.rootUrl + '/detailMovieId?detailMovieId=' + id);

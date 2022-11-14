@@ -28,6 +28,7 @@ export class ListShowtimeComponent implements OnInit {
     ngOnInit(): void {
         this.showtime.getAllShowTimes().subscribe((res) => {
             this.showtimedto = res;
+            console.log(this.showtimedto)
         });
         this.movies.getAllMovies().subscribe((res) => {
             this.movieDto = res;
@@ -35,7 +36,7 @@ export class ListShowtimeComponent implements OnInit {
         this.cinemas.getAllCinema().subscribe((res) => {
             this.cinemadto = res.data;
         });
-       
+
 
         this.today = new Date();
     }
@@ -63,6 +64,6 @@ export class ListShowtimeComponent implements OnInit {
     shiftDto!: Shiftdto[];
 
     showtimes = [] as ShowTimedto[];
-    items = 5;
+    items = 10;
     p: number = 1;
 }

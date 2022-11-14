@@ -19,10 +19,10 @@
                             </div>
                             <div class="d-flex align-items-center gap-2">
                                 <select class="form-select" [(ngModel)]="items" style="width: 200px" aria-label="Default select example">
-                                    <option value="1">10 Bản ghi</option>
-                                    <option value="2">20 bản ghi</option>
-                                    <option value="5">50 bản ghi</option>
-                                    <option value="10">100 bản ghi</option>
+                                    <option value="5">5 Bản ghi</option>
+                                    <option value="10">10 bản ghi</option>
+                                    <option value="20">20 bản ghi</option>
+                                    <option value="25">25 bản ghi</option>
                                 </select>
                                 <div class="input-group rounded">
                                     <input
@@ -37,7 +37,7 @@
                                     </span>
                                 </div>
                             </div>
-                           
+
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
@@ -51,7 +51,7 @@
                                     style="width: 100%"
                                 >
                                     <thead>
-                                        <tr role="row">                                       
+                                        <tr role="row">
                                             <th
                                                 class="sorting"
                                                 tabindex="0"
@@ -63,16 +63,16 @@
                                             >
                                                Tên Thể loại
                                             </th>
-                                            
-    
+
+
                                             <th style="width: 8px"></th>
                                         </tr>
                                     </thead>
-    
+
                                     <tbody>
                                         <tr class="odd" *ngFor="let categoryMovie of categoryMovieDto | paginate: { itemsPerPage: 2, currentPage: p }">
                                             <td class="sorting_1">{{ categoryMovie.categoryMovieName }}</td>
-    
+
                                             <td class="text-center">
                                                 <a href="/admin/catmovieedit" class="me-2 text-decoration-none text-secondary"
                                                     ><i class="fa fa-pen" aria-hidden="true"></i

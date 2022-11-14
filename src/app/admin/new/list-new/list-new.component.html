@@ -46,12 +46,12 @@
                                 cellspacing="0"
                                 role="grid"
                                 aria-describedby="dataTable_info"
-                            
+
                             >
                                 <thead>
                                     <tr role="row">
                                         <th
-                                            
+
                                         >
                                            Họ và Tên
                                         </th>
@@ -62,20 +62,9 @@
                                             rowspan="1"
                                             colspan="1"
                                             aria-label="Position: activate to sort column ascending"
-                                            
+
                                         >
                                             Số Điện Thoại
-                                        </th>
-                                        <th
-                                            class="sorting"
-                                            tabindex="0"
-                                            aria-controls="dataTable"
-                                            rowspan="1"
-                                            colspan="1"
-                                            aria-label="Office: activate to sort column ascending"
-                                           
-                                        >
-                                            Vai Trò
                                         </th>
                                         <th
                                         class="sorting"
@@ -84,13 +73,13 @@
                                         rowspan="1"
                                         colspan="1"
                                         aria-label="Office: activate to sort column ascending"
-                                       
+
                                     >
                                         Email
                                     </th>
                                     <th></th>
 
-                                        
+
                                     </tr>
                                 </thead>
 
@@ -98,9 +87,8 @@
                                     <tr class="odd" *ngFor="let user of userdto | paginate: { itemsPerPage: items, currentPage: p }">
                                         <td style="font-size: 15px">{{ user.fullNamme }}</td>
                                         <td>{{ user.phoneNumber }}</td>
-                                        <td>admin</td>
                                         <td>{{user.email}}</td>
-                                        
+
                                         <td class="text-center">
                                             <a href="/admin/edit-new" class="me-2 text-decoration-none text-secondary"
                                                 ><i class="fa fa-pen" aria-hidden="true"></i

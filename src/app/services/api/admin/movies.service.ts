@@ -22,6 +22,10 @@ export class MoviesAdminService extends BaseApiService {
     return this.http.get<any>(this.rootUrl+'/getall');
   }
 
-  
+  public getAllMoviesSearch(search: string): Observable<any> {
+    return this.http.get<Moviesdto>(this.rootUrl + '/getsearch?search=' + search);
+}
+
+
 
 }

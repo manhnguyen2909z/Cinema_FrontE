@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-
 import { Billdto } from 'src/app/services/model/billdto';
 import { TicketService } from '../../services/api/user/ticket.service';
+import { Router } from '@angular/router';
 
 
 
@@ -12,7 +12,7 @@ import { TicketService } from '../../services/api/user/ticket.service';
 })
 export class PaymentComponent implements OnInit {
 
-  constructor(private ticket : TicketService) { }
+  constructor(private ticket : TicketService, private router:Router) { }
   ngOnInit(): void {
   }
   billDto = [] as Billdto[];
@@ -20,11 +20,11 @@ export class PaymentComponent implements OnInit {
   done(){
     this.ticket.addTicket(this.billDto[0]).subscribe(res =>
      console.log(res)
-      )
+    )
+
   }
 
   reset(){
     this.billDto = [];
   }
-
 }
