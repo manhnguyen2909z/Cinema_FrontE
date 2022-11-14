@@ -26,5 +26,9 @@ export class BillService extends BaseApiService {
             })
         })
     }
-    
+
+    public getMyBill(): Observable<any> {
+      return this.http.get(this.rootUrl +'/getMyBill');
+    }
+
 }
