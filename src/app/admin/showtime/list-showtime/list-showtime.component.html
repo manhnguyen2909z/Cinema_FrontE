@@ -2,7 +2,9 @@
     <h1 class="h3 my-4 text-gray-800">Danh Sách lịch chiếu</h1>
     <div class="dataTables_length mb-3" id="dataTable_length" cla>
         <a type="button" class="btn btn-secondary com-sm-6" href="/admin/create-showtime">Thêm lịch chiếu Mới</a>
-        <a type="button" class="btn btn-secondary ms-2" href="javascript:window.top.location.reload(true)"><i class="fas fa-sync-alt"></i></a>
+        <a type="button" class="btn btn-secondary ms-2" href="javascript:window.top.location.reload(true)"
+            ><i class="fas fa-sync-alt"></i
+        ></a>
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -13,15 +15,14 @@
                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
                     <div class="d-flex justify-content-between my-2 mb-4 gap-2">
                         <div class="d-flex gap-2">
-                            <input
-                                type="date"
-                                [ngModel]="date | date: 'yyyy-MM-dd'"
-                                (ngModelChange)="date = $event;getbyShowDate()"
-                                class="form-select"
-                                name="date"
-                            />
-                            <select (change)="getBymovieId()" [(ngModel)]="movieId" class="form-select mt-2 w-100" aria-label="Default select example">
-                                <option *ngFor="let nameMovie of movieDto" [ngValue]="nameMovie.movieId">{{ nameMovie.movieName }}</option>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="5">Phòng Chiếu 1</option>
+                            </select>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="5">Ngày Chiếu</option>
+                            </select>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="5">Mười loiwf nguyen tro lai</option>
                             </select>
                         </div>
                         <div class="d-flex align-items-center gap-2">
@@ -30,6 +31,10 @@
                                 <option value="10">10 bản ghi</option>
                                 <option value="20">20 bản ghi</option>
                                 <option value="50">50 bản ghi</option>
+                            </select>
+                            <select class="form-select"  style="width: 200px" aria-label="Default select example">
+                                <option value="5">Rạp Hà Nội</option>
+                                <option value="10">Rạp Hồ Chí Minh</option>
                             </select>
                             <div class="input-group rounded">
                                 <input
@@ -112,7 +117,7 @@
                                         <td style="font-size: 15px">{{ showtime.movieName }}</td>
                                         <td>{{ showtime.cinemaName }}</td>
                                         <td>{{ showtime.roomName }}</td>
-                                        <td>{{ showtime.showDate | date: 'yyyy-MM-dd' }}</td>
+                                        <td>{{ showtime.showDate | date: 'yyyy-MM-dd'}}</td>
                                         <td>{{ showtime.startTime }}</td>
 
                                         <td class="text-center d-flex gap-2">

@@ -4,5 +4,4 @@ export class UserDto {
   email= '';
   phoneNumber= '';
   fullNamme= '';
-  role= ''
 }
