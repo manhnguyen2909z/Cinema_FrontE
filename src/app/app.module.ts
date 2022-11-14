@@ -75,15 +75,12 @@ import { ReactiveFormsModule } from '@angular/forms';
         FilmComponent,
         LayoutAdminComponent,
         ProfileComponent,
-
         CatmoviecreateComponent,
         CatmovieeditComponent,
         CatmovielistComponent,
-
         CreateCsComponent,
         EditCsComponent,
         ListCsComponent,
-
         MoviesComingComponent,
         PaymentComponent,
         MyTicketComponent,
@@ -102,7 +99,6 @@ import { ReactiveFormsModule } from '@angular/forms';
         CreateRoomComponent,
         EditRoomComponent,
         ListRoomComponent,
-
         CreateShowtimeComponent,
         EditShowtimeComponent,
         ListShowtimeComponent,
