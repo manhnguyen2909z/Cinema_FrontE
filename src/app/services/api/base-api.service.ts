@@ -30,9 +30,7 @@ export abstract class BaseApiService {
   }
 
   public delete(id: any): Observable<any> {
-      return this.http.delete<any>(this.rootUrl, {
-          params: new HttpParams().set('Id', id)
-      })
+      return this.http.delete<any>(this.rootUrl+'/'+ id)
   }
 
   public update(item: any): Observable<any> {

@@ -18,10 +18,10 @@
                         </div>
                         <div class="d-flex align-items-center gap-2">
                             <select class="form-select" [(ngModel)]="items" style="width: 200px" aria-label="Default select example">
-                                <option value="1">10 Bản ghi</option>
-                                <option value="2">20 bản ghi</option>
-                                <option value="5">50 bản ghi</option>
-                                <option value="10">100 bản ghi</option>
+                                <option value="5">5 Bản ghi</option>
+                                <option value="10">10 bản ghi</option>
+                                <option value="20">20 bản ghi</option>
+                                <option value="50">50 bản ghi</option>
                             </select>
                             <div class="input-group rounded">
                                 <input
@@ -124,7 +124,7 @@
                                         <td>{{ film.releaseDate | date }}</td>
                                         <td>{{ film.duration }} phút</td>
                                         <td class="text-center">
-                                            <a href="/admin/editfilm/{{film.movieId}}" class="me-2 text-decoration-none text-secondary">
+                                            <a href="/admin/editfilm/{{ film.movieId }}" class="me-2 text-decoration-none text-secondary">
                                                 <i class="fa fa-pen" aria-hidden="true"></i>
                                             </a>
                                             <a
@@ -134,25 +134,45 @@
                                                 data-bs-target="#exampleModal"
                                                 ><i class="fa fa-trash" aria-hidden="true"></i
                                             ></a>
+                                            <div
+                                                class="modal fade"
+                                                id="exampleModal"
+                                                tabindex="-1"
+                                                aria-labelledby="exampleModalLabel"
+                                                aria-hidden="true"
+                                            >
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Xóa Phim</h5>
+                                                            <button
+                                                                type="button"
+                                                                class="btn-close"
+                                                                data-bs-dismiss="modal"
+                                                                aria-label="Close"
+                                                            ></button>
+                                                        </div>
+                                                        <div class="modal-body">Bạn chắc chắn muốn xóa phim này?</div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+
+                                                            <a
+                                                                id="btn-delete-course"
+                                                                type="button"
+                                                                class="btn btn-danger"
+                                                                href="/admin/film"
+                                                                (click)="delete(film.movieId)"
+                                                                >Có</a
+                                                            >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Xóa Phim</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">Bạn chắc chắn muốn xóa phim này?</div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
-                                            <button id="btn-delete-course" type="button" class="btn btn-danger">Có</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <pagination-controls (pageChange)="p = $event" class="text-center"></pagination-controls>
                         </div>
                     </div>

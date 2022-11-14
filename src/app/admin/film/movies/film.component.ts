@@ -8,33 +8,37 @@ import { Moviesdto } from '../../../services/model/moviesdto';
     styleUrls: ['./film.component.css'],
 })
 export class FilmComponent implements OnInit {
-  
     constructor(private movies: MoviesAdminService) {}
     ngOnInit(): void {
         this.movies.getAllMovies().subscribe((res) => {
             this.films = res;
         });
     }
-    films = [] as Moviesdto[]
-    dec =true
-    decName!:boolean
-    isHiddenName!:boolean
-    isSortDec=false
-    sortByName(){
-        this.isSortDec = !this.isSortDec
-        if(this.isSortDec){
-            this.decName =true
-            this.films.sort((a, b) => -1 * a.movieName.localeCompare(b.movieName))
-
+    films = [] as Moviesdto[];
+    dec = true;
+    decName!: boolean;
+    isHiddenName!: boolean;
+    movieId!: string;
+    isSortDec = false;
+    sortByName() {
+        this.isSortDec = !this.isSortDec;
+        if (this.isSortDec) {
+            this.decName = true;
+            this.films.sort((a, b) => -1 * a.movieName.localeCompare(b.movieName));
         }
-        if(!this.isSortDec){
-          this.decName =false
-            this.films.sort((a, b) =>a.movieName.localeCompare(b.movieName))
-
+        if (!this.isSortDec) {
+            this.decName = false;
+            this.films.sort((a, b) => a.movieName.localeCompare(b.movieName));
         }
     }
-    
 
+    delete(id: string) {
+        {
+            this.movies.delete(id).subscribe(res=>{
+                console.log(res)
+            });
+        }
+    }
     // films = [
     //     {
     //       movieName:'Black Adam2',
@@ -69,7 +73,7 @@ export class FilmComponent implements OnInit {
     //       duration:'129 phút'
     //     }
     //   ]
-      items = 1
-      // films: any;
-      p: number = 1;
+    items = 5;
+    // films: any;
+    p: number = 1;
 }

@@ -35,6 +35,7 @@ export class CreateComponent implements OnInit {
         console.log(this.listCategorySelect);
     }
     addMovie() {
+     
         const newMovie: Moviesdto = new Moviesdto();
         newMovie.movieName = this.movieName;
         newMovie.duration = this.duration;
@@ -46,7 +47,7 @@ export class CreateComponent implements OnInit {
         newMovie.endShowDate = this.endShowDate;
         newMovie.categoryMovies = this.listCategorySelect;
         console.log(this.releaseDate)
-      
+        
         this.movie.addMovie(newMovie).subscribe((res) => {
             console.log('push')
             this.MovieDto.push(res);

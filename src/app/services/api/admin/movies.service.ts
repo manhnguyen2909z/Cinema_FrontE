@@ -21,6 +21,7 @@ export class MoviesAdminService extends BaseApiService {
   public getAllMovies(): Observable<any> {
     return this.http.get<any>(this.rootUrl+'/getall');
   }
+
   
 
 }
