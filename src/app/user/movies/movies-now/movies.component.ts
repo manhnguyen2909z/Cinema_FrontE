@@ -30,14 +30,20 @@ export class MoviesComponent implements OnInit {
     login!: boolean;
     ngOnInit(): void {
         setTimeout(()=>{
-            this.btn = document.getElementById('btn-order') as HTMLButtonElement;
+            this.btn = document.getElementsByClassName('btn-order') as any;
+
             if (!this.login) {
-            this.btn.setAttribute('href', '/signIn');
-        } else if (this.login) {
-           this.btn.setAttribute('data-bs-toggle', 'modal');
-        }
-            console.log(this.btn)
-        }, 2000)
+                for (let i = 0; i < this.btn.length; i++) {
+                    console.log(this.btn[i].id); //second console output
+                    this.btn[i].setAttribute('href', '/signIn');
+                }
+            } else if (this.login) {
+                for (let i = 0; i < this.btn.length; i++) {
+                    console.log (''+this.btn[i].id); //second console output
+                    this.btn[i].setAttribute('data-bs-toggle', 'modal');
+                }
+            }
+        }, 500)
 
         this.toLogin();
         if (!this.login) {
