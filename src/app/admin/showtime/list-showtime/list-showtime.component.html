@@ -2,7 +2,7 @@
     <h1 class="h3 my-4 text-gray-800">Danh Sách lịch chiếu</h1>
     <div class="dataTables_length mb-3" id="dataTable_length" cla>
         <a type="button" class="btn btn-secondary com-sm-6" href="/admin/create-showtime">Thêm lịch chiếu Mới</a>
-        <a type="button" class="btn btn-secondary ms-2" href="javascript:window.top.location.reload(true)"><i class="fas fa-sync-alt"></i></a>
+        <a type="button" class="btn btn-secondary ms-2" (click)='getAllShowtime()'><i class="fas fa-sync-alt"></i></a>
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -116,11 +116,11 @@
                                         <td>{{ showtime.startTime }}</td>
 
                                         <td class="text-center d-flex gap-2">
-                                            <a href="/admin/edit-showtime" class="me-2 text-decoration-none text-secondary"
+                                            <a href="/admin/edit-showtime" (click)='editShowTime(showtime)' class="me-2 text-decoration-none text-secondary"
                                                 ><i class="fa fa-pen" aria-hidden="true"></i
                                             ></a>
                                             <a
-                                                href=""
+                                                (click)='deleteShowTime(showtime)'
                                                 class="ms-1 text-danger text-decoration-none"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal"
@@ -140,7 +140,7 @@
                                         <div class="modal-body">Bạn chắc chắn muốn xóa lịch chiếu này?</div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
-                                            <button id="btn-delete-course" type="button" class="btn btn-danger">Có</button>
+                                            <button id="btn-delete-course" type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)='confirmDelete()'>Có</button>
                                         </div>
                                     </div>
                                 </div>

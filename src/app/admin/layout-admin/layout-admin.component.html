@@ -9,7 +9,7 @@
             </a>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item active">
-                <a class="nav-link" routerLink="/admin/film">
+                <a class="nav-link" href="/admin/film">
                     <i class="fas fa-fw fa-film"></i>
                     <span>Danh Sách Phim</span></a
                 >
@@ -21,7 +21,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item active">
-                <a class="nav-link " routerLink="/admin/list-cs" >
+                <a class="nav-link " href="/admin/list-cs" >
                     <i class="fas fa-fw fa-chair" ></i>
                     <span>Danh Sách Loại Ghế</span></a
                 >
@@ -29,14 +29,14 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" routerLink="/admin/catmovielist" >
+                <a class="nav-link" href="/admin/catmovielist" >
                     <i class="fas fa-fw fa-table"></i>
                     <span>DS Thể Loại Phim</span></a
                 >
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" routerLink="/admin/list-new" >
+                <a class="nav-link" href="/admin/list-acc" >
                     <i class="fas fa-fw fa-table"></i>
                     <span>Danh Sách Tài Khoản</span></a
                 >
@@ -44,7 +44,7 @@
 
 
             <li class="nav-item active">
-                <a class="nav-link" routerLink="/admin/list-showtime" >
+                <a class="nav-link" href="/admin/list-showtime" >
                     <i class="fas fa-fw fa-table"></i>
                     <span>Danh Sách lịch chiếu</span></a
                 >
@@ -99,7 +99,7 @@
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{user.fullNamme}}</span>
                         <img class="img-profile rounded-circle" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp">
                     </a>
                     <!-- Dropdown - User Information -->
@@ -110,7 +110,7 @@
                         </a> -->
                         <div class="dropdown-divider"></div>
 
-                        <a class="dropdown-item" href="/adminLogin">
+                        <a class="dropdown-item" (click)="logout()">
                             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                             Đăng Xuất
                         </a>

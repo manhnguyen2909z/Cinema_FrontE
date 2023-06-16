@@ -52,6 +52,8 @@ export class ModalOrderComponent implements OnInit {
         });
         this.bill.addBill(newBill).subscribe((res: any) => {
             this.billDto.push(res);
+            console.log(res);
+
 
         });
     }

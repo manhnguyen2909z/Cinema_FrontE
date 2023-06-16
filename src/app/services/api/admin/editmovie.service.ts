@@ -22,12 +22,9 @@ export class EditMovieService extends BaseApiService {
     return this.http.get<any>(this.rootUrl+'/detailMovieId?detailMovieId='+id);
   }
   // PUT editMovie
-  public editMovie(movie: Moviesdto): Observable<Moviesdto> {
-    return this.http.put<Moviesdto>(this.rootUrl + '/Save', movie, {
-        headers: new HttpHeaders({
-            'Content-Type': 'application/json',
-        }),
-    });
-}
+  public editMovie(movie: Moviesdto, idMovie: any): Observable<Moviesdto> {
+    return this.http.put<Moviesdto>(this.rootUrl + `/id?id=${idMovie}`, movie)
+    };
+
 
 }

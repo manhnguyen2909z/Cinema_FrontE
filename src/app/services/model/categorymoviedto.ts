@@ -7,4 +7,5 @@ export class categorymoviedto  {
     isDeleted!: false;
     modifiedByUser!: null;
     modifiedTime!: null;
+    isCheck!:boolean
 }

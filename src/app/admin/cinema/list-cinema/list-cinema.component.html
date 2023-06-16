@@ -51,18 +51,18 @@
                                 <thead>
                                     <tr role="row">
                                         <th
-                                            
+
                                         >
                                             Tên Rạp
                                         </th>
-                                        
+
                                     </tr>
                                 </thead>
 
                                 <tbody>
                                     <tr class="odd" *ngFor="let cinema of cinemas | paginate: { itemsPerPage: items, currentPage: p }">
                                         <td style="font-size: 15px">{{ cinema.cinemaName }}</td>
-        
+
                                         <td class="text-center">
                                             <a href="/admin/edit-cinema" class="me-2 text-decoration-none text-secondary"
                                                 ><i class="fa fa-pen" aria-hidden="true"></i

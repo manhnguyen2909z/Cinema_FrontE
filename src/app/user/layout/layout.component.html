@@ -15,7 +15,7 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- <div class="text-dark mx-2 news" routerLink="/News">Tin Tức</div> -->
+            <!-- <div class="text-dark mx-2 news" href="/News">Tin Tức</div> -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown px-2">
@@ -30,18 +30,18 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" routerLink="/moviesNow">Phim đang chiếu</a>
+                                <a class="nav-link active" aria-current="page" href="/moviesNow">Phim đang chiếu</a>
                             </li>
 
                             <li><hr class="dropdown-divider" /></li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" routerLink="/moviesComing">Phim sắp chiếu</a>
+                                <a class="nav-link active" aria-current="page" href="/moviesComing">Phim sắp chiếu</a>
                             </li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" routerLink="/aboutUs">About Us</a>
+                        <a class="nav-link active" aria-current="page" href="/aboutUs">About Us</a>
                     </li>
                     <!--HIển thị cái này nếu đã đăng nhập rồi -->
 
@@ -52,18 +52,18 @@
                        {{user.fullNamme}}
                     </a>
                     <ul class="dropdown-menu">
-                        <!-- <li><a class="dropdown-item" routerLink="/myProfile">Thông tin tài khoản</a></li> -->
-                        <li><a class="dropdown-item" routerLink="/myTicket">Vé của tôi</a></li>
+                        <!-- <li><a class="dropdown-item" href="/myProfile">Thông tin tài khoản</a></li> -->
+                        <li><a class="dropdown-item" href="/myTicket">Vé của tôi</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" (click)="logout()"  routerLink="/">Đăng xuất</a></li>
+                        <li><a class="dropdown-item" (click)="logout()"  href="/">Đăng xuất</a></li>
                     </ul>
                 </div>
 
                     <li class="list-unstyled nav-item mx-2" *ngIf="!isLogin">
-                        <a class="nav-link active" aria-current="page" routerLink="/signIn">Đăng Nhập</a>
+                        <a class="nav-link active" aria-current="page" href="/signIn">Đăng Nhập</a>
                     </li>
                     <li class="list-unstyled nav-item" *ngIf="!isLogin">
-                        <a class="nav-link active" aria-current="page" routerLink="/signUp">Đăng Ký</a>
+                        <a class="nav-link active" aria-current="page" href="/signUp">Đăng Ký</a>
                     </li>
 
             </div>
@@ -84,22 +84,22 @@
 
             <!-- Right -->
             <div>
-                <a routerLink="" class="me-4 link-secondary">
+                <a href="" class="me-4 link-secondary">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a routerLink="" class="me-4 link-secondary">
+                <a href="" class="me-4 link-secondary">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a routerLink="" class="me-4 link-secondary">
+                <a href="" class="me-4 link-secondary">
                     <i class="fab fa-google"></i>
                 </a>
-                <a routerLink="" class="me-4 link-secondary">
+                <a href="" class="me-4 link-secondary">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a routerLink="" class="me-4 link-secondary">
+                <a href="" class="me-4 link-secondary">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a routerLink="" class="me-4 link-secondary">
+                <a href="" class="me-4 link-secondary">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -183,7 +183,7 @@
         <!-- Copyright -->
         <div class="text-center p-4" style="background-color: white">
             © 2021 Copyright:
-            <a class="text-reset fw-bold" routerLink="https://mdbootstrap.com/">CCV.com</a>
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">CCV.com</a>
         </div>
         <!-- Copyright -->
     </footer>

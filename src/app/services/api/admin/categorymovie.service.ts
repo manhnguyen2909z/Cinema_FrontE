@@ -5,7 +5,7 @@ import { BaseApiService } from '../base-api.service';
 import { Moviesdto } from '../../model/moviesdto';
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class CategoryMovieAdminService extends BaseApiService {
   constructor(http: HttpClient) {
@@ -16,11 +16,12 @@ export class CategoryMovieAdminService extends BaseApiService {
     return 'CategoryMovie';
   }
 
-
   // GET
   public getAllCategory(): Observable<any> {
     return this.http.get<any>(this.rootUrl);
   }
-  
 
+  public addCatName(body: any): Observable<any> {
+    return this.http.post<any>(this.rootUrl, body);
+  }
 }

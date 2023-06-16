@@ -6,12 +6,13 @@ import { categorySeatdto } from '../../model/categoryseatdto';
 import { Moviesdto } from '../../model/moviesdto';
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class CategorySeatsService extends BaseApiService {
   getDetailCatSeatEdit(catSeatId: any) {
-      throw new Error('Method not implemented.');
+    throw new Error('Method not implemented.');
   }
+
   constructor(http: HttpClient) {
     super(http);
   }
@@ -19,22 +20,26 @@ export class CategorySeatsService extends BaseApiService {
   name() {
     return 'CategorySeat';
   }
-  
+
 
   // GET
   public getAllCategorySeats(): Observable<any> {
     return this.http.get<any>(this.rootUrl);
   }
 
-  public getEditCategorySeat(id:string): Observable<any>{
-    return this.http.get<any>(this.rootUrl+'/'+id);
+  public addNewCategorySeat(cs: any): Observable<any> {
+    return this.http.post<any>(this.rootUrl, cs);
   }
-  public editCatSeat(catSeat: categorySeatdto): Observable<Moviesdto> {
-    return this.http.put<Moviesdto>(this.rootUrl, catSeat, {
-        headers: new HttpHeaders({
-            'Content-Type': 'application/json',
-        }),
-    });
-}
 
+  public getEditCategorySeat(id: string): Observable<any> {
+    return this.http.get<any>(this.rootUrl + '/' + id);
+  }
+
+  public editCatSeat(catSeat: categorySeatdto, id: any): Observable<Moviesdto> {
+    return this.http.put<Moviesdto>(this.rootUrl + '/id?id=' + id, catSeat);
+  }
+
+  public deleteCatSeat(id: any): Observable<any> {
+    return this.http.delete<any>(this.rootUrl + `/${id}`);
+  }
 }

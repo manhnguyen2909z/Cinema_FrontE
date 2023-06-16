@@ -1,1 +1,35 @@
-<p>edit-showtime works!</p>
+<div class="me-5 container px-5">
+  <h3>Sửa lịch chiếu</h3>
+  <div class="mb-4">
+    <label>Tên phim</label>
+    <input [(ngModel)]='movieName' class='form-control' readonly />
+  </div>
+  <div class="mb-4">
+    <label>Tên rạp</label>
+    <input [(ngModel)]='cinemaName' class='form-control' readonly />
+  </div>
+  <div>
+    <label>Tên Phòng</label>
+    <input [(ngModel)]='roomName' class='form-control' readonly />
+  </div>
+  <div class="my-4">
+    <label>Ngày chiếu</label>
+    <input
+      type="date"
+      [ngModel]="date | date: 'yyyy-MM-dd'"
+      (ngModelChange)="date = $event"
+      class="form-select"
+      name="date"
+    />
+    <span *ngIf="checkDate" class="text-danger">Ngày phải lớn hơn {{ today | date: 'yyyy-MM-dd' }}</span>
+  </div>
+
+  <div>
+    <label>Ca Chiếu</label>
+    <select [(ngModel)]="shiftId" class="form-select mt-2  w-100" aria-label="Default select example">
+      <option *ngFor="let shift of shiftDto" [ngValue]="shift.shiftId">Bắt đầu từ {{ shift.startTime }} đến {{ shift.endTime }}</option>
+    </select>
+    <span *ngIf="checkNullShift" class="form-text text-danger">Vui lòng chọn trường này!</span>
+  </div>
+  <a type="submit" class="btn btn-primary mt-4" (click)="save()" >Lưu</a>
+</div>

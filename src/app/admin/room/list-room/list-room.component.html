@@ -51,7 +51,7 @@
                                 <thead>
                                     <tr role="row">
                                         <th
-                                            
+
                                         >
                                             Tên phòng
                                         </th>
@@ -66,9 +66,9 @@
                                         >
                                             Tên rạp
                                         </th>
-                                        
 
-                                        
+
+
 
                                         <th style="width: 8px"></th>
                                     </tr>
@@ -78,9 +78,9 @@
                                     <tr class="odd" *ngFor="let room of rooms | paginate: { itemsPerPage: items, currentPage: p }">
                                         <td style="font-size: 15px">{{ room.roomName }}</td>
                                         <td>{{ room.cinemaName }}</td>
-                                        
+
                                         <td></td>
-                                        
+
                                         <td class="text-center">
                                             <a href="/admin/edit-room" class="me-2 text-decoration-none text-secondary"
                                                 ><i class="fa fa-pen" aria-hidden="true"></i

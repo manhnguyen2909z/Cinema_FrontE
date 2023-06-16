@@ -21,7 +21,7 @@ import { ListCsComponent } from './admin/categoryseat/list-cs/list-cs.component'
 import { ListCinemaComponent } from './admin/cinema/list-cinema/list-cinema.component';
 import { CreateCinemaComponent } from './admin/cinema/create-cinema/create-cinema.component';
 import { EditCinemaComponent } from './admin/cinema/edit-cinema/edit-cinema.component';
-import { ListNewComponent } from './admin/new/list-new/list-new.component';
+import { ListNewComponent } from './admin/new/list-acc/list-new.component';
 import { CreateNewComponent } from './admin/new/create-new/create-new.component';
 import { EditNewComponent } from './admin/new/edit-new/edit-new.component';
 import { ListShiftComponent } from './admin/shift/list-shift/list-shift.component';
@@ -42,68 +42,73 @@ import { MyProfileComponent } from './user/my-profile/my-profile.component';
 import { MyTicketComponent } from './user/my-ticket/my-ticket.component';
 import { DiscountComponent } from './user/discount/discount.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AuthGuard } from './shared/guard/auth.guard';
+import { CatmoviecreateComponent } from './admin/categorymovie/catmoviecreate/catmoviecreate.component';
 
 const routes: Routes = [
-    {
-        path: 'admin',
-        component: LayoutAdminComponent,
-        children: [
-            { path: 'createfilm', component: CreateComponent },
-            { path: 'create-cs', component: CreateCsComponent },
-            { path: 'editfilm/:movieId', component: EditComponent },
-            { path: 'edit-cs/:catSeatId', component: EditCsComponent },
-            { path: 'list-cs', component: ListCsComponent },
-            { path: 'list-cinema', component: ListCinemaComponent },
-            { path: 'edit-cinema', component: EditCinemaComponent },
-            { path: 'create-cinema', component: CreateCinemaComponent },
-            { path: 'list-new', component: ListNewComponent },
-            { path: 'edit-new', component: EditNewComponent },
-            { path: 'create-new', component: CreateNewComponent },
-            { path: 'list-shift', component: ListShiftComponent },
-            { path: 'edit-shift', component: EditShiftComponent },
-            { path: 'create-shift', component: CreateShiftComponent },
-            { path: 'list-room', component: ListRoomComponent },
-            { path: 'edit-room', component: EditRoomComponent },
-            { path: 'create-room', component: CreateRoomComponent },
-            { path: 'list-seat', component: ListSeatComponent },
-            { path: 'edit-seat', component: EditSeatComponent },
-            { path: 'create-seat', component: CreateSeatComponent },
-            { path: 'list-showtime', component: ListShowtimeComponent },
-            { path: 'edit-showtime/:showtimeId', component: EditShowtimeComponent },
-            { path: 'create-showtime', component: CreateShowtimeComponent },
-            { path: 'film', component: FilmComponent },
-            { path: 'profile', component: ProfileComponent },
-            { path: 'catmovielist', component: CatmovielistComponent },
-            { path: '', component: FilmComponent },
-        ],
-    },
-    {
-        path: 'adminLogin',
-        component: AdminLoginComponent,
-    },
-    {
-        path: '',
-        component: LayoutComponent,
-        children: [
-            { path: 'signUp', component: RegistrationFormComponent },
-            { path: 'signIn', component: SignInComponent },
-            { path: 'aboutUs', component: AboutUsComponent },
-            { path: 'detailFilm/:id', component: MovieDetailComponent },
-            { path: 'moviesNow', component: MoviesComponent },
-            { path: 'moviesComing', component: MoviesComingComponent },
-            { path: 'forgot', component: ForgotPasswordComponent },
-            { path: 'payment', component: PaymentComponent },
-            { path: 'myTicket', component: MyTicketComponent },
-            { path: 'myProfile', component: MyProfileComponent },
-            { path: 'News', component: DiscountComponent },
-            { path: '', component: HomeComponent },
-        ],
-    },
-    { path: '**', component: NotFoundComponent },
+  {
+    path: 'admin',
+    component: LayoutAdminComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {path: 'catmoviecreate', component: CatmoviecreateComponent},
+      { path: 'createfilm', component: CreateComponent },
+      { path: 'create-cs', component: CreateCsComponent },
+      { path: 'editfilm/:movieId', component: EditComponent },
+      { path: 'edit-cs/:catSeatId', component: EditCsComponent },
+      { path: 'list-cs', component: ListCsComponent },
+      { path: 'list-cinema', component: ListCinemaComponent },
+      { path: 'edit-cinema', component: EditCinemaComponent },
+      { path: 'create-cinema', component: CreateCinemaComponent },
+      { path: 'list-acc', component: ListNewComponent },
+      { path: 'edit-new', component: EditNewComponent },
+      { path: 'create-new', component: CreateNewComponent },
+      { path: 'list-shift', component: ListShiftComponent },
+      { path: 'edit-shift', component: EditShiftComponent },
+      { path: 'create-shift', component: CreateShiftComponent },
+      { path: 'list-room', component: ListRoomComponent },
+      { path: 'edit-room', component: EditRoomComponent },
+      { path: 'create-room', component: CreateRoomComponent },
+      { path: 'list-seat', component: ListSeatComponent },
+      { path: 'edit-seat', component: EditSeatComponent },
+      { path: 'create-seat', component: CreateSeatComponent },
+      { path: 'list-showtime', component: ListShowtimeComponent },
+      { path: 'edit-showtime', component: EditShowtimeComponent },
+      { path: 'create-showtime', component: CreateShowtimeComponent },
+      { path: 'film', component: FilmComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'catmovielist', component: CatmovielistComponent },
+      { path: '', component: FilmComponent },
+    ],
+  },
+  {
+    path: 'adminLogin',
+    component: AdminLoginComponent,
+  },
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: 'signUp', component: RegistrationFormComponent },
+      { path: 'signIn', component: SignInComponent },
+      { path: 'aboutUs', component: AboutUsComponent },
+      { path: 'detailFilm/:id', component: MovieDetailComponent },
+      { path: 'moviesNow', component: MoviesComponent },
+      { path: 'moviesComing', component: MoviesComingComponent },
+      { path: 'forgot', component: ForgotPasswordComponent },
+      { path: 'payment', component: PaymentComponent },
+      { path: 'myTicket', component: MyTicketComponent },
+      { path: 'myProfile', component: MyProfileComponent },
+      { path: 'News', component: DiscountComponent },
+      { path: '', component: HomeComponent },
+    ],
+  },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

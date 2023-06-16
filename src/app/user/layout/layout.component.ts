@@ -18,7 +18,6 @@ export class LayoutComponent implements OnInit {
     this.user = new UserDto();
     if(localStorage.getItem('authToken')){
       this.isLogin = true;
-      console.log(this.isLogin);
       this.getuser();
     }
   }
@@ -33,6 +32,7 @@ export class LayoutComponent implements OnInit {
   getuser(){
     this.authservice.getUserInfo().subscribe( (res) =>{
       this.user = res;
+      localStorage.setItem('role', res.role);
       console.log(this.user);
     })
   }

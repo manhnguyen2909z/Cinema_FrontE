@@ -16,7 +16,7 @@ export class AuthService extends BaseApiService{
     return 'Account';
   }
 
-  public signup(user: UserDto): Observable<any>{
+  public signup(user: any): Observable<any>{
     return this.http.post<any>(this.rootUrl + '/SignUp', user)
   }
 
@@ -35,5 +35,6 @@ export class AuthService extends BaseApiService{
   public getAllRole(): Observable<any>{
     return this.http.get<any>('https://localhost:7068/api/Role');
   }
+
 
 }

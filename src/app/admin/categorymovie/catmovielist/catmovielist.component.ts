@@ -4,23 +4,32 @@ import { CategoryMovieService } from 'src/app/services/api/user/categorymovie.se
 @Component({
   selector: 'app-catmovielist',
   templateUrl: './catmovielist.component.html',
-  styleUrls: ['./catmovielist.component.css']
+  styleUrls: ['./catmovielist.component.css'],
 })
 export class CatmovielistComponent implements OnInit {
 
-  p:number= 1
+  p: number = 1;
 
-  constructor(private catmovie: CategoryMovieService){}
+  constructor(private catmovie: CategoryMovieService) {
+  }
+
   categoryMovieDto: any;
-    formDetail = document.getElementById('formDetail') 
-    submit(){
-        
-    }
-    ngOnInit(): void {
-        this.catmovie.getAllCategoryMovies().subscribe((res) => {
-            this.categoryMovieDto = res.data;
-            console.log(this.categoryMovieDto);
-        });
-    }
-    items = 1
+  formDetail = document.getElementById('formDetail');
+
+  submit() {
+
+  }
+
+  ngOnInit(): void {
+    this.catmovie.getAllCategoryMovies().subscribe((res) => {
+      this.categoryMovieDto = res.data;
+      console.log(this.categoryMovieDto);
+    });
+  }
+
+  items = 5;
+
+  deleteCategory(id:any) {
+    this.catmovie.delete(id).subscribe()
+  }
 }

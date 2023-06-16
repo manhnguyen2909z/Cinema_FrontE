@@ -6,60 +6,71 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+  styleUrls: ['./sign-in.component.css'],
 })
 export class SignInComponent implements OnInit {
   userdto!: UserDto;
   messageError!: string;
-    notEmail!: boolean;
-    wrongPass!:boolean
-    expression: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-  constructor(private authService: AuthService, private router: Router) { }
+  notEmail!: boolean;
+  wrongPass!: boolean;
+  expression: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
+  constructor(private authService: AuthService, private router: Router) {
+  }
+
   ngOnInit(): void {
+    document.addEventListener("keydown",(e) => {
+      if(e.key === "Enter"){
+        this.signin()
+      }
+    })
     this.userdto = new UserDto();
     this.messageError = '';
   }
-  isShow = false
-  show(){
-    this.isShow = !this.isShow
+
+  isShow = false;
+
+  show() {
+    this.isShow = !this.isShow;
   }
+
   signin() {
-    this.authService.signin(this.userdto).subscribe( (token: string) =>{
+
+    this.authService.signin(this.userdto).subscribe((token: string) => {
       localStorage.setItem('authToken', token);
       this.messageError = '';
-      if(token === "failed"){
-        this.messageError = "Email hoặc mật khẩu không chính xác";
+      if (token === 'failed') {
+        this.messageError = 'Email hoặc mật khẩu không chính xác';
         return;
       }
       // this.router.navigate(['/'])
       window.location.href = 'http://localhost:4200/';
-      this.validate()
+      this.validate();
     });
   }
+
   validate() {
-   
+
     // check mail
     if (this.expression.test(this.userdto.email)) {
-        this.notEmail = false;
+      this.notEmail = false;
     } else {
-        this.notEmail = true;
+      this.notEmail = true;
     }
-   
+
     //check Pass
-    if (this.userdto.password.length == 0 ) {
-        this.wrongPass = true;
+    if (this.userdto.password.length == 0) {
+      this.wrongPass = true;
     } else {
-        this.wrongPass = false;
+      this.wrongPass = false;
     }
     //
-    if (!this.notEmail &&  !this.wrongPass) {
-        console.log('Đăng nhap thành công');
-        this.authService.signin(this.userdto).subscribe(
-          res =>{
-            console.log(res)
-          }
-        );
+    if (!this.notEmail && !this.wrongPass) {
+      this.authService.signin(this.userdto).subscribe(
+        res => {
+        },
+      );
     }
-}
+  }
 
 }

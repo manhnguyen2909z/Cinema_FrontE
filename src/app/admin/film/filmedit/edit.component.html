@@ -1,5 +1,5 @@
 <div class="my-4 container px-5 ">
-    <h3>Thêm Phim Mới</h3>
+    <h3>Chỉnh Sửa</h3>
     <form method="GET" action="admin/film" class="container">
         <div class="form-group mt-4">
             <label for="name">Tên Phim</label>
@@ -15,7 +15,7 @@
                 <div *ngFor="let category of listCategoryMoviedto">
                     <div class="form-check">
                         <input  [value]="category.categoryMovieName"  class="form-check-input" type="checkbox" value="" id="{{category.categoryMovieId}}" />
-                        <label class="form-check-label" for="flexCheckIndeterminate">
+                        <label class="form-check-label">
                             {{ category.categoryMovieName }}
                         </label>
                     </div>
@@ -27,7 +27,7 @@
             <input [ngModel]="releaseDate" type="date" class="form-control" id="releaseDate" name="releaseDate" />
         </div>
         <div class="form-group mt-4">
-            <label for="endShowDate" class="my-2">Khởi Chiếu</label>
+            <label for="endShowDate" class="my-2">Kết Thúc</label>
             <input [ngModel]="endShowDate" type="date" class="form-control" id="endShowDate" name="releaseDate" />
         </div>
         <div class="form-group mt-4">
@@ -47,6 +47,6 @@
             <input [(ngModel)]="director" type="text" class="form-control" id="director" name="director" />
         </div>
 
-        <button type="submit" class="btn btn-primary mt-4" (click)="saveMovie()">Thêm</button>
+        <button type="submit" class="btn btn-primary mt-4" (click)="saveMovie()">Lưu</button>
     </form>
 </div>

@@ -44,7 +44,7 @@ Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152
 	transform: translate3d(-50%,-50%,0);
 }
 .hero h1 {
-    font-size: 6em;    
+    font-size: 6em;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -52,18 +52,18 @@ Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152
 .fade-carousel .carousel-inner .item .hero {
     opacity: 0;
     -webkit-transition: 2s all ease-in-out .1s;
-       -moz-transition: 2s all ease-in-out .1s; 
-        -ms-transition: 2s all ease-in-out .1s; 
-         -o-transition: 2s all ease-in-out .1s; 
-            transition: 2s all ease-in-out .1s; 
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
 }
 .fade-carousel .carousel-inner .item.active .hero {
     opacity: 1;
     -webkit-transition: 2s all ease-in-out .1s;
-       -moz-transition: 2s all ease-in-out .1s; 
-        -ms-transition: 2s all ease-in-out .1s; 
-         -o-transition: 2s all ease-in-out .1s; 
-            transition: 2s all ease-in-out .1s;    
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
 }
 
 .overlay {
@@ -87,7 +87,7 @@ Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152
 	font-size:26px;
 }
 
-.fade-carousel .slides .slide-1, 
+.fade-carousel .slides .slide-1,
 .fade-carousel .slides .slide-2,
 .fade-carousel .slides .slide-3 {
   height: 100vh;
@@ -106,21 +106,21 @@ background-image: url(../img/3.jpg);
 } */
 
 @media screen and (min-width: 980px){
-    .hero { width: 980px; }    
+    .hero { width: 980px; }
 }
 @media screen and (max-width: 640px){
-    .hero h1 { font-size: 4em; }    
+    .hero h1 { font-size: 4em; }
 }
 /*********************center_end****************/
 
 /*********************booking****************/
 #booking{
  padding-top:40px;
- padding-bottom:40px; 
+ padding-bottom:40px;
   }
 .nav-tabs{
  border:none;
- margin-bottom:25px; 
+ margin-bottom:25px;
   }
 .nav-tabs li{
   font-size:24px;
@@ -138,27 +138,27 @@ background:#cf0000;
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
 color:#fff;
 font-weight:bold;
-background:#cf0000;  
+background:#cf0000;
   }
 .click_1{
   background:#f4f4f4;
   padding:15px;
   }
 .click_1 h3{
-font-size:20px; 
-color:#666; 
+font-size:20px;
+color:#666;
   }
 .click_1 h3 a{
-color:#666; 
+color:#666;
   }
 .click_1 h3 a:hover{
-color:#000; 
+color:#000;
   }
 .click_2{
   margin-top:25px;
   }
 .click_2_inner img:hover{
-opacity:0.8;  
+opacity:0.8;
   }
 .click_2_inner p{
 margin-top:10px;
@@ -187,17 +187,17 @@ color:#000;
  display:block;
   }
 .booking_right_main_1 ul a i{
-line-height:45px;  
+line-height:45px;
   }
 .book_1{
 margin-top:5px;
   }
 .booking_right_main_2 {
- background:#333; 
+ background:#333;
  padding:0px 15px 30px 15px;
   }
 .booking_right_main_2_inner{
- margin-top:20px; 
+ margin-top:20px;
   }
 .booking_right_main_2_inner p{
 font-size:18px;
@@ -211,14 +211,14 @@ color:#fff;
   }
 .booking_right_main_2_inner .p_1{
 margin-top:20px;
-font-size:14px;  
+font-size:14px;
   }
 .booking_right_main_2_inner h4{
 color:#fff;
 margin-top:20px;
 border-bottom:1px solid #666;
 padding-bottom:8px;
-margin-bottom:20px; 
+margin-bottom:20px;
   }
 
 
@@ -301,7 +301,7 @@ a.socialIcon:hover, .socialHoverClass {
 }
 
 .booking_right_main_2_inner ul li a {
- background-color: #eee;   
+ background-color: #eee;
 }
 
 
@@ -430,10 +430,10 @@ figure.effect-milo:hover p {
 }
 
 .booking_right_main_3{
-margin-top:30px;  
+margin-top:30px;
   }
 .booking_1{
- margin-top:40px; 
+ margin-top:40px;
   }
 .booking_1 h3{
 border-bottom:5px solid #cf0000;
@@ -467,7 +467,7 @@ color:#666;
 .booking_1_inner_1 p a:hover{
 color:#000;
  }
- 
+
 .booking_1_inner_1 h6 {
 margin-top:20px;
 text-align:center;
@@ -488,7 +488,7 @@ background:#cf0000;
 #booking_last{
  background:#f4f4f4;
  padding-top:20px;
- padding-bottom:50px; 
+ padding-bottom:50px;
   }
 /*********************booking_end****************/
 
@@ -503,45 +503,45 @@ height:350px!important;
   height:350px!important;
   }
 .hero h1{
-font-size:50px!important;  
+font-size:50px!important;
   }
 .hero h3{
-font-size:20px!important;  
+font-size:20px!important;
   }
 .hero{
- top:50%!important; 
+ top:50%!important;
  left:50%!important;
   }
 .nav-tabs li a{
-padding:10px 15px;  
+padding:10px 15px;
   }
 .click_1 h3{
- line-height:1.6em; 
+ line-height:1.6em;
  text-align:center;
   }
 .click_1 h3 a{
  float:none!important;
- display:block; 
+ display:block;
   }
 .nav-tabs li{
- font-size:16px; 
+ font-size:16px;
   }
 .click_2_inner p{
  margin-bottom:10px;
  }
 .booking_right_main_2_inner p{
-text-align: center; 
+text-align: center;
   }
 .booking_right_main_2_inner h4{
 text-align:center;
-line-height:1.6em; 
+line-height:1.6em;
  }
 .booking_right_main_2_inner{
  text-align:center;
  }
 .booking_right_main_2_inner ul li a{
 width:30px;
-height:30px; 
+height:30px;
  }
 .booking_right_main_2_inner ul li a i{
 line-height:30px;
@@ -554,13 +554,13 @@ font-size:14px;
   top:55%;
   }
 .nav-tabs li{
-font-size:20px;  
+font-size:20px;
   }
 .nav-tabs li a{
   padding:15px 20px;
   }
 .click_1 h3{
- font-size:16px; 
+ font-size:16px;
   }
 .booking_1 h3 {
 width:47%;

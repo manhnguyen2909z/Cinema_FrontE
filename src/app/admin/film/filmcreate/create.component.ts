@@ -28,14 +28,16 @@ export class CreateComponent implements OnInit {
     image!: string;
     actor!: string;
     director!: string;
+  isCheck: any;
 
-    MovieDto = [] as Moviesdto[];
-    getCategory(category: categorymoviedto) {
-        this.listCategorySelect.push(category);
-        console.log(this.listCategorySelect);
+    getCategory() {
+        this.listCategoryMoviedto.forEach(category =>{
+          if(category.isCheck){
+            this.listCategorySelect.push(category);
+          }
+        })
     }
     addMovie() {
-     
         const newMovie: Moviesdto = new Moviesdto();
         newMovie.movieName = this.movieName;
         newMovie.duration = this.duration;
@@ -46,13 +48,8 @@ export class CreateComponent implements OnInit {
         newMovie.releaseDate = this.releaseDate;
         newMovie.endShowDate = this.endShowDate;
         newMovie.categoryMovies = this.listCategorySelect;
-        console.log(this.releaseDate)
-        
-        this.movie.addMovie(newMovie).subscribe((res) => {
-            console.log('push')
-            this.MovieDto.push(res);
-            console.log(res);
-        });
+        this.getCategory()
+        this.movie.addMovie(newMovie).subscribe();
         this.reset();
     }
     reset() {

@@ -27,7 +27,7 @@ export class MovieDetailComponent implements OnInit {
             let dateComing = moment(res.releaseDate).format('DD-MM-YYYY');
             this.detailmoviedto = res;
             console.log(res);
-            
+
             this.getCategoryMovie();
         });
     }

@@ -3,10 +3,13 @@
     <form method="GET" action="admin/categoryseat">
         <div class="form-group mt-2">
             <label for="name">Tên loại ghế</label>
-            <input type="text" class="form-control" id="name" name="name" />
+            <input type="text" [(ngModel)]="categorySeat" class="form-control" id="name" name="name" />
         </div>
-       
-        <button type="submit" class="btn btn-primary mt-4">Thêm</button>
+      <div class="form-group mt-2">
+        <label for="name">Giá</label>
+        <input type="text" [(ngModel)]="price" class="form-control" id="price" name="price" />
+      </div>
+        <button (click)="add()" type="submit" class="btn btn-primary mt-4">Thêm</button>
     </form>
 </div>
 
