@@ -19,20 +19,20 @@ aria-hidden="true"
 
                 <div class="box-2 col-sm-12" *ngFor="let detail of billDto">
                     <div class="box-inner-2">
-                        <div >
+<!--                        <div >-->
 
-                            <p class="fw-bold mb-3">Chi tiết hóa đơn</p>
-                            <p class="dis mb-3">Hoàn tất giao dịch mua bằng cách cung cấp chi tiết thanh toán của bạn</p>
-                        </div>
+<!--                            <p class="fw-bold mb-3">Chi tiết hóa đơn</p>-->
+<!--                            <p class="dis mb-3">Hoàn tất giao dịch mua bằng cách cung cấp chi tiết thanh toán của bạn</p>-->
+<!--                        </div>-->
                         <form action="">
                             <div class="mb-3">
                                 <div class="address">
-                                    <div class="my-3">
-                                        <p class="dis fw-bold mb-2">Mã nhận vé</p>
-                                        <div class="inputWithcheck">
-                                            <input class="form-control" [disabled]="true" type="text" value="{{detail.billId}}" />
-                                        </div>
-                                    </div>
+<!--                                    <div class="my-3">-->
+<!--                                        <p class="dis fw-bold mb-2">Mã nhận vé</p>-->
+<!--                                        <div class="inputWithcheck">-->
+<!--                                            <input class="form-control" [disabled]="true" type="text" value="{{detail.billId}}" />-->
+<!--                                        </div>-->
+<!--                                    </div>-->
                                     <div class="d-flex flex-column dis">
                                         <div class="d-flex align-items-center justify-content-between mb-2">
                                             <p>Tên phim</p>
@@ -46,10 +46,10 @@ aria-hidden="true"
                                             <p>Ghế</p>
                                             <div class="d-flex align-items-center gap-2"><p *ngFor="let seat of detail.listSeat">{{seat.seatName}}</p></div>
                                         </div>
-                                        <div class="d-flex align-items-center justify-content-between mb-2">
-                                            <p>Giá</p>
-                                            <p>{{detail.listSeat.length}} x {{detail.listSeat[0].price}} VND</p>
-                                        </div>
+<!--                                        <div class="d-flex align-items-center justify-content-between mb-2">-->
+<!--                                            <p>Giá</p>-->
+<!--                                            <p>{{detail.listSeat.length}} x {{detail.listSeat[0].price}} VND</p>-->
+<!--                                        </div>-->
                                         <div class="d-flex align-items-center justify-content-between mb-2">
                                             <p class="fw-bold">Tổng tiền</p>
                                             <p class="fw-bold">{{detail.totalAmount}}</p>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesAdminService } from '../../../services/api/admin/movies.service';
 import { Moviesdto } from '../../../services/model/moviesdto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-film',
@@ -18,21 +19,22 @@ export class FilmComponent implements OnInit {
   items = 5;
   p: number = 1;
 
-  constructor(private movies: MoviesAdminService) {
+  constructor(private movies: MoviesAdminService, private router: Router) {
   }
 
   ngOnInit(): void {
-   this.getAllMovie()
+    this.getAllMovie();
   }
 
-  getAllMovie(){
+  getAllMovie() {
     this.movies.getAllMovies().subscribe((res) => {
       this.films = res;
     });
   }
+
   getsearch() {
-    if(this.search.trim() == ''){
-      this.getAllMovie()
+    if (this.search.trim() == '') {
+      this.getAllMovie();
     }
     if (this.search.trim() !== '') {
       this.movies.getAllMoviesSearch(this.search).subscribe((res) => {
@@ -54,6 +56,11 @@ export class FilmComponent implements OnInit {
   }
 
   delete(id: string) {
-    this.movies.delete(id).subscribe();
+    this.movies.delete(id).subscribe(() => {
+        this.getAllMovie();
+      },
+      () => {
+        alert('Xóa phim thất bại');
+      });
   }
 }

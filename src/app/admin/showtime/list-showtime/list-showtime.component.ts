@@ -30,7 +30,6 @@ export class ListShowtimeComponent implements OnInit {
   }
 
   showtimedto: any;
-
   ngOnInit(): void {
     this.getAllShowtime();
     this.movies.getAllMovies().subscribe((res) => {

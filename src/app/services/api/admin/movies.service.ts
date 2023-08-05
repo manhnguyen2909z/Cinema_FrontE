@@ -26,4 +26,8 @@ export class MoviesAdminService extends BaseApiService {
     return this.http.get<Moviesdto>(this.rootUrl + '/getsearch?search=' + search);
   }
 
+  public deleteMovie(id: string): Observable<any> {
+    return this.http.delete<Moviesdto>(this.rootUrl + `/${id}`);
+  }
+
 }
